@@ -23,11 +23,9 @@ const Dropdown = styled.div`
     justify-content: flex-start;
     align-items: center;
 
-    >.dropdown-txt{ 
+  >.dropdown-txt{ 
   padding: 0 10px 0 0;
-  font-family: NotoSansCJKKR;
   font-size: 16px;
-  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.63;
@@ -38,11 +36,8 @@ const Dropdown = styled.div`
 }
 
 >.dropdown-help{ 
-  margin: 20px 0;
   font-size: 16px;
-  font-weight: normal;
   font-stretch: normal;
-  font-style: normal;
   line-height: 1.63;
   letter-spacing: normal;
   text-align: left;
@@ -119,16 +114,11 @@ const DropdownContent = styled.div`
 
  function DropdownComponent({text,help, content}){ 
      const [click, setClick] = useState(false);
-     const [arrow, setArrow] = useState(arrowdown);
      const [button, setButton] = useState(false);
 
      const clickHandler = () => { 
          setClick(!click);
-         if(arrow === arrowup) { 
-             setArrow(arrowdown);
-         }else{ 
-            setArrow(arrowup);
-         }
+       
      }
 
      const buttonHandler = () => { 
@@ -140,10 +130,10 @@ const DropdownContent = styled.div`
         <>
     <Dropdown onClick={clickHandler} click={click}> 
        <div className='dropdowntxt-container'  >
-       <span className='dropdown-txt'>{text}</span> 
-       <span className='dropdown-help'>{help}</span> 
+       <span className='dropdown-txt Bold'>{text}</span> 
+       <span className='dropdown-help Regular'>{help}</span> 
        </div>
-       <img className='dropdown-arrow' src={arrow} onClick={clickHandler}/>
+       <img className='dropdown-arrow' src={click ? arrowup : arrowdown} onClick={clickHandler}/>
        
     </Dropdown>
     <DropdownContent click={click}>
