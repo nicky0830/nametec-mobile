@@ -1,0 +1,62 @@
+.brandregister-inputcontainer{ 
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.brandregister-input{ 
+    font-family: NotoSansCJKKR;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #b7b7b7;
+
+  width: 335px;
+  height: 29px;
+  margin: 6.1px 20px 0;
+  border-style: none;
+  border-bottom: solid 2px #b7b7b7;
+
+
+}
+
+.brandregister-input:focus{ 
+    caret-color: #4a64f5;
+    outline: none;
+    border-style: none;
+    border-bottom: solid 2px #4a64f5;
+}
+
+.brandregister-inputbutton{
+    width: 16px;
+    height: 16px;
+    background-color: #efefef;
+    padding: 4.5px 4.5px 4.5px 4.5px;
+    margin: 10px 20px 12.1px 0;
+    border-style: none;
+    font-size: 3px;
+    text-align: center;
+} 
+
+
+.brandlogoregister-plusbox{
+    display: block;
+    width: 335px;
+    height: 253px;
+    margin: 43px 35px 203px;
+    object-fit: contain;
+
+}
+
+.dropdowncomponent-container{ 
+    margin-top: 44px;
+}
+
+
+
+

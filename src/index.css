@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.active{
+  background-color: tomato;
+}
+
+.homeRegisterBtn{ 
+  border-radius: 10%;
+  display: block; 
+  width: 100px; 
+  height: 50px;
+  background-color: aliceblue;
+}
+
+.app{ 
+
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+
+
+}

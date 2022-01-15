@@ -1,0 +1,102 @@
+@font-face {
+    font-family : "Bold";
+    src : url("./font/NotoSansCJKkr-Bold.otf") format('truetype');
+}
+.Bold{
+    font-family: Bold
+}
+@font-face {
+    font-family : "Regular";
+    src : url("./font/NotoSansCJKkr-Regular.otf") format('truetype');
+    
+}
+.Regular{
+    font-family: Regular
+}
+
+
+@font-face {
+    font-family : "Light";
+    src : url("./font/NotoSansCJKkr-Light.otf") format('truetype');
+}
+.Light{
+    font-family: Light
+}
+@font-face {
+    font-family : "Medium";
+    src : url("./font/NotoSansCJKkr-Medium.otf") format('truetype');
+}
+.Medium{
+    font-family: Medium
+}
+
+#start_btn {
+    width: 60%;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : 14.65%;
+}
+.btn:focus,
+.btn:active,
+.btn:active:focus,
+.custom-select:focus,
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+.btn {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    padding: .3rem .8rem;
+    letter-spacing: .5px;
+}
+.btn:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+.btn:active {
+    box-shadow: none !important;
+    outline: none;
+}
+.btn:active:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+.circle{
+    width:113px;
+    height:113px;
+    border-radius: 70px;
+    border: solid 1px #cccccc;
+}
+#midbox{
+    width: 80%;
+    height: 275px;
+    margin: 24px 0 21.3px;
+    margin-left : 10%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+#start_btn2 {
+    width: 230px;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : -115px;
+}
