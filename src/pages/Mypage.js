@@ -5,10 +5,12 @@ import {useState} from 'react';
 import x_btn from '../image/x_menuicon@3x.png';
 import { Link } from 'react-router-dom';
 import backarrow from '../data/backarrow@3x.png'
-import '../text.css';
 import user_profile from "../image/user_profile.png"; 
 import modify_profile from '../image/modify_profile@2x.png';
-import mypagearrow from '../image/mypagearrow@3x.png'
+import arrowdown from '../image/mypagearrow@3x.png'
+import arrowup from '../image/uparrow@3x.png'
+
+
 
 
 
@@ -27,28 +29,30 @@ const MyInfoItem = ({name, email}) => {
         <img src={user_profile} 
                 style={{marginLeft: '18px', marginRight: '10px',display:'inline-block'}}/>
       <div style={{display:'inline-block', width: '90%'}}>
-      <div style={{display:'inline-block', marginTop: '2px'}}>
-     <div id="customername" className = 'Medium' style={{fontSize: '16px'}}>{name}</div>
-     <div id="customeremail" style={{fontSize: '10px',color: '#b7b7b7'}}>{email}</div>
+        <div style={{display:'inline-block', marginTop: '2px'}}>
+            <div id="customername" className = 'Medium' style={{fontSize: '16px'}}>{name}</div>
+            <div id="customeremail" style={{fontSize: '10px',color: '#b7b7b7'}}>{email}</div>
+        </div>
+      </div>     
+      <div style={{display:'inline-block',float:'right'}}>
+        <Link to='/member'>
+        <img src={modify_profile} 
+             style={{cursor:'pointer', marginTop: '15px', marginRight: '20px', width: '68px'}}/>
+        </Link>
       </div>
-
-
-        </div>      <div style={{display:'inline-block',float:'right'}}>
-              <img src={modify_profile} 
-                 style={{cursor:'pointer', marginTop: '15px', marginRight: '20px', width: '68px'}}/></div>
   </div>
 
 
     )
 }
 
-const ItemContent  = ({title, subtitle, current=null}) => { 
+const ItemContent  = ({title, subtitle, current}) => { 
     return( 
         <div  style={{borderBottom: '1px solid rgb(224, 224, 224)', marginLeft: '5%', marginRight: '5%'}}>
             {/* font 상속이 되나 싶어서 부모에 className을 넣었는데 상속 X */}
     <div className = 'Medium' style={{paddingTop: '10px', color: 'rgb(137, 137, 137)', fontSize: '16px'}}>{title}</div>
     <div  className = 'Medium' style={{color: 'rgb(81, 81, 81)', paddingBottom: '8px', fontSize: '16px'}}>{subtitle}</div>
-   { current ? 
+   { typeof current === 'string'  ? 
     <div 
     className ='Medium'
     style={{
@@ -195,7 +199,12 @@ const MypageTopbar = () => {
                 onClick = {modalHandler}/>              
         </div>
 
+{/* state를 정하고 export하는 컴포넌트에서 state를 받아서 사용 */}
+{/* 상위, 하위의 개념이 아니라 둘다 동시에 받으면 된다 그러니까  */}
+
 {/* 마이 페이지 메뉴모달 */}
+
+
 
         <div id="menuContainer" 
     style={{display: display, 
@@ -225,7 +234,9 @@ const MypageTopbar = () => {
             
  
             <div className="menuicon1"  style={{marginTop : '25px', marginLeft: '20px'}}>
-                <span style={{cursor: 'pointer'}}>비용 및 절차 안내</span>
+                <Link to='/costprocess'>
+                <span style={{cursor: 'pointer', color: 'black', display: 'inline-block'}}>비용 및 절차 안내</span>
+                </Link>
              </div>
           <div className ="menuicon1"  style={{marginTop : '25px', marginLeft: '20px'}}>
                  <span style={{cursor: 'pointer'}}> 고객센터</span>
@@ -254,13 +265,14 @@ const MypageTopbar = () => {
             {/* 리스트 전체 컨테이너 */}
 
             <div style={{margin : '22px 5% 0px 5%'}}>
-            <div id="maindiv0" style={{cursor: 'pointer'}}>
+            <div id="maindiv0" style={{cursor: 'pointer'}}  onClick ={itemHandler}>
             <div className='Regular'
             style={{fontSize: '16px', 
             color: 'rgb(74, 100, 245)', 
             textAlign: 'center', 
             display: 'inline-block', 
             width: '70px', 
+            height: '24px',
             transform: 'translateY(-5px)', 
             position: 'absolute', 
             marginTop: '15px'}}>입금대기</div>
@@ -268,12 +280,12 @@ const MypageTopbar = () => {
                 <div style={{display: 'inline-block'}}>상표명</div>
                 <div style={{fontSize: '12px', color: 'rgb(183, 183, 183)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '140px'}}>의류 및 패션 제품</div>
             </div>
-            <img id="imgdiv0" src={open? mypagearrow : mypagearrow} 
+            <img id="imgdiv0" src={open? arrowup : arrowdown} 
             style={{float: 'right', 
             display: 'inline-block', 
             marginTop: '16px', 
             width: '10px'}}
-            onClick ={itemHandler}/>
+           />
             </div>
             <div style={{width: '111%',
              height: '1px', 
@@ -288,10 +300,11 @@ const MypageTopbar = () => {
             marginLeft: '-5.5%', 
             display: open ? 'block' : 'none' }}>
 
-            <ItemContent title='결제일' subtitle='내용없음' current='current'/>
-            <ItemContent title='결제일' subtitle='내용없음' current='current'/>
-            <ItemContent title='결제일' subtitle='내용없음' current='current'/>
-            <ItemContent title='결제일' subtitle='내용없음' />
+            <ItemContent title='결제일' subtitle='2022-01-10' current='출원인 정보 입력완료'/>
+            <ItemContent title='출원인 정보' subtitle='내용없음' current='출원 내역 상세보기'/>
+            <ItemContent title='출원일' subtitle='날짜 미정' current='등록료 결제하기'/>
+            <ItemContent title='등록료 납부 상태' subtitle='납부일 미정' current= {null}/>
+            <ItemContent title='등록일' subtitle='날짜 미정'/>
 
 
 

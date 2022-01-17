@@ -8,6 +8,9 @@ import BrandLogoRegister from './pages/BrandLogoRegister';
 import BrandCategoryRegister from './pages/BrandCategoryRegister';
 import Intro from "./pages/Intro";
 import Mypage from './pages/Mypage';
+import Member from './pages/Member';
+import CostProcessGuide from './pages/CostProcessGuide';
+import Center from './pages/Center';
 
 
 
@@ -87,6 +90,9 @@ function App(){
                 <Route path="/brandlogoregister"><BrandLogoRegister></BrandLogoRegister></Route>
                 <Route path="/brandcategoryregister"><BrandCategoryRegister></BrandCategoryRegister></Route>
                 <Route path="/mypage"><Mypage/></Route>
+                <Route path="/member"><Member/></Route>
+                <Route path='/costprocess'><CostProcessGuide/></Route>
+                <Route path='/center'><Center/></Route>
                 <Route path="/">Not found</Route>
             </Routes>
         </div>
