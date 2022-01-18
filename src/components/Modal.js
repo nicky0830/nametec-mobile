@@ -53,10 +53,14 @@ const Modal = function({display, modalHandler}){
             </div>}
  
             <div className="menuicon1" onClick="anne()" style={{marginTop : '25px', marginLeft: '20px'}}>
-                <span style={{cursor: 'pointer'}}>비용 및 절차 안내</span>
+                <Link to='/costprocess'>
+                <span style={{cursor: 'pointer', color: 'black', block : 'inline-block'}}>비용 및 절차 안내</span>
+                </Link>
              </div>
           <div className ="menuicon1" onClick="center()" style={{marginTop : '25px', marginLeft: '20px'}}>
-                 <span style={{cursor: 'pointer'}}> 고객센터</span>
+              <Link to ='/center'>
+                 <span style={{cursor: 'pointer', color: 'black', block : 'inline-block'}}> 고객센터</span>
+                 </Link>
              </div>
             <Link to ='/'>
             <div className="menuicon1" id="logoutBtn" style={{marginTop : '25px', marginLeft: '20px'}} >
