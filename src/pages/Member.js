@@ -5,21 +5,30 @@ import {useState} from 'react';
 import x_btn from '../image/x_menuicon@3x.png';
 import { Link } from 'react-router-dom';
 import backarrow from '../data/backarrow@3x.png'; 
-
+import nametecLogo from "../image/nametecLogo.png";
 
 const MemberInfoItem = ({title, content, button}) => { 
   
     return(
         <div style={{textAlign: 'left', marginBottom: '24px'}} >
-                <div className="Medium" style={{display: 'inline-block', width: '35%', float: 'left', fontSize:'16px', color: '#898989'}}>{title}</div>
-                <div className="Medium" id="cusname" style={{display: 'inline-block', fontSize: '16px', color: '#515151'}}>{content}</div>
-                <div className="Medium" style={{display: typeof button === null ?  null : "inline-block" , float: 'right', fontSize:'16px', color: '#4a64f5', cursor : 'pointer'}} >수정</div>
+                <div className="noto" style={{display: 'inline-block', width: '35%', float: 'left', fontSize:'16px', color: '#898989'}}>{title}</div>
+                <div className="noto" id="cusname" style={{display: 'inline-block', fontSize: '16px', color: '#515151'}}>{content}</div>
+                <div className="noto" style={{display: typeof button === null ?  null : "inline-block" , float: 'right', fontSize:'16px', color: '#4a64f5', cursor : 'pointer'}} >수정</div>
             </div>
 
     )
 }
 
+const MemberInfoItemWithOutCorrection = ({title, content, button}) => {
 
+    return(
+        <div style={{textAlign: 'left', marginBottom: '24px'}} >
+                <div className="noto" style={{display: 'inline-block', width: '35%', float: 'left', fontSize:'16px', color: '#898989'}}>{title}</div>
+                <div className="noto" id="cusname" style={{display: 'inline-block', fontSize: '16px', color: '#515151'}}>{content}</div>
+            </div>
+
+    )
+}
 const MemberTopbar = () => { 
     const [display, setDisplay] = useState('none');
     
@@ -61,7 +70,7 @@ const MemberTopbar = () => {
             alt='<'/>
             </Link>
 
-            <div className='Bold' style={{display: 'inline-block', marginTop : '18px', fontSize: '20px' }}>회원정보</div>
+            <div className='noto' style={{display: 'inline-block', marginTop : '18px', fontSize: '20px' ,fontWeight : '500'}}>회원정보</div>
 
             <img src={menu} style={{cursor:"pointer",
                 display: 'inline-block',
@@ -69,7 +78,7 @@ const MemberTopbar = () => {
                 width: '22px',
                 height: '17px',
                 marginTop : "20px",
-                marginRight : "20px"}} 
+                marginRight : "20px"}}
                 onClick = {modalHandler}/>              
             </div>
 
@@ -88,44 +97,51 @@ const MemberTopbar = () => {
      zIndex : '20000'}}>
     
 
-     <div style={{backgroundColor:'#ffffff', width: '100%'}}>
+      <div style={{ backgroundColor: '#ffffff', width: '100%' }}>
 
-              <div className = "menuicon1">
-              <img src={x_btn}  id="xbtn" onClick={modalHandler} style={{cursor:'pointer', width : '18px', float : 'right',  marginRight : '20px', marginTop: '20px' }}/>
-             </div>
+                                                         <div className="menuicon1">
+                                                         <img src={nametecLogo} class="" style={{display: "inline-block",
+                                                                                                                                     width: "105px",
+                                                                                                                                     transform: "translate(28px)",
+                                                                                                                                     marginTop: "12px"}}/>
+                                                             <img src={x_btn} id="xbtn" onClick={modalHandler} style={{ cursor: 'pointer', width: '18px', float: 'right', marginRight: '20px', marginTop: '20px' }} />
+                                                         </div>
+                                                         <div style={{backgroundColor:'#4a64f5', float:"right",width:"60%",height :"20000px"}}>
+                                                         <div className="menuicon1" style={{height : '50px'}}>
+                                                                     <Link to='/'>
+                                                                     <span style={{cursor: 'pointer', marginRight: '20px', marginTop: '40px',float : "right", display:'inline-block', color: "#fff"}}>메인화면</span>
+                                                                     </Link>
+                                                                     </div>
 
-            <div className="menuicon1" style={{height : '50px'}}>
-            <Link to='/'>
-            <span style={{cursor: 'pointer', marginLeft: '20px', marginTop: '15px', display:'inline-block', color: "black"}}>메인화면</span>
-            </Link>
-            </div>  
-            
- 
-            <div className="menuicon1"  style={{marginTop : '25px', marginLeft: '20px'}}>
-                <span style={{cursor: 'pointer'}}>비용 및 절차 안내</span>
-             </div>
-          <div className ="menuicon1"  style={{marginTop : '25px', marginLeft: '20px'}}>
-                 <span style={{cursor: 'pointer'}}> 고객센터</span>
-             </div>
-            <div className="menuicon1" id="logoutBtn" style={{marginTop : '25px', marginLeft: '20px'}} >
-                <Link to='/'>
-                 <span style={{cursor: 'pointer', color: 'black', display: 'inline-block'}}>로그아웃</span>
-                 </Link>
 
-           </div>
-    
-            <div style={{height: '33px'}}></div> 
-         </div>
-            </div>
+                                                                         <Link style={{display:'block',marginTop :"40px",marginRight: '20px'}} to='/costprocess'>
+                                                                         <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float : "right"}}>비용 및 절차 안내</span>
+                                                                         </Link>
+                                                                             <Link style={{display:'block',marginTop :"90px",marginRight: '20px'}} to='/center'>
+                                                                          <span style={{cursor: 'pointer',color :"#fff",display: 'inline-block',float : "right"}}> 고객센터</span>
+                                                                          </Link>
+
+
+                                                                         <Link style={{display:'block',marginTop :"140px",marginRight: '20px'}} to='/'>
+                                                                          <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float:"right"}}>로그아웃</span>
+                                                                          </Link>
+
+                                                         <div className="Medium" style={{marginLeft :"30px",fontSize:"15px",marginTop: "100px",marginRight: '20px',float:"right",color :"#ffffff"}}>Copyright©2021 티타티티</div>
+
+
+                                                                     <div style={{height: '33px'}}></div>
+                                                     </div>
+                                                     </div>
+                                                 </div>
 
             {/* 기본회원정보 */}
             <div style={{fontSize: '18px', color: '#000000', marginLeft: '5%', marginTop: '50px'}} className="Medium">기본 회원 정보</div>
             <div style={{marginLeft: '5%', marginRight: '5%', paddingTop: '30px', fontSize: '16px'}}>
                 <MemberInfoItem title='이름' content='곽나경' button/> 
-                <MemberInfoItem title='이메일' content='kwaknicky@naver.com' button={null}/> 
+                <MemberInfoItemWithOutCorrection title='이메일' content='kwaknicky@naver.com' button={null}/>
                 <MemberInfoItem title='수신 이메일' content='kwaknicky@naver.com' button/> 
                 <MemberInfoItem title='휴대폰 번호' content='01099737057' button/> 
-                <MemberInfoItem title='SNS 연결' content='카카오 연결' button={null}/> 
+                <MemberInfoItemWithOutCorrection title='SNS 연결' content='카카오 연결' button={null}/>
                 <div style={{cursor : 'pointer', textAlign: 'center', marginBottom: '24px', fontSize:'16px', color:'#faedef', border:'1px solid #4a64f5', borderRadius: '10px', background: '#4a64f5', paddingTop : '10px', paddingBottom : '10px'}}>
                 회원 탈퇴
                 </div>

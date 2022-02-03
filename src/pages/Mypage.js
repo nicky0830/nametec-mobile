@@ -9,8 +9,8 @@ import user_profile from "../image/user_profile.png";
 import modify_profile from '../image/modify_profile@2x.png';
 import arrowdown from '../image/mypagearrow@3x.png'
 import arrowup from '../image/uparrow@3x.png'
-
-
+import '../text.css';
+import nametecLogo from "../image/nametecLogo.png";
 
 
 
@@ -72,75 +72,6 @@ const ItemContent  = ({title, subtitle, current}) => {
     )
 }
 
-// const MypageItem = () => { 
-//     return (
-// <div id="application_show" style="width: 90%; margin-left: 5%;border-radius: 10px;
-//   border: solid 1px #e0e0e0;box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.14);margin-top : 23px;">
-
-// <div style="margin-left: 5%; margin-right: 5%; margin-top: 22px;">
-// <div id="maindiv0" style="cursor: pointer;">
-// <div style="font-size: 16px; color: rgb(74, 100, 245); text-align: center; display: inline-block; width: 70px; transform: translateY(-5px); position: absolute; margin-top: 15px;">입금대기</div>
-// <div style="display: inline-block; margin-left: 110px;">
-//     <div style="display: inline-block;">상표명</div>
-//     <div style="font-size: 12px; color: rgb(183, 183, 183); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;">의류 및 패션 제품</div>
-// </div>
-// <img id="imgdiv0" src="../static/image/mypagearrow@3x.png" style="float: right; display: inline-block; margin-top: 16px; width: 10px;"/>
-//     </div>
-
-
-//     <div style="width: 111%; height: 1px; margin-left: -5.5%; background-color: rgb(224, 224, 224); margin-top: 20px;">
-// </div>
-
-
-// <div style="border-bottom: 1px solid rgb(224, 224, 224); margin-left: 5%; margin-right: 5%;">
-//     <div style="padding-top: 10px; color: rgb(137, 137, 137);">결제일</div>
-//     <div style="color: rgb(81, 81, 81); padding-bottom: 8px;">2022-01-15</div>
-//     <div style="font-size: 12px; position: absolute; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 0px; text-align: center; height: 36px; width: 130px; left: 50%; margin-left: 30px; margin-top: 18px; line-height: 3; background-color: rgb(239, 239, 239); color: rgb(137, 137, 137);">
-//         출원인 정보 입력완료
-//     </div>
-// </div>
-
-// <div style="border-bottom: 1px solid rgb(224, 224, 224); margin-left: 5%; margin-right: 5%;">
-//     <div style="padding-top: 10px; color: rgb(137, 137, 137);">출원인 정보</div>
-//     <div style="color: rgb(81, 81, 81); padding-bottom: 8px;">내용 없음</div>
-//     <div style="font-size: 12px; position: absolute; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 0px; text-align: center; height: 36px; width: 130px; left: 50%; margin-left: 30px; margin-top: 18px; line-height: 3; background-color: rgb(239, 239, 239); color: rgb(137, 137, 137);">
-//         출원 내역 상세보기
-//     </div>   
-//  </div>
- 
-//  <div style="border-bottom: 1px solid rgb(224, 224, 224); margin-left: 5%; margin-right: 5%;">
-//      <div style="padding-top: 10px; color: rgb(137, 137, 137);">
-//          출원일
-//     </div>
-
-// <div style="color: rgb(81, 81, 81); padding-bottom: 8px;">
-//     날짜 미정
-// </div>
-// <div style="font-size: 12px; position: absolute; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 0px; text-align: center; height: 36px; width: 130px; left: 50%; margin-left: 30px; margin-top: 18px; line-height: 3; background-color: rgb(239, 239, 239); color: rgb(137, 137, 137);">
-//     등록료 결제하기
-// </div>
-// </div>
-
-// <div style="border-bottom: 1px solid rgb(224, 224, 224); margin-left: 5%; margin-right: 5%;">
-//     <div style="padding-top: 10px; color: rgb(137, 137, 137);">등록료 납부상태</div>
-//     <div style="color: rgb(81, 81, 81); padding-bottom: 8px;">납부일 미정</div>
-//     </div>
-
-// <div style="padding-left: 5%; padding-right: 5%; border-bottom: 1px solid rgb(224, 224, 224);">
-//         <div style="padding-top: 10px; color: rgb(137, 137, 137);">
-//             등록일
-//         </div>
-//         <div style="color: rgb(81, 81, 81); padding-bottom: 8px;">
-//                 날짜 미정
-//         </div>
-//     </div>
-//                 </div>
-//                 </div>
-// </div>
-
-
-//     )
-// }
 
 
 
@@ -223,36 +154,38 @@ const MypageTopbar = () => {
      <div style={{backgroundColor:'#ffffff', width: '100%'}}>
 
               <div className = "menuicon1">
+              <img src={nametecLogo} class="" style={{display: "inline-block",
+                                                                            width: "105px",
+                                                                            transform: "translate(28px)",
+                                                                            marginTop: "12px"}}/>
               <img src={x_btn} class="" id="xbtn" onClick={modalHandler} style={{cursor:'pointer', width : '18px', float : 'right',  marginRight : '20px', marginTop: '20px' }}/>
              </div>
-
+             <div style={{backgroundColor:'#4a64f5', float:"right",width:"60%",height :"20000px"}}>
             <div className="menuicon1" style={{height : '50px'}}>
             <Link to='/'>
-            <span style={{cursor: 'pointer', marginLeft: '20px', marginTop: '15px', display:'inline-block', color: "black"}}>메인화면</span>
+            <span style={{cursor: 'pointer', marginRight: '20px', marginTop: '40px',float : "right", display:'inline-block', color: "#fff"}}>메인화면</span>
             </Link>
-            </div>  
-            
- 
-            <div className="menuicon1"  style={{marginTop : '25px', marginLeft: '20px'}}>
-                <Link to='/costprocess'>
-                <span style={{cursor: 'pointer', color: 'black', display: 'inline-block'}}>비용 및 절차 안내</span>
-                </Link>
-             </div>
+            </div>
 
-          <div className ="menuicon1"  style={{marginTop : '25px', marginLeft: '20px'}}>
-              <Link to='/center'>
-                 <span style={{cursor: 'pointer',  color: 'black', display: 'inline-block'}}> 고객센터</span>
+
+                <Link style={{display:'block',marginTop :"40px",marginRight: '20px'}} to='/costprocess'>
+                <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float : "right"}}>비용 및 절차 안내</span>
                 </Link>
-             </div>
-            <div className="menuicon1" id="logoutBtn" style={{marginTop : '25px', marginLeft: '20px'}} >
-                <Link to='/'>
-                 <span style={{cursor: 'pointer', color: 'black', display: 'inline-block'}}>로그아웃</span>
+                    <Link style={{display:'block',marginTop :"90px",marginRight: '20px'}} to='/center'>
+                 <span style={{cursor: 'pointer',color :"#fff",display: 'inline-block',float : "right"}}> 고객센터</span>
                  </Link>
 
-           </div>
-    
-            <div style={{height: '33px'}}></div> 
-         </div> 
+
+                <Link style={{display:'block',marginTop :"140px",marginRight: '20px'}} to='/'>
+                 <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float:"right"}}>로그아웃</span>
+                 </Link>
+
+<div className="Medium" style={{marginLeft :"30px",fontSize:"15px",marginTop: "100px",marginRight: '20px',float:"right",color :"#ffffff"}}>Copyright©2021 티타티티</div>
+
+
+            <div style={{height: '33px'}}></div>
+         </div>
+         </div>
 
 
 

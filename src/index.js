@@ -11,6 +11,20 @@ import Mypage from './pages/Mypage';
 import Member from './pages/Member';
 import CostProcessGuide from './pages/CostProcessGuide';
 import Center from './pages/Center';
+import Infomcheck from './pages/Infomcheck';
+import Success3 from './pages/Success3';
+import Success from './pages/Success';
+import Payment from './pages/Payment';
+import Payment2 from './pages/Payment2';
+import ApplicantInfo from './pages/ApplicantInfo';
+import ApplicantNumber from './pages/ApplicantNumber';
+import ApplicantAddress from './pages/ApplicantAddress';
+import ApplicantAgree from './pages/ApplicantAgree';
+import ApplicantAssign from './pages/ApplicantAssign';
+import CorporateInfo from './pages/CorporateInfo';
+import CorporateDetails from './pages/CorporateDetails';
+import CorporateHead from './pages/CorporateHead';
+
 
 
 
@@ -21,7 +35,7 @@ function Home(){
         <div>
             <h2>Home</h2>
             Home...
-            <Link to="/brandregister"> 
+            <Link to="/brandregister">
             상품등록하기
             </Link>
         </div>
@@ -93,6 +107,26 @@ function App(){
                 <Route path="/member"><Member/></Route>
                 <Route path='/costprocess'><CostProcessGuide/></Route>
                 <Route path='/center'><Center/></Route>
+                <Route path='/success'><Success/></Route>
+                <Route path='/infomcheck'><Infomcheck/></Route>
+                <Route path='/success3'><Success3/></Route>
+                <Route path='/payment'><Payment/></Route>
+                <Route path='/payment2'><Payment2/></Route>
+                <Route path='/applicant'><ApplicantInfo/></Route>
+                <Route path='/applicant2'><ApplicantNumber/></Route>x
+                <Route path='/applicant3'><ApplicantAddress/></Route>
+                <Route path='/applicant4'><ApplicantAgree/></Route>
+                <Route path='/applicant5'><ApplicantAssign/></Route>
+                <Route path='/corporate'><CorporateInfo/></Route>
+                <Route path='/corporate2'><CorporateDetails/></Route>
+                <Route path='/corporate3'><CorporateHead/></Route>
+
+
+
+
+
+
+
                 <Route path="/">Not found</Route>
             </Routes>
         </div>

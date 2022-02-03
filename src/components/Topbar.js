@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import backarrow from '../data/backarrow@3x.png'
 import {Link} from 'react-router-dom';
 import '../text.css'
-const Topbar = styled.div`
+
+export const Topbar = styled.div`
 
 >a .topbar-backbutton{ 
 cursor:pointer;
@@ -51,7 +52,7 @@ margin: 4% 20px 0 0;
 // style을 입힌 컴포넌트를 리턴문이 있는 다른 컴포넌트 안에 넣음
 
 
-export default function TopbarComponent({page, path}){
+ export default function TopbarComponent({page, path}){
     return (
     <Topbar>
       <Link to={path}>
@@ -64,3 +65,4 @@ export default function TopbarComponent({page, path}){
       </Topbar>
         )
 }
+

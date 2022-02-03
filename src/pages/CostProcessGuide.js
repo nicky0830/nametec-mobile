@@ -4,13 +4,14 @@ import '../text.css'
 import {useState} from 'react';
 import x_btn from '../image/x_menuicon@3x.png';
 import { Link } from 'react-router-dom';
-import backarrow from '../data/backarrow@3x.png'; 
+import backarrow from '../data/backarrow@3x.png';
+import nametecLogo from "../image/nametecLogo.png";
 
-const CostProcessContent = () => { 
+const CostProcessContent = () => {
     return (
 
     <div style={{textAlign: 'center', paddingTop : '49.5px'}}>
-        <div className="midbox"     
+        <div className="midbox"
         style = {{width: '88%',
         margin: '24px 0 21.3px',
         marginLeft: '6.3%',
@@ -37,7 +38,7 @@ const CostProcessContent = () => {
         <br/>
             나지 않을 수 있으므로,
         </a>
-        <a className="Medium" style={{fontSize : '14px', color : '#515151'}}>AI 기술을 활용한 
+        <a className="Medium" style={{fontSize : '14px', color : '#515151'}}>AI 기술을 활용한
         <br/>
         사전 법률 진단을 진행한 후 출원 신청을 진행합니다.</a>
         </div>
@@ -56,9 +57,9 @@ const CostProcessContent = () => {
     )
     }
 
-const Dots = () => { 
+const Dots = () => {
 
-return ( 
+return (
     <div style={{lineHeight: '6px', color : '#b7b7b7', position: 'absolute', left : '50%', marginTop : '-22px'}}>
     <a>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/></a>
 </div>
@@ -66,12 +67,12 @@ return (
 }
 
 
-const CostProcessContent2 = () => { 
+const CostProcessContent2 = () => {
 
 return (
     <>
     <div style={{textAlign: 'center'}}>
-        <div className="midbox"     
+        <div className="midbox"
         style = {{width: '88%',
         margin: '52px 0 21.3px',
         marginLeft: '6.3%',
@@ -80,7 +81,7 @@ return (
         backgroundColor: '#ffffff'
         }}>
 
-        <div className="midbox" style={{ marginTop: '52px' }}>
+        <div className="" style={{ marginTop: '52px' }}>
             <div style={{ paddingTop: '16px' }}>
                 <a className="Medium" style={{ fontSize: '14px' }}>2단계 : 특허청 심사</a>
             </div>
@@ -109,7 +110,7 @@ return (
             <a>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/>.<br/></a>
             </div>
 
-            <div className="midbox"     
+            <div className="midbox"
         style = {{width: '88%',
         margin: '52px 0 21.3px',
         marginLeft: '6.3%',
@@ -117,7 +118,7 @@ return (
         boxShadow: '1px 1px 4px 0 rgb(0 0 0 / 10%)',
         backgroundColor: '#ffffff'
         }}>
-                <div className="midbox" style={{marginTop : '52px'}}>
+                <div className="" style={{marginTop : '52px'}}>
                     <div style= {{paddingTop : '16px', paddingBottom : '10px'}}>
                         <a className="Medium" style={{fontSize : '14px'}}>3단계 : 상표 등록</a>
                     </div>
@@ -164,7 +165,7 @@ return (
                             </div>
                 </div>
             </div>
-        
+
             </>
                 )
             }
@@ -172,19 +173,19 @@ return (
 
 
 
-                const CostProcessComponent = () => { 
+                const CostProcessComponent = () => {
                 const [display, setDisplay] = useState('none');
 
 
-                const modalHandler = () => { 
+                const modalHandler = () => {
                 if(display === 'none'){
                     setDisplay('inline-block')
                 }else{
                 setDisplay('none')
                 }
-                
+
                 }
-               
+
 
                 return (
                 // 마이페이지 헤더
@@ -252,35 +253,37 @@ return (
                             <div style={{ backgroundColor: '#ffffff', width: '100%' }}>
 
                                 <div className="menuicon1">
+                                <img src={nametecLogo} class="" style={{display: "inline-block",
+                                                                                                            width: "105px",
+                                                                                                            transform: "translate(28px)",
+                                                                                                            marginTop: "12px"}}/>
                                     <img src={x_btn} id="xbtn" onClick={modalHandler} style={{ cursor: 'pointer', width: '18px', float: 'right', marginRight: '20px', marginTop: '20px' }} />
                                 </div>
+                                <div style={{backgroundColor:'#4a64f5', float:"right",width:"60%",height :"20000px"}}>
+                                <div className="menuicon1" style={{height : '50px'}}>
+                                            <Link to='/'>
+                                            <span style={{cursor: 'pointer', marginRight: '20px', marginTop: '40px',float : "right", display:'inline-block', color: "#fff"}}>메인화면</span>
+                                            </Link>
+                                            </div>
 
-                                <div className="menuicon1" style={{ height: '50px' }}>
-                                    <Link to='/'>
-                                        <span style={{ cursor: 'pointer', marginLeft: '20px', marginTop: '15px', display: 'inline-block', color: "black" }}>메인화면</span>
-                                    </Link>
-                                </div>
+
+                                                <Link style={{display:'block',marginTop :"40px",marginRight: '20px'}} to='/costprocess'>
+                                                <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float : "right"}}>비용 및 절차 안내</span>
+                                                </Link>
+                                                    <Link style={{display:'block',marginTop :"90px",marginRight: '20px'}} to='/center'>
+                                                 <span style={{cursor: 'pointer',color :"#fff",display: 'inline-block',float : "right"}}> 고객센터</span>
+                                                 </Link>
 
 
-                                <div className="menuicon1" style={{ marginTop: '25px', marginLeft: '20px' }}>
-                                    <Link to='/costprocess'>
-                                        <span style={{ cursor: 'pointer', display: 'inline-block', color: "black" }} onClick={modalHandler}>비용 및 절차 안내</span>
-                                    </Link>
-                                </div>
+                                                <Link style={{display:'block',marginTop :"140px",marginRight: '20px'}} to='/'>
+                                                 <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float:"right"}}>로그아웃</span>
+                                                 </Link>
 
-                                <div className="menuicon1" style={{ marginTop: '25px', marginLeft: '20px' }}>
-                                    <Link to='/center'>
-                                    <span style={{ cursor: 'pointer', display: 'inline-block', color: "black" }}> 고객센터</span>
-                                    </Link>
-                                </div>
+                                <div className="Medium" style={{marginLeft :"30px",fontSize:"15px",marginTop: "100px",marginRight: '20px',float:"right",color :"#ffffff"}}>Copyright©2021 티타티티</div>
 
-                                <div className="menuicon1" id="logoutBtn" style={{ marginTop: '25px', marginLeft: '20px' }}>
-                                    <Link to='/'>
-                                        <span style={{ cursor: 'pointer', color: 'black', display: 'inline-block' }}>로그아웃</span>
-                                    </Link>
-                                </div>
 
-                                <div style={{ height: '33px' }}></div>
+                                            <div style={{height: '33px'}}></div>
+                            </div>
                             </div>
                         </div>
 

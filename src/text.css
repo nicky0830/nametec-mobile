@@ -1,13 +1,13 @@
 @font-face {
     font-family : "Bold";
-    src : url("./font/NotoSansCJKkr-Bold.otf") format('truetype');
+    src : url("./font/NotoSansKR-Bold.otf") format('truetype');
 }
 .Bold{
     font-family: Bold
 }
 @font-face {
     font-family : "Regular";
-    src : url("./font/NotoSansCJKkr-Regular.otf") format('truetype');
+    src : url("./font/NotoSansKR-Regular.otf") format('truetype');
     
 }
 .Regular{
@@ -17,14 +17,14 @@
 
 @font-face {
     font-family : "Light";
-    src : url("./font/NotoSansCJKkr-Light.otf") format('truetype');
+    src : url("./font/NotoSansKR-Light.otf") format('truetype');
 }
 .Light{
     font-family: Light
 }
 @font-face {
     font-family : "Medium";
-    src : url("./font/NotoSansCJKkr-Medium.otf") format('truetype');
+    src : url("./font/NotoSansKR-Medium.otf") format('truetype');
 }
 .Medium{
     font-family: Medium
