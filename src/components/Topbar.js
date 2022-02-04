@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import backarrow from '../data/backarrow@3x.png'
 import {Link} from 'react-router-dom';
 import '../text.css'
-
-export const Topbar = styled.div`
+const Topbar = styled.div`
 
 >a .topbar-backbutton{ 
 cursor:pointer;
@@ -41,8 +40,9 @@ object-fit: contain;
     text-align: left;
     color: #4a64f5;
 }
+
 >.topbar-pageallnumber{
-margin: 4% 20px 0 0;
+  margin: 4% 20px 0 0;
     float: right;
     font-size: 16px;
     color: #b7b7b7;
@@ -52,16 +52,14 @@ margin: 4% 20px 0 0;
 // style을 입힌 컴포넌트를 리턴문이 있는 다른 컴포넌트 안에 넣음
 
 
- export default function TopbarComponent({page, path}){
+export default function TopbarComponent({page, path}){
     return (
     <Topbar>
       <Link to={path}>
       <img className="topbar-backbutton" src={backarrow} alt='<'/>
       </Link>
-      <span className='topbar-pagecontainer' display>
-        <span className='topbar-pageallnumber Regular'>/ 03</span>
-      <span className="topbar-pagenumber Regular">{page}</span>
-      </span>
+      <span id="a04" className="Regular topbar-pageallnumber"> / 03</span>
+      <span id="a01" className="Regular topbar-pagenumber" >{page} </span>
       </Topbar>
         )
 }

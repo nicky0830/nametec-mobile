@@ -7,10 +7,12 @@ import file_btn from '../image/file_button@3x.png';
 import upyen from '../image/upyen.png';
 import DaumPostcode from 'react-daum-postcode';
 
-const CorporateDetails = () => {
+const CorporateDetails = ({post}) => {
 
     const [bordercolor1, setColor1] = useState('#e0e0e0')
     const [bordercolor2, setColor2] = useState('#e0e0e0')
+    const [bordercolor3, setColor3] = useState('#e0e0e0')
+
 
     const [div1, setDiv1] = useState('hidden');
     const [div2, setDiv2] = useState('hidden');
@@ -23,6 +25,8 @@ const CorporateDetails = () => {
 
     const onChangeOpenPost = ()=> { 
         setIsOpenPost(!isOpenPost);
+        post(true)
+        
     }
 
     const onCompleteOpenPost = (data)=> { 
@@ -39,7 +43,7 @@ const CorporateDetails = () => {
             fullAddr += extraAddr !== '' ? `(${extraAddr})` : '';
         
     }
-
+    post(false)
     setAddress(data.zonecode);
     setAddressDetail(fullAddr); 
     setIsOpenPost(false);
@@ -50,8 +54,8 @@ const CorporateDetails = () => {
         position:'relative', 
         zIndex:'1000',
         top: '0%', 
-        width: '400px', 
-        height: '400px', 
+        width: '520px', 
+        height: '100vh', 
         padding: '7px'
     }
 
@@ -62,16 +66,17 @@ const CorporateDetails = () => {
 
     const Number1 = (ele) => { 
 
-        if(ele.nativeEvent.data){
-            setColor1('blue')
         
-        if(!checkNumber(ele.nativeEvent.data)){ 
+        if(checkNumber(ele.nativeEvent.data)){ 
+            setColor1('#4a64f5')
+        }else{ 
             setColor1('red')
         }
-        if(ele.nativeEvent.data.length >6){
+
+        if(ele.nativeEvent.data.length > 13){
             setColor1('red')
         }
-       }
+       
 
     }
 
@@ -79,7 +84,7 @@ const CorporateDetails = () => {
     const Number2 = (ele) => { 
 
         if(ele.nativeEvent.data){
-            setColor2('blue')
+            setColor2('#4a64f5')
         
         if(!checkNumber(ele.nativeEvent.data)){ 
             setColor2('red')
@@ -93,18 +98,28 @@ const CorporateDetails = () => {
 
     const showDiv1 = (ele) => { 
         setDiv1('visible')
+        ele.target.placeholder='';
+        setColor1('#4a64f5')
+
          
     }
 
     const showDiv2 = (ele) => { 
      setDiv2('visible')
+     setColor2('#4a64f5')
+     ele.target.placeholder='';
+
+
     
      }
  
 
  const showDiv3 = (ele) => { 
      setDiv3('visible')
-        
+     setColor3('#4a64f5')
+     ele.target.placeholder='';
+
+
     
      }
  
@@ -173,8 +188,8 @@ return (
 
 
     <div className="imformname" id="imformname44" style={{visibility: div1, fontSize: '12px', color:'#898989'}} > 법인 등록번호</div>
-    <div className="inputdiv" id="inputdiv44" style={{borderBottom: `1px solid ${bordercolor1}`}}>
-        <input autoComplete="off" type="number" name="" defaultValue="" id="text44" className="textcont" 
+    <div className="inputdiv" id="inputdiv44" style={{borderBottom: `1px solid ${bordercolor1}`, marginBottom: '10px'}}>
+    <input autoComplete="off" type="number" name="" defaultValue="" id="text44" className="textcont" 
       onClick={showDiv1}
       onChange={Number1}
         style={{marginBottom: '5px',
@@ -188,17 +203,16 @@ return (
            lineHeight: '1.1',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}}
-        placeholder="법인 등록번호"  maxLength="13" onInput="maxLengthCheck(this)"/>
+           color: 'internal light dark'}}
+        placeholder="법인 등록번호" />
     </div>
 
     <div className="imformname" id="imformname55" style={{visibility: div2, fontSize: '12px', color:'#898989'}} > 사업자 등록번호</div>
-    <div className="inputdiv" id="inputdiv55" style={{borderBottom: `1px solid ${bordercolor2}`}}>
+    <div className="inputdiv" id="inputdiv55" style={{borderBottom: `1px solid ${bordercolor2}`, marginBottom: '10px'}}>
         <input autocomplete="off" type="number" name="" defaultValue="" id="text55" className="textcont" placeholder="사업자 등록번호" 
         onClick={showDiv2}
         onChange={Number2}
         style={{marginBottom: '5px',
-        outline: 'none',
         border:'none',
         caretColor: bordercolor2,
         padding: '0px',
@@ -206,10 +220,11 @@ return (
            height: '40px',
            fontSize: '20px',
            lineHeight: '1.1',
+           outline:'none',
            letterSpacing: 'normal',
            textAlign: 'left',
            color: '#b7b7b7'}}
-        maxlength="10" oninput="maxLengthCheck(this)"/>
+        maxLength="10" oninput="maxLengthCheck(this)"/>
     </div>
 
 
@@ -221,6 +236,7 @@ return (
     <div className="inputdiv" style={{width:'60%',display:'inline-block', flex: '4 1 0'}} style={{borderBottom: '1px solid rgb(224 224 224)'}}>
         <input type="text" id="textpost-1" className="textcont" style={{border:'none',display:'inline'}}
         defaultValue=''
+        value={address}
         onClick={showDiv3}
         style={{marginBottom: '5px',
         border:'none',
@@ -232,7 +248,7 @@ return (
            outline: 'none',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}}
+           color: 'internal light dark'}}
         placeholder="법인 등본상 주소" readonly=""/></div>
     <div style={{display:"inline", flex: '1 1 0'}}>
 <img src={upyen} style={{width: 'calc(40% - 15px)', transform: 'translateY(7px)', marginLeft: '10px', float: 'right'}} onClick={onChangeOpenPost}/>
@@ -240,8 +256,9 @@ return (
     </div>
     </div>
 
-    <div className="inputdiv" id="inputdiv111" style={{borderBottom: '1px solid rgb(224 224 224)'}}>
+    <div className="inputdiv" id="inputdiv111" style={{borderBottom: '1px solid rgb(224 224 224)', marginBottom: '10px'}}>
         <input type="text" id="textpost-23" className="textcont" style={{border:'none', display:'inline'}} readonly=""
+        value={addressDetail}
         style={{marginBottom: '5px',
         outline: 'none',
         border:'none',
@@ -252,36 +269,29 @@ return (
            lineHeight: '1.1',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}}
+           color: 'internal light dark'}}
         /></div>
 
-    <div className="inputdiv" id="inputdiv112" style={{borderBottom: '1px solid rgb(224 224 224)'}}>
+    <div className="inputdiv" id="inputdiv112" style={{borderBottom: `1px solid ${bordercolor3}`}}>
         <input autocomplete="off" type="text" name="" value="" id="text61" className="textcont" placeholder="상세주소를 입력해주세요" 
-        style={{border:'none', color : 'rgb(0,0,0)'}}
+        onClick={showDiv3}
         style={{marginBottom: '5px',
                border:'none',
                padding: '0px',
                outline: 'none',
-
                margin:'0px',
+               caretColor: bordercolor3,
                   height: '40px',
                   fontSize: '20px',
                   lineHeight: '1.1',
                   letterSpacing: 'normal',
                   textAlign: 'left',
-                  color: '#b7b7b7'}}
+                  color: 'internal light dark'}}
                   />
     </div>
     </div> 
 
-<Link to ='/applicant2'>
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}} disabled="disabled">다음
-</button>
-</Link>
+
 </div>
 </>)}
 

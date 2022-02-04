@@ -179,11 +179,18 @@ const Page1 = styled.div`
 
     const showDiv1 = (ele) => { 
         setDiv1('visible')
+        setColor1('#4a64f5')
+        ele.target.placeholder ='';
+
          
     }
 
     const showDiv2 = (ele) => { 
      setDiv2('visible')
+     setColor2('#4a64f5')
+     ele.target.placeholder ='';
+
+
     
      }
 

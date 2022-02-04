@@ -129,7 +129,7 @@ const DropdownContent = styled.div`
     return ( 
         <>
     <Dropdown onClick={clickHandler} click={click}> 
-       <div className='dropdowntxt-container'  >
+       <div className='dropdowntxt-container'>
        <span className='dropdown-txt Bold'>{text}</span> 
        <span className='dropdown-help Regular'>{help}</span> 
        </div>

@@ -22,7 +22,7 @@ height: 200px;
     line-height : 1.3
 }
 >.guideline-help{
-  margin-top: 8px;
+  margin-top: 115px;
     font-size: 14px;
     color: #4a64f5;
 }

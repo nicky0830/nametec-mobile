@@ -45,7 +45,7 @@ const CorporateHead = () => {
     const Korean = (ele) => { 
 
      if(ele.target.value){ 
-        setColor1('blue')
+        setColor1('#4a64f5')
         if(!checkKorean(ele.target.value)){
         setColor1('red')
         }
@@ -55,7 +55,7 @@ const CorporateHead = () => {
 
     const English = (ele) => { 
         if(ele.nativeEvent.data){
-            setColor3('blue')
+            setColor3('#4a64f5')
 
     if(!checkEnglish(ele.nativeEvent.data)){ 
         setColor3('red')
@@ -67,7 +67,7 @@ const CorporateHead = () => {
        const Number1 = (ele) => { 
 
         if(ele.nativeEvent.data){
-            setColor2('blue')
+            setColor2('#4a64f5')
         
         if(!checkNumber(ele.nativeEvent.data)){ 
             setColor2('red')
@@ -82,7 +82,7 @@ const CorporateHead = () => {
     const Number2 = (ele) => { 
 
         if(ele.nativeEvent.data){
-            setColor4('blue')
+            setColor4('#4a64f5')
         
         if(!checkNumber(ele.nativeEvent.data)){ 
             setColor4('red')
@@ -99,12 +99,15 @@ const CorporateHead = () => {
        const showDiv1 = (ele) => { 
            setDiv1('visible')
            ele.target.placeholder ='';
-            
+           setColor1('#4a64f5')
+
        }
 
        const showDiv2 = (ele) => { 
         setDiv2('visible')
         ele.target.placeholder ='';
+        setColor2('#4a64f5')
+
 
         }
     
@@ -112,12 +115,16 @@ const CorporateHead = () => {
     const showDiv3 = (ele) => { 
         setDiv3('visible')
         ele.target.placeholder ='';
+        setColor3('#4a64f5')
+
 
         }
     
     const showDiv4 = (ele) => { 
         setDiv4('visible')
         ele.target.placeholder ='';
+        setColor4('#4a64f5')
+
 
         }
 
@@ -152,7 +159,7 @@ const CorporateHead = () => {
 
 
     <div className="imformname" id="imformname7" style={{visibility: div1, fontSize: '12px', color:'#898989'}} >성명</div>
-    <div className="inputdiv" id="inputdiv7" style={{borderBottom: `1px solid ${bordercolor1}`}}>
+    <div className="inputdiv" id="inputdiv7" style={{borderBottom: `1px solid ${bordercolor1}`,  marginBottom: '10px'}}>
         <input autocomplete="off" type="text" name="" defaultValue="" id="text7" className="textcont" 
        onClick={showDiv1}
        onChange={Korean}
@@ -174,7 +181,7 @@ const CorporateHead = () => {
 
 
        <div className="imformname" id="imformname8" style={{visibility: div2, fontSize: '12px', color:'#898989'}}> 주민등록번호</div>
-    <div className="inputdiv" id="inputdiv8" style={{borderBottom: `1px solid ${bordercolor2}`}}>
+    <div className="inputdiv" id="inputdiv8" style={{borderBottom: `1px solid ${bordercolor2}`,  marginBottom: '10px'}}>
         <input autocomplete="off" type="number" name="" defaultValue="" id="text8-1" class="textcont" placeholder="주민등록번호" maxlength="6"
               onClick={showDiv2}
               onChange={Number1}
@@ -214,7 +221,7 @@ const CorporateHead = () => {
     </div>
 
     <div className="imformname" id="imformname9" style={{visibility: div3, fontSize: '12px', color:'#898989'}}> 이메일</div>
-    <div className="inputdiv" id="inputdiv9"style={{borderBottom: `1px solid ${bordercolor3}`}}>
+    <div className="inputdiv" id="inputdiv9"style={{borderBottom: `1px solid ${bordercolor3}`,  marginBottom: '10px'}}>
   
         <input autocomplete="off" type="email" name="" defaultValue="" id="text9" class="textcont" placeholder="이메일" 
        onClick={showDiv3}
@@ -235,13 +242,14 @@ const CorporateHead = () => {
 
 
     <div className="imformname" id="imformname10" style={{visibility: div4, fontSize: '12px', color:'#898989'}}> 휴대전화</div>
-    <div className="inputdiv" id="inputdiv10" style={{borderBottom: `1px solid ${bordercolor4}`}}
+    <div className="inputdiv" id="inputdiv10" style={{borderBottom: `1px solid ${bordercolor4}`,  marginBottom: '10px'}}
     >
         <input autocomplete="off" type="number" name="" defaultValue="" id="text10" class="textcont" placeholder="휴대전화"
         onClick={showDiv4}
         onChange={Number2}
         style={{marginBottom: '5px',
         border:'none',
+        caretColor: bordercolor4,
            height: '40px',
            fontSize: '20px',
            lineHeight: '1.1',
@@ -254,14 +262,6 @@ const CorporateHead = () => {
 
 </div>
 
-<Link to ='/applicant2'>
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}} disabled="disabled">다음
-</button>
-</Link>
 
 
 

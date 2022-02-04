@@ -114,9 +114,9 @@ const Page1 = styled.div`
    
 
  
-    const [bordercolor1, setColor1] = useState('#e0e0e0')
-    const [bordercolor2, setColor2] = useState('#e0e0e0')
-    const [bordercolor3, setColor3] = useState('#e0e0e0')
+    const [bordercolor1, setColor1] = useState('#e0e0e0');
+    const [bordercolor2, setColor2] = useState('#e0e0e0');
+    const [bordercolor3, setColor3] = useState('#e0e0e0');
 
 
 
@@ -154,7 +154,7 @@ const Page1 = styled.div`
     const Korean = (ele) => { 
 
      if(ele.target.value){ 
-        setColor1('blue')
+        setColor1('#4a64f5')
         if(!checkKorean(ele.target.value)){
         setColor1('red')
         }
@@ -164,7 +164,7 @@ const Page1 = styled.div`
 
     const English = (ele) => { 
         if(ele.nativeEvent.data){
-            setColor2('blue')
+            setColor2('#4a64f5')
 
     if(!checkEnglish(ele.nativeEvent.data)){ 
         setColor2('red')
@@ -175,8 +175,6 @@ const Page1 = styled.div`
     
        const Number = (ele) => { 
 
-        if(ele.nativeEvent.data){
-            setColor3('blue')
         
         if(!checkNumber(ele.nativeEvent.data)){ 
             setColor3('red')
@@ -184,7 +182,7 @@ const Page1 = styled.div`
         if(ele.nativeEvent.data.length >6){
             setColor3('red')
         }
-       }
+       
        console.log(bordercolor3)
 
     }
@@ -196,6 +194,7 @@ const Page1 = styled.div`
        const showDiv1 = (ele) => { 
            setDiv1('visible')
            ele.target.placeholder ='';
+           setColor1('#4a64f5')
 
             
        }
@@ -203,7 +202,7 @@ const Page1 = styled.div`
        const showDiv2 = (ele) => { 
         setDiv2('visible')
         ele.target.placeholder ='';
-
+        setColor2('#4a64f5')
        
         }
     
@@ -211,9 +210,19 @@ const Page1 = styled.div`
     const showDiv3 = (ele) => { 
         setDiv3('visible')
         ele.target.placeholder ='';
+        setColor3('#4a64f5')
 
        
         }
+
+
+    const inputFull = () => { 
+        if(bordercolor1==='#4a64f5'&&
+        bordercolor2==='#4a64f5' &&
+        bordercolor3==='#4a64f5'){ 
+            return true;
+        }
+    }
     
     //렌더링을 위해 감싸준다 
     //react는 외부 dom에서 일어나는 변화를 인식 못하며 자체적으로 업데이트한다 
@@ -326,7 +335,8 @@ const Page1 = styled.div`
                lineHeight: '1.1',
                letterSpacing: 'normal',
                textAlign: 'left',
-               color: '#b7b7b7'}}/>
+               color: 'internal light dark'}}/>
+            
         </div>
         <div className="imformname" id="imformname3" style={{visibility: div3, fontSize: '12px', color:'#898989'}} > 주민등록번호</div>
         <div className="inputdiv" id="inputdiv3" onClick ={showDiv3}  style={{borderBottom: `1px solid ${bordercolor3}`  }}>
@@ -345,7 +355,7 @@ const Page1 = styled.div`
                   lineHeight: '1.1',
                   letterSpacing: 'normal',
                   textAlign: 'left',
-                  color: '#b7b7b7'}}
+                  color: 'internal light dark'}}
             ></input>
             <span className="lineDivider"> - </span>
 
@@ -360,7 +370,7 @@ const Page1 = styled.div`
                   lineHeight: '1.1',
                   letterSpacing: 'normal',
                   textAlign: 'left',
-                  color: '#b7b7b7'}}
+                  color: 'internal light dark'}}
          />
 
             <input type="hidden" defaultValue ='' id="a" style={{width: '16px', height: '16px', float:'right'}} />
@@ -409,15 +419,6 @@ const Page1 = styled.div`
     </Page1>
 </div>
 
-<Link to ='/applicant2'>
-    {/* visible한 div의 id를 state배열에 저장해두고 다음걸로 넘긴다 */}
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}} disabled="disabled">다음
-</button>
-</Link>
 
 </div>
 

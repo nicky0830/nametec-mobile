@@ -8,9 +8,11 @@ import backarrow from '../data/backarrow@3x.png';
 import arrow from "../image/arrow@3x.png";
 import customer_service_email from '../image/customer_service_email.png';
 import customer_service_kakao from '../image/customer_service_kakao.png';
-import customer_service_tel from '../image/customer_service_tel@2x.png';
+import customer_service_tel from '../image/telimg.png';
 import x_round from '../image/x_round.png';
 import pass_arrow from '../image/pass_arrow.png';
+import nametecLogo from "../image/nametecLogo.png";
+
 
 const CenterItems = ({question, answer}) => { 
 
@@ -109,38 +111,40 @@ const Center = () => {
 
                     <div style={{ backgroundColor: '#ffffff', width: '100%' }}>
 
-                        <div className="menuicon1">
-                            <img src={x_btn} id="xbtn" onClick={modalHandler} style={{ cursor: 'pointer', width: '18px', float: 'right', marginRight: '20px', marginTop: '20px' }} />
-                        </div>
+                                                    <div className="menuicon1">
+                                                    <img src={nametecLogo} class="" style={{display: "inline-block",
+                                                                                                                                width: "105px",
+                                                                                                                                transform: "translate(28px)",
+                                                                                                                                marginTop: "12px"}}/>
+                                                        <img src={x_btn} id="xbtn" onClick={modalHandler} style={{ cursor: 'pointer', width: '18px', float: 'right', marginRight: '20px', marginTop: '20px' }} />
+                                                    </div>
+                                                    <div style={{backgroundColor:'#4a64f5', float:"right",width:"60%",height :"20000px"}}>
+                                                    <div className="menuicon1" style={{height : '50px'}}>
+                                                                <Link to='/'>
+                                                                <span style={{cursor: 'pointer', marginRight: '20px', marginTop: '40px',float : "right", display:'inline-block', color: "#fff"}}>메인화면</span>
+                                                                </Link>
+                                                                </div>
 
-                        <div className="menuicon1" style={{ height: '50px' }}>
-                            <Link to='/'>
-                                <span style={{ cursor: 'pointer', marginLeft: '20px', marginTop: '15px', display: 'inline-block', color: "black" }}>메인화면</span>
-                            </Link>
-                        </div>
+
+                                                                    <Link style={{display:'block',marginTop :"40px",marginRight: '20px'}} to='/costprocess'>
+                                                                    <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float : "right"}}>비용 및 절차 안내</span>
+                                                                    </Link>
+                                                                        <Link style={{display:'block',marginTop :"90px",marginRight: '20px'}} to='/center'>
+                                                                     <span style={{cursor: 'pointer',color :"#fff",display: 'inline-block',float : "right"}}> 고객센터</span>
+                                                                     </Link>
 
 
-                        <div className="menuicon1" style={{ marginTop: '25px', marginLeft: '20px' }}>
-                            <Link to='/costprocess'>
-                                <span style={{ cursor: 'pointer', display: 'inline-block', color: "black" }} onClick={modalHandler}>비용 및 절차 안내</span>
-                            </Link>
-                        </div>
+                                                                    <Link style={{display:'block',marginTop :"140px",marginRight: '20px'}} to='/'>
+                                                                     <span style={{cursor: 'pointer', color: '#fff', display: 'inline-block',float:"right"}}>로그아웃</span>
+                                                                     </Link>
 
-                        <div className="menuicon1" style={{ marginTop: '25px', marginLeft: '20px' }}>
-                            <Link to='/center'>
-                                <span style={{ cursor: 'pointer',display: 'inline-block', color: "black" }} onClick={modalHandler}> 고객센터</span>
-                            </Link>
-                        </div>
+                                                    <div className="Medium" style={{marginLeft :"30px",fontSize:"15px",marginTop: "100px",marginRight: '20px',float:"right",color :"#ffffff"}}>Copyright©2021 티타티티</div>
 
-                        <div className="menuicon1" id="logoutBtn" style={{ marginTop: '25px', marginLeft: '20px' }}>
-                            <Link to='/'>
-                                <span style={{ cursor: 'pointer', color: 'black', display: 'inline-block' }}>로그아웃</span>
-                            </Link>
-                        </div>
 
-                        <div style={{ height: '33px' }}></div>
-                    </div>
-                </div>
+                                                                <div style={{height: '33px'}}></div>
+                                                </div>
+                                                </div>
+                                            </div>
 
                 {/* center */}
 
@@ -161,7 +165,7 @@ const Center = () => {
             <img src={customer_service_kakao}/></a></div>
 
         <div style={{display: 'inline-block'}}><a href="tel:02-922-5710">
-            <img src={{customer_service_tel}}/></a></div>
+            <img style={{width:"24px",height :"51px"}}src={customer_service_tel}/></a></div>
     </div>
     </div>
 

@@ -14,13 +14,12 @@
     line-height: 1.1;
     letter-spacing: normal;
     text-align: left;
-    color: #b7b7b7;
+    color: #000000;
 
   width: 335px;
   height: 29px;
-  margin: 6.1px 20px 0;
+  margin: 6.1px 0px 5px;
   border-style: none;
-  border-bottom: solid 2px #b7b7b7;
 
 
 }
@@ -28,8 +27,6 @@
 .brandregister-input:focus{ 
     caret-color: #4a64f5;
     outline: none;
-    border-style: none;
-    border-bottom: solid 2px #4a64f5;
 }
 
 .brandregister-inputbutton{

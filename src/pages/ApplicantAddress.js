@@ -6,7 +6,7 @@ import button from '../image/upyen.png';
 import DaumPostcode from 'react-daum-postcode';
 
 
-const ApplicantAddress = () => {
+const ApplicantAddress = ({post}) => {
     const [div1, setDiv1] = useState('hidden');
     const [div2, setDiv2] = useState('hidden');
 
@@ -37,7 +37,7 @@ const ApplicantAddress = () => {
        const showDiv2 = (ele) => { 
         setDiv2('visible')
         ele.target.placeholder ='';
-
+        setColor1('#4a64f5')
        
         }
 
@@ -48,7 +48,9 @@ const ApplicantAddress = () => {
 
     const onChangeOpenPost = ()=> { 
         setIsOpenPost(!isOpenPost);
+        post(true)
     }
+
 
     const onCompleteOpenPost = (data)=> { 
         let fullAddr = data.address; 
@@ -64,7 +66,7 @@ const ApplicantAddress = () => {
             fullAddr += extraAddr !== '' ? `(${extraAddr})` : '';
         
     }
-
+    post(false)
     setAddress(data.zonecode);
     setAddressDetail(fullAddr); 
     setIsOpenPost(false);
@@ -75,8 +77,8 @@ const ApplicantAddress = () => {
         position:'relative', 
         zIndex:'1000',
         top: '0%', 
-        width: '400px', 
-        height: '400px', 
+        width: '520px', 
+        height: '100vh', 
         padding: '7px'
     }
 
@@ -113,7 +115,7 @@ return (
                 <div className="imformname Regular" id="imformnamepost" style={{visibility: div1, fontSize:'12px', color: 'rgb(183,183,183)'}}>우편 번호</div>
                 
                 <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                <div className="inputdiv" style={{borderBottom: '1px solid rgb(224 224 224)', width: '280px', height: '42px', paddingTop: '20px',flex: '3'}}>
+                <div className="inputdiv" style={{borderBottom: '1px solid rgb(224 224 224)', width: '280px', height: '42px', paddingTop: '20px',flex: '3', marginBottom: '10px'}}>
                 
                 <input type="text" id="textpost" class="textcont" 
                 defaultValue=''
@@ -126,10 +128,10 @@ return (
                         fontSize: '20px',
                         letterSpacing: 'normal',
                         textAlign: 'left',
-                        color: '#b7b7b7'}}
+                        color: 'internal light dark'}}
                         placeholder="우편 번호" readonly=""/>
                         </div>
-                <img src={button} onClick={onChangeOpenPost} 
+                <img src={button} onClick={onChangeOpenPost}
                 style={{width: 'calc(40% - 15px)', height: '57px',marginLeft: '10px'}}/>
                 </div>
 
@@ -137,7 +139,7 @@ return (
                  style={{borderBottom: '1px solid rgb(224 224 224)'}}
                  >
                     <div>
-                <input type="text" id="textpostdet" class="textcont1" style={{border:'none'}} readonly=""
+                <input type="text" id="textpostdet" class="textcont1" style={{border:'none', marginBottom: '10px'}} readonly=""
                   value={addressDetail}
                    style={{marginBottom: '5px',
                    border:'none',
@@ -148,11 +150,11 @@ return (
                       lineHeight: '1.1',
                       letterSpacing: 'normal',
                       textAlign: 'left',
-                      color: '#b7b7b7'}}/>
+                      color: 'internal light dark'}}/>
                     </div>
                 </div>
 
-                <div class="imformname" id="imformname6" style={{visibility: div2, fontSize: '12px', color: 'rgb(183,183,183)'}}> 상세주소</div>
+                <div class="imformname" id="imformname6" style={{visibility: div2, fontSize: '12px', color: 'rgb(183,183,183)', marginTop: '10px'}}> 상세주소</div>
                 <div class="inputdiv" id="inputdiv6" style={{borderBottom: `1px solid ${bordercolor1}`}}>
                     <input autocomplete="off" type="text" name="" id="text6" class="textcont" placeholder="상세주소를 입력해주세요" 
                    defaultValue=''
@@ -160,6 +162,7 @@ return (
                    onChange={Korean}
                    style={{marginBottom: '5px',
                     border:'none',
+                    caretColor: bordercolor1,
                        width: '80%',
                        height: '40px',
                        outline: 'none',
@@ -167,7 +170,7 @@ return (
                        lineHeight: '1.1',
                        letterSpacing: 'normal',
                        textAlign: 'left',
-                       color: '#b7b7b7'}}/>
+                       color: 'internal light dark'}}/>
                 </div>
 
             </div>

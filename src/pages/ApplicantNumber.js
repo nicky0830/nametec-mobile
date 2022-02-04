@@ -14,11 +14,17 @@ const  ApplicantNumber = () => {
 
     const showDiv1 = (ele) => { 
         setDiv1('visible')
+        ele.target.placeholder ='';
+        setColor1('#4a64f5')
          
     }
 
     const showDiv2 = (ele) => { 
      setDiv2('visible')
+     setColor2('#4a64f5')
+     ele.target.placeholder ='';
+
+
 
      }
  
@@ -93,7 +99,7 @@ return (
     <div className="" id="textcon2" style={{width: '90%', margin: '20px', marginTop: '20px'}}>
         <div className="imformname" id="imformname5" style={{visibility: div1, fontSize: '12px', color:'#898989'}}> 출원인 전화번호</div>
 
-        <div className="inputdiv" id="inputdiv5" style={{borderBottom: `1px solid ${bordercolor1}`}}>
+        <div className="inputdiv" id="inputdiv5" style={{borderBottom: `1px solid ${bordercolor1}`, marginBottom: '10px'}}>
             <input autoComplete="off" type="tel" name="" defaultValue="" id="text5" className="textcont Regular" placeholder="출원인 전화번호" 
                     onClick={showDiv1}
                     onChange={Number}
@@ -136,14 +142,6 @@ return (
     </div>
 </div>
 
-<Link to ='/applicant2'>
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}} disabled="disabled">다음
-</button>
-</Link>
 
 </div>
 )

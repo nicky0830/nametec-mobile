@@ -47,6 +47,8 @@ function All() {
     // 경신함수를 통해 페이지 번호로 바꾸고 해당 페이지 visibility를 visible로 
 
     const [page, setPage] = useState(0);
+    const [full, setFull] = useState(0); 
+    const [post, setPost] = useState(false)
     
 
     const pageHandler = () => {
@@ -90,23 +92,23 @@ function All() {
         case 0:  
             return <ApplicantInfo tab={tabHandler}/>
         case 1:
-            return <ApplicantNumber tab={tabHandler}/>
+            return <ApplicantNumber />
         case 2: 
-            return <ApplicantAddress tab={tabHandler}/>
+            return <ApplicantAddress  post={postHandler}/>
         
         case 0.5: 
             return <CorporateInfo tab={tabHandler}/>
         case 1.5: 
-            return <CoroporateDetails tab={tabHandler}/>
+            return <CoroporateDetails post={postHandler} />
         case 2.5: 
-            return <CorporateHead tab={tabHandler}/>
+            return <CorporateHead />
 
         case 3: 
-            return <ApplicantAgree tab={tabHandler}/>
+            return <ApplicantAgree/>
         case 4: 
-            return <ApplicantAssign tab={tabHandler}/>
+            return <ApplicantAssign />
         case 5: 
-            return <ApplyFinish tab={tabHandler}/>
+            return <ApplyFinish />
         
         break;
         default: 
@@ -115,16 +117,19 @@ function All() {
         }
     }
     
+    const postHandler = (el) => { 
+        setPost(el)
+    }
 
     return (
 
         // rendering 
         <>
-        <div className='test' style={{maxWidth: '520px', margin:'auto', marginBottom: '100px'}}>
-        <div style={{display: page>=5 ? 'none' : 'block'}}>
+        <div className='test' style={{width: '520px',margin:'auto', height: '100%', marginBottom: page>=5 ? '0px' : '100px'}}>
+        <div style={{display: page>=5 || post ? 'none' : 'block'}}>
         <div className="menu2" style={{marginTop : '42px', marginBottom:'70px', height: '20px', display: 'flex', justifyContent: 'space-between'}}> 
         <div>
-        <img src={arrow} style={{width : '15px', marginTop :'25px', marginLeft: '18px',display: page===0? 'none': 'block'}} onClick={arrowHandler}/>
+        <img src={arrow} style={{width : '15px', marginTop :'25px', marginLeft: '18px',display: page<1? 'none': 'block'}} onClick={arrowHandler}/>
         </div>
         <DotCircleBar>
         <div className="circle1" style={{backgroundColor: page >-1 ? '#4a64f5' : '#efefef'}}></div>
@@ -139,18 +144,21 @@ function All() {
     </DotCircleBar>
     </div>
     </div>
-            <div> 
+            <div > 
                 {pageRender()}
             </div>
+            { page>=5 || post ? null :
             <button type="button" id="next_button6" className='Medium'
                 onClick={()=>pageHandler()}
                 style={{
-                    display: page>=5 ? 'none':'block',
-                    height: '60px', marginTop: '4%', position: 'fixed',
+                    visibility: page>=5 ? 'hidden':'visible',
+                    textAlign:'center', margin: 'auto',
+                    height: '60px', position: 'fixed',
                     bottom: '0px', width: '520px', border: 'none',
-                    backgroundColor: '#efefef', color: '#b7b7b7', fontSize: '17px'
+                    padding: '0px',
+                    backgroundColor: full ? '#4a64f5': '#efefef', color: '#b7b7b7', fontSize: '17px'
                 }}>다음
-            </button>
+            </button>}
         </div>
             
             </>
