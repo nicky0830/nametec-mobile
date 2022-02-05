@@ -1,7 +1,4 @@
-import arrow from "../image/arrow@3x.png";
-import React, { useEffect, useRef, useState } from 'react';
-import {Link} from 'react-router-dom'; 
-import { DotCircleBar } from './ApplicantInfo';
+import React, { useRef, useState } from 'react';
 import question from '../image/question_mark.png';
 import file_btn from '../image/file_button@3x.png';
 import upyen from '../image/upyen.png';
@@ -118,13 +115,19 @@ const CorporateDetails = ({post}) => {
      setDiv3('visible')
      setColor3('#4a64f5')
      ele.target.placeholder='';
-
-
-    
      }
  
+     const inputImg = useRef(null);
+     const ingam = useRef(null)
 
-    
+
+ function fileUpload(){
+     console.log(inputImg.current)
+     console.log(ingam.current)
+
+        let file = inputImg.current.files[0];
+         ingam.current.value = file.name;
+        }
 
 
 
@@ -168,17 +171,17 @@ return (
 
 <div style={{display: 'flex'}}>
     <div className="filebox" style={{flex: '1'}}>
-              <label for="ex_file">    
+              <label htmlFor="ex_file" ref={inputImg}>    
               <img src={file_btn}  style={{display:'inline', marginTop:'5px', transform: 'translateY(10px)', width: '96px'}}/>
               </label>
-              <input type="file" onchange="fileUpload()" id="ex_file" style={{visibility: 'hidden', height: '0px'}}/>
+              <input type="file" onChange={fileUpload} id="ex_file" ref ={inputImg} style={{visibility: 'hidden', height: '0px'}}/>
     </div>
 
     <div className="inputdiv" id="inputdivin" 
     style={{ borderBottom: '1px solid rgb(224 224 224)', width: '190px', flex: '4'}}>
         
     <div style={{display:'inline'}} id="inputdivingam">
-    <input type="text" id="ingam" className="textcont" style={{border:'none', width: '190px'}} readonly=""/>
+    <input type="text" id="ingam" ref={ingam} className="textcont" style={{border:'none', width: '190px'}} readonly=""/>
     </div>
 
     </div>
@@ -209,7 +212,7 @@ return (
 
     <div className="imformname" id="imformname55" style={{visibility: div2, fontSize: '12px', color:'#898989'}} > 사업자 등록번호</div>
     <div className="inputdiv" id="inputdiv55" style={{borderBottom: `1px solid ${bordercolor2}`, marginBottom: '10px'}}>
-        <input autocomplete="off" type="number" name="" defaultValue="" id="text55" className="textcont" placeholder="사업자 등록번호" 
+        <input autoComplete="off" type="number" name="" defaultValue="" id="text55" className="textcont" placeholder="사업자 등록번호" 
         onClick={showDiv2}
         onChange={Number2}
         style={{marginBottom: '5px',
