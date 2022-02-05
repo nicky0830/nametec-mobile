@@ -295,8 +295,11 @@
     </div>
 
     <div class="filebox">
-              <label for="ex_file">    <img src="../static/image/file_button.png" srcset="../static/image/file_button@2x.png 2x,
-                ../static/image/file_button@3x.png 3x" style="display:inline; margin-top:5px; transform: translateY(10px);"></label>
+              <label for="ex_file">  
+                <img src="../static/image/file_button.png" srcset="../static/image/file_button@2x.png 2x,
+                ../static/image/file_button@3x.png 3x" style="display:inline; margin-top:5px; transform: translateY(10px);">
+                    
+                </label>
               <input type="file" onchange="fileUpload()" id="ex_file">
     </div>
 

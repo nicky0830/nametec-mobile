@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import TopbarComponent  from '../components/Topbar';
 import Nextbutton from '../components/Nextbutton';
 import {Link} from 'react-router-dom';
@@ -8,6 +8,28 @@ import plusbox from '../data/plus_box@3x.png';
 import Plus_button from '../image/Plus_button@3x.png'
 
 function BrandLogoRegister(){ 
+    const input = useRef(null); 
+    const img = useRef(null);
+    const [src, setSrc] = useState('')
+
+    function fileUpload(){ 
+        console.log(input); 
+        console.log(img)
+        let file = input.current.files[0]; 
+        console.log(file);
+
+        const reader = new FileReader()
+        console.log(reader)
+        reader.onload = e => { 
+            setSrc(e.target.result)
+        }
+        console.log(img)
+
+        reader.readAsDataURL(file)
+
+        
+    }
+
     return(
     <div style={{margin : 'auto',maxWidth : '520px'}}>
         <TopbarComponent page={'02'} path={'/brandregister'}/>
@@ -18,17 +40,28 @@ function BrandLogoRegister(){
         <div style={{marginTop : '-45px'}}>
             <div style={{width : '100%',maxWidth : '520px', textAlign : 'center', margin : '0 auto'}}>
                 <div className="box" style={{marginTop : '-141px',height:'253px', width: 'calc(100% - 64px)', border : '2px dashed lightgrey', margin:'30px',borderRadius: '5px'}}>
+                   { src ? <img ref = {img} src={src}
+                    style={{marginTop : '0px', height:'253px', width:'auto'}}
+                   /> :
+                    <>
                     <input type="file" accept="image/*,.pdf,.png" name="file-1[]" id="file-1"
-                           className="inputfile inputfile-1" style={{display:'none',textAlign:'center'}}/>
-                            <div id="image_container">
-                                <img className="thumb" src={Plus_button} id="top" style={{marginTop : '100px',cursor:'pointer',border:'none',height: '39px',width: '38px'}}/>
-                            </div>
+                            onChange={fileUpload}
+                            ref={input}
+                            className="inputfile inputfile-1" 
+                            style={{ display: 'none', textAlign: 'center' }} />
+                            <label htmlFor='file-1'>
+                             <img className="thumb"
+                                src={Plus_button} id="top"
+                                  style={{display: 'inline-block', marginTop: '100px', cursor: 'pointer',
+                                            border: 'none', height: '39px', width: '38px' }} />
+                            </label>
+                    </> }
                 </div>
             </div>
         </div>
         {/*<img className="brandlogoregister-plusbox" src={plusbox}/>*/}
         <Link to="/brandcategoryregister">
-        <Nextbutton text={"다음"}/>
+        <Nextbutton text={"다음"} color={src ? '#4a64f5':  '#efefef'}/>
         </Link>
     </div>
     )

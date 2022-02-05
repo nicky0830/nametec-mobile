@@ -122,8 +122,6 @@ const CorporateDetails = ({post}) => {
 
 
  function fileUpload(){
-     console.log(inputImg.current)
-     console.log(ingam.current)
 
         let file = inputImg.current.files[0];
          ingam.current.value = file.name;
@@ -141,12 +139,9 @@ return (
     (<>
    
 
-  
-
-
-
 <div id="page2-2" style={{display: 'block'}}>
-<div className="headLine"     style={{ 
+<div className="headLine"     
+style={{ 
         marginTop: '40px',
         marginLeft: '20px',
         fontSize: '30px',
@@ -169,19 +164,18 @@ return (
         <img src={question}  style={{marginLeft:'5px'}}/>
     </div>
 
-<div style={{display: 'flex'}}>
-    <div className="filebox" style={{flex: '1'}}>
-              <label htmlFor="ex_file" ref={inputImg}>    
-              <img src={file_btn}  style={{display:'inline', marginTop:'5px', transform: 'translateY(10px)', width: '96px'}}/>
+<div style={{display: 'flex',height: '36px', marginBottom: '30px'}}>
+              <label htmlFor="ex_file">    
+              <img src={file_btn} 
+               style={{display:'inline', marginTop:'5px', transform: 'translateY(10px)', marginBottom:'20px', width: '110px'}}/>
               </label>
               <input type="file" onChange={fileUpload} id="ex_file" ref ={inputImg} style={{visibility: 'hidden', height: '0px'}}/>
-    </div>
 
     <div className="inputdiv" id="inputdivin" 
-    style={{ borderBottom: '1px solid rgb(224 224 224)', width: '190px', flex: '4'}}>
+    style={{ borderBottom: '1px solid rgb(224 224 224)', height: '30px',width: '320px', marginTop: '22px', display: 'inline-block'}}>
         
     <div style={{display:'inline'}} id="inputdivingam">
-    <input type="text" id="ingam" ref={ingam} className="textcont" style={{border:'none', width: '190px'}} readonly=""/>
+    <input type="text" id="ingam" ref={ingam} className="textcont" style={{border:'none', width: '320px', outline:'none', fontSize: '20px'}} readOnly=""/>
     </div>
 
     </div>
@@ -232,12 +226,10 @@ return (
 
 
 
-
-
     <div className="imformname" id="imformnamepost-1" style={{visibility: div3, fontSize: '12px', color:'#898989'}}> 법인 등본상 주소</div>
     <div style={{display: 'flex'}}>
-    <div className="inputdiv" style={{width:'60%',display:'inline-block', flex: '4 1 0'}} style={{borderBottom: '1px solid rgb(224 224 224)'}}>
-        <input type="text" id="textpost-1" className="textcont" style={{border:'none',display:'inline'}}
+    <div className="inputdiv" style={{width:'330px',display:'inline-block'}} style={{borderBottom: '1px solid rgb(224 224 224)'}}>
+        <input type="text" id="textpost-1" className="textcont" 
         defaultValue=''
         value={address}
         onClick={showDiv3}
@@ -245,6 +237,8 @@ return (
         border:'none',
         padding: '0px',
         margin:'0px',
+        display: 'inline-block',
+        width: '330px',
            height: '40px',
            fontSize: '20px',
            lineHeight: '1.1',
@@ -253,10 +247,7 @@ return (
            textAlign: 'left',
            color: 'internal light dark'}}
         placeholder="법인 등본상 주소" readonly=""/></div>
-    <div style={{display:"inline", flex: '1 1 0'}}>
-<img src={upyen} style={{width: 'calc(40% - 15px)', transform: 'translateY(7px)', marginLeft: '10px', float: 'right'}} onClick={onChangeOpenPost}/>
-
-    </div>
+<img src={upyen} style={{width: 'calc(30% - 15px)',display:'inline-block', transform: 'translateY(7px)', marginLeft: '10px', marginBottom:'10px', float: 'right'}} onClick={onChangeOpenPost}/>
     </div>
 
     <div className="inputdiv" id="inputdiv111" style={{borderBottom: '1px solid rgb(224 224 224)', marginBottom: '10px'}}>
