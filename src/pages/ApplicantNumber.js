@@ -5,72 +5,64 @@ import arrow from "../image/arrow@3x.png";
 import { DotCircleBar } from './ApplicantInfo';
 
 
-const  ApplicantNumber = () => { 
+const  ApplicantNumber = ({full}) => { 
     const [div1, setDiv1] = useState('hidden');
     const [div2, setDiv2] = useState('hidden');
 
     const [bordercolor1, setColor1] = useState('#e0e0e0')
     const [bordercolor2, setColor2] = useState('#e0e0e0')
 
+    const fullHandler = () => { 
+        if((bordercolor1==='#4a64f5')
+        && (bordercolor2==='#4a64f5'))
+        {
+            full(true);
+        }else{ 
+            full(false);
+        }
+    }
+
     const showDiv1 = (ele) => { 
         setDiv1('visible')
         ele.target.placeholder ='';
-        setColor1('#4a64f5')
-         
     }
 
     const showDiv2 = (ele) => { 
      setDiv2('visible')
-     setColor2('#4a64f5')
      ele.target.placeholder ='';
-
-
-
      }
  
-     const checkNumber = (str) => { 
-        const regExp = /[0-9]/;
-        return regExp.test(str); 
-    }
+ 
 
 
-    const checkEnglish = (str) => { 
-        const regExp = /[a-z|A-Z|.|@]/;
-        return regExp.test(str); 
-    }
-    
 
-    const Number = (ele) => { 
+    function telValidator(args) {
+        // IE 브라우저에서는 당연히 var msg로 변경
+   
+        var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
 
-        if(ele.nativeEvent.data){
-            setColor1('blue')
-        
-        if(!checkNumber(ele.nativeEvent.data)){ 
+        if( regExp.test(args)) {
+            setColor1('#4a64f5')
+        }
+        else{ 
             setColor1('red')
         }
-        if(ele.nativeEvent.data.length >6){
-            setColor1('red')
-        }
-       }
-       console.log(bordercolor1)
-
-    }
-
-  
-    const Email = (ele) => { 
-    if(ele.nativeEvent.data){
-            setColor2('blue')
-
-    if(!checkEnglish(ele.nativeEvent.data)){ 
-        setColor2('red')
-    }
-
-    if(ele.nativeEvent.data.includes('@')){ 
-        setColor2('blue')
-    }
-       }
+    
     
     }
+
+    
+    
+
+
+    function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(re.test(email)===true){ 
+            setColor2('#4a64f5')
+        }else{ 
+            setColor2('red')
+        }
+        }
 
   
 return (
@@ -102,7 +94,7 @@ return (
         <div className="inputdiv" id="inputdiv5" style={{borderBottom: `1px solid ${bordercolor1}`, marginBottom: '10px'}}>
             <input autoComplete="off" type="tel" name="" defaultValue="" id="text5" className="textcont Regular" placeholder="출원인 전화번호" 
                     onClick={showDiv1}
-                    onChange={Number}
+                    onChange={(ele)=> telValidator(ele.target.value)}
                      style={{marginBottom: '5px',
                      border:'none',
                      outline: 'none',
@@ -113,29 +105,29 @@ return (
                         lineHeight: '1.1',
                         letterSpacing: 'normal',
                         textAlign: 'left',
-                        color: '#e0e0e0'}}
-            maxlength="11" oninput="maxLengthCheck(this)"/>
+                        color: 'internal light dark'}}
+            maxLength="11" oninput="maxLengthCheck(this)"/>
         </div>
 
         <div className="imformname" id="imformname4" style={{visibility: div2, fontSize: '12px', color:'#898989'}}> 출원인 이메일
         </div>
       <div className="inputdiv" id="inputdiv4" style={{borderBottom: `1px solid ${bordercolor2}`}}>
-            <input autocomplete="off" type="email" name="cus_email" defaultValue="" id="text4" 
+            <input autoComplete="off" type="email" name="email" defaultValue="" id="text4" 
             className="textcont" placeholder="출원인 이메일" style={{border:'none', color : '#000000'}}
             onClick={showDiv2}
-            onChange={Email}
+            onChange={(ele)=>validateEmail(ele.target.value)}
+            onKeyUp={fullHandler}
             style={{marginBottom: '5px',
             border:'none',
                width: '80%',
                outline: 'none',
                caretColor: bordercolor2,
-
-               height: '40px',
+                 height: '40px',
                fontSize: '20px',
                lineHeight: '1.1',
                letterSpacing: 'normal',
                textAlign: 'left',
-               color: '#e0e0e0'}}
+               color: 'internal light dark'}}
             />
         </div>
 

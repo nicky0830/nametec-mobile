@@ -1,13 +1,7 @@
-import arrow from "../image/arrow@3x.png";
 import React, { useEffect, useRef, useState } from 'react';
-import {Link} from 'react-router-dom'; 
-import { DotCircleBar } from './ApplicantInfo';
-import question from '../image/question_mark.png';
-import file_btn from '../image/file_button.png';
-import upyen from '../image/upyen.png';
-import CorporateInfo from "./CorporateInfo";
 
-const CorporateHead = () => {
+
+const CorporateHead = ({full}) => {
     const [div1, setDiv1] = useState('hidden');
     const [div2, setDiv2] = useState('hidden');
     const [div3, setDiv3] = useState('hidden');
@@ -25,6 +19,19 @@ const CorporateHead = () => {
 
 
 
+    const fullHandler = () => { 
+        console.log('full')
+        if((bordercolor1 === '#4a64f5')
+        &&(bordercolor2 === '#4a64f5')
+        &&(bordercolor3 === '#4a64f5')
+        &&(bordercolor4 === '#4a64f5')
+        ){
+            full(true);
+        }else{
+            full(false);
+        }
+
+    }
 
     const checkKorean = (str) => { 
         const regExp = /[ㄱ-ㅎ|ㅏ-ㅣ가-힣]/;
@@ -99,14 +106,12 @@ const CorporateHead = () => {
        const showDiv1 = (ele) => { 
            setDiv1('visible')
            ele.target.placeholder ='';
-           setColor1('#4a64f5')
 
        }
 
        const showDiv2 = (ele) => { 
         setDiv2('visible')
         ele.target.placeholder ='';
-        setColor2('#4a64f5')
 
 
         }
@@ -115,7 +120,6 @@ const CorporateHead = () => {
     const showDiv3 = (ele) => { 
         setDiv3('visible')
         ele.target.placeholder ='';
-        setColor3('#4a64f5')
 
 
         }
@@ -123,10 +127,170 @@ const CorporateHead = () => {
     const showDiv4 = (ele) => { 
         setDiv4('visible')
         ele.target.placeholder ='';
-        setColor4('#4a64f5')
-
-
         }
+
+        var yy, mm, dd,cc;
+
+        function check_1(number){ 
+            var num1 = number.substr(0,6);
+            yy = num1.substr(0,2);//01
+            mm = num1.substr(2,4);//23
+            dd = num1.substr(4,6);//45
+    
+            var color = '#4164f5';
+    
+            if(number==='' || number===null || number.length!==6){ 
+                color = 'red'
+            }
+    
+    
+            if(!isNumeric(num1)){ 
+                color = 'red'
+            }
+    
+            if(yy <'00' || yy>'99' ||
+               mm < '01' || mm > '12' ||
+               dd < '01' || dd > '31'){ 
+                color = 'red'
+            }
+    
+    
+            if(getNumberOfDate(yy, mm) < mm){ 
+                color = 'red'
+            }
+            
+            setColor2(color);
+    
+    
+        }
+    
+    
+    
+    
+        function check_resident2(number){ 
+            var num2 = number.substr(6,7);
+            var gender = num2.substr(0,1);
+             cc = (gender=== '1' || gender === '2') ? '19' : '20'; 
+            var color = '#4a64f5'
+    
+        
+            if(number==='' || number===null || number.length!==7){ 
+                color = 'red'
+            }
+       
+         
+    
+            else if(!isNumeric(num2)){ 
+                color = 'red'
+            }
+    
+        
+            else if(gender < '1' || gender > '4'){ 
+                color = 'red'
+            }
+        
+            //  연도계산
+            //날짜 형식 검사 
+            else if(isYYYYMMDD(parseInt(cc+yy), parseInt(mm), parseInt(dd))===false){ 
+                color = 'red'
+            }
+    
+           
+    
+        //     if (!isSSN(num1, num2)) { 
+        //         return false; 
+        // } 
+            setColor2(color)
+        
+        
+        }
+    
+        function isYYYYMMDD(y,m,d){ 
+            switch(m){ 
+                case 2: 
+                if(d>29)return false; 
+                if(d === 29){ //윤년인지 확인 : 윤년일 때만 29 가능  - 4의 배수 또는 100의 배수지만 400의 배수가 아니도록
+                    if((y%4 !==0)|| ((y%100===0) && (y%400 !==0))){ 
+                        return false;
+                    }
+                }
+                break;
+                //31이 없는 달들
+                case 4: if(d >= 31)return false;
+                break;
+                case 6: if(d >= 31)return false;
+                break;
+                case 9: if(d >= 31)return false;
+                break;
+                case 11: if(d >= 31)return false;
+                break;
+    
+                default: return true;
+        
+            }
+            return true;
+        }
+        
+    
+        function isNumeric(s) { 
+            for (let i=0; i<s.length; i++) { 
+                    let c = s.substr(i, 1); 
+                    //하나씩 확인하면서
+                    if (c < "0" || c > "9") return false; 
+            } 
+            return true; 
+        } 
+    
+        function isLeapYear(y) { 
+            if (y < 100) {
+                y = y + 1900; 
+            }
+            if ( ((y % 4 === 0) && (y % 100 !== 0)) || (y % 400 === 0) ) { 
+                    return true; 
+            } else { 
+                    return false; 
+            }
+        }
+    
+    
+    function getNumberOfDate(yy, mm) { 
+        let month = [29,31,28,31,30,31,30,31,31,30,31,30,31];
+         if (mm === 2 && isLeapYear(yy)) {
+             mm = 0; 
+         }
+         return month[mm]; 
+     } 
+    
+
+     function telValidator(args) {
+        // IE 브라우저에서는 당연히 var msg로 변경
+   
+        var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+
+        if( regExp.test(args)) {
+            setColor4('#4a64f5')
+        }
+        else{ 
+            setColor4('red')
+        }
+    
+    }
+
+    
+    
+
+
+    function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        if(re.test(email)===true){ 
+            setColor3('#4a64f5')
+        }else{ 
+            setColor3('red')
+        }
+        }
+    
+    
+    
 
     return (
 
@@ -174,7 +338,7 @@ const CorporateHead = () => {
            lineHeight: '1.1',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}}
+           color: 'black'}}
         placeholder="성명"  maxlength="13" oninput="maxLengthCheck(this)"/>
     </div>
 
@@ -184,7 +348,7 @@ const CorporateHead = () => {
     <div className="inputdiv" id="inputdiv8" style={{borderBottom: `1px solid ${bordercolor2}`,  marginBottom: '10px'}}>
         <input autocomplete="off" type="number" name="" defaultValue="" id="text8-1" class="textcont" placeholder="주민등록번호" maxlength="6"
               onClick={showDiv2}
-              onChange={Number1}
+              onChange={(ele) => check_1(ele.target.value)}
        style={{marginBottom: '5px',
        outline:'none',
         border:'none',
@@ -196,11 +360,12 @@ const CorporateHead = () => {
            lineHeight: '1.1',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}} oninput="maxLengthCheck(this)"/>
+           color: 'black'}} oninput="maxLengthCheck(this)"/>
         <span class="lineDivider"> - </span>
 
-        <input autocomplete="off" type="password" name="" value="" id="text8-2" class="textcont" placeholder="●●●●●●●" 
-         style={{marginBottom: '5px',
+        <input autocomplete="off" type="password" name="" defaultValue="" id="text8-2" class="textcont" placeholder="●●●●●●●" 
+        onChange={(ele) => check_resident2(ele.target.value)}
+        style={{marginBottom: '5px',
          border:'none',
          caretColor: bordercolor3,
             height: '40px',
@@ -211,7 +376,7 @@ const CorporateHead = () => {
             lineHeight: '1.1',
             letterSpacing: 'normal',
             textAlign: 'left',
-            color: '#b7b7b7'}}
+            color: 'black'}}
          maxlength="7" oninput="maxLengthCheck(this)"/>
 
 
@@ -225,7 +390,7 @@ const CorporateHead = () => {
   
         <input autocomplete="off" type="email" name="" defaultValue="" id="text9" class="textcont" placeholder="이메일" 
        onClick={showDiv3}
-       onChange={English}
+       onChange={(ele) => validateEmail(ele.target.value)}
        style={{marginBottom: '5px',
         border:'none',
            height: '40px',
@@ -237,7 +402,7 @@ const CorporateHead = () => {
            margin: '0px',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}}/>
+           color: 'black'}}/>
     </div>
 
 
@@ -246,7 +411,8 @@ const CorporateHead = () => {
     >
         <input autocomplete="off" type="number" name="" defaultValue="" id="text10" class="textcont" placeholder="휴대전화"
         onClick={showDiv4}
-        onChange={Number2}
+        onChange={(ele) => telValidator(ele.target.value)}
+        onKeyUp={fullHandler}
         style={{marginBottom: '5px',
         border:'none',
         caretColor: bordercolor4,
@@ -256,7 +422,7 @@ const CorporateHead = () => {
            outline:'none',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}} 
+           color: 'black'}} 
         />
     </div>
 

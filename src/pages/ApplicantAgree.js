@@ -10,10 +10,18 @@ import blc from '../image/blc@2x.png';
 
 
 
-const ApplicantAgree = () => {
+const ApplicantAgree = ({full}) => {
 const [check, setCheck] = useState(true)
 const clickHandler = () => { 
         setCheck(!check);
+}
+
+const fullHandler = () => { 
+    if(check){ 
+        full(true)
+    }else{ 
+        full(false);
+    }
 }
 return (
 <div className='test' style={{width: '520px', margin:'auto', marginBottom: '100px'}}>
@@ -104,7 +112,10 @@ return (
     </div>
 
 
-    <div id="checkagree" className="Regular" onClick={clickHandler}
+    <div id="checkagree" className="Regular" onClick={() => { 
+        clickHandler(); 
+        fullHandler();
+    }}
     style={{fontSize : '12px', marginLeft : '20px', marginRight : '20px', backgroundColor:  check  ? '#efefef': 'rgb(237, 239, 254)', borderRadius: '21px',
     marginTop : '20px', padding : '18px 10.9px 20px 60.9px'}}>
 <img id="imgcheck" src={check ? grc : blc} 
@@ -125,14 +136,7 @@ Mail : admin@nametec.kr
 </div>
 
 
-<Link to ='/applicant2'>
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}} disabled="disabled">다음
-</button>
-</Link>
+
 </div>
 
 

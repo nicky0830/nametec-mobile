@@ -47,7 +47,7 @@ function All() {
     // 경신함수를 통해 페이지 번호로 바꾸고 해당 페이지 visibility를 visible로 
 
     const [page, setPage] = useState(0);
-    const [full, setFull] = useState(0); 
+    const [full, setFull] = useState(false); 
     const [post, setPost] = useState(false)
     
 
@@ -79,6 +79,11 @@ function All() {
 
     }
 
+    const buttonHandler = (ele) => { 
+        setFull(ele);
+        console.log(ele)
+    }
+
  
     //최상위에서만 hook이용
 
@@ -90,25 +95,25 @@ function All() {
         console.log('render')
         switch (page){
         case 0:  
-            return <ApplicantInfo tab={tabHandler}/>
+            return <ApplicantInfo tab={tabHandler} full={buttonHandler} page={page}/>
         case 1:
-            return <ApplicantNumber />
+            return <ApplicantNumber full={buttonHandler} />
         case 2: 
-            return <ApplicantAddress  post={postHandler}/>
+            return <ApplicantAddress  post={postHandler} full={buttonHandler}/>
         
         case 0.5: 
-            return <CorporateInfo tab={tabHandler}/>
+            return <CorporateInfo tab={tabHandler} full={buttonHandler} page={page}/>
         case 1.5: 
-            return <CoroporateDetails post={postHandler} />
+            return <CoroporateDetails post={postHandler} full={buttonHandler}/>
         case 2.5: 
-            return <CorporateHead />
+            return <CorporateHead full={buttonHandler}/>
 
         case 3: 
-            return <ApplicantAgree/>
+            return <ApplicantAgree full={buttonHandler}/>
         case 4: 
-            return <ApplicantAssign />
+            return <ApplicantAssign full={buttonHandler} />
         case 5: 
-            return <ApplyFinish />
+            return <ApplyFinish full={buttonHandler}/>
         
         break;
         default: 
@@ -149,14 +154,17 @@ function All() {
             </div>
             { page>=5 || post ? null :
             <button type="button" id="next_button6" className='Medium'
-                onClick={()=>pageHandler()}
+                onClick={()=>{
+                    pageHandler(); 
+                    setFull(false);
+                }}
                 style={{
                     visibility: page>=5 ? 'hidden':'visible',
                     textAlign:'center', margin: 'auto',
                     height: '60px', position: 'fixed',
                     bottom: '0px', width: '520px', border: 'none',
                     padding: '0px',
-                    backgroundColor: full ? '#4a64f5': '#efefef', color: '#b7b7b7', fontSize: '17px'
+                    backgroundColor: full ? '#4a64f5': '#efefef', color: full? 'white' : '#b7b7b7', fontSize: '17px'
                 }}>다음
             </button>}
         </div>

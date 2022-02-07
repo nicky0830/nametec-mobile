@@ -4,12 +4,25 @@ import file_btn from '../image/file_button@3x.png';
 import upyen from '../image/upyen.png';
 import DaumPostcode from 'react-daum-postcode';
 
-const CorporateDetails = ({post}) => {
+const CorporateDetails = ({post,full}) => {
 
     const [bordercolor1, setColor1] = useState('#e0e0e0')
     const [bordercolor2, setColor2] = useState('#e0e0e0')
     const [bordercolor3, setColor3] = useState('#e0e0e0')
 
+
+    const fullHandler = () => { 
+        console.log('full')
+        if((bordercolor1 === '#4a64f5')
+        &&(bordercolor2 === '#4a64f5')
+        &&(bordercolor3 === '#4a64f5')){
+    
+            full(true);
+        }else{
+            full(false);
+        }
+
+    }
 
     const [div1, setDiv1] = useState('hidden');
     const [div2, setDiv2] = useState('hidden');
@@ -23,7 +36,6 @@ const CorporateDetails = ({post}) => {
     const onChangeOpenPost = ()=> { 
         setIsOpenPost(!isOpenPost);
         post(true)
-        
     }
 
     const onCompleteOpenPost = (data)=> { 
@@ -40,7 +52,7 @@ const CorporateDetails = ({post}) => {
             fullAddr += extraAddr !== '' ? `(${extraAddr})` : '';
         
     }
-    post(false)
+    post(false);
     setAddress(data.zonecode);
     setAddressDetail(fullAddr); 
     setIsOpenPost(false);
@@ -96,14 +108,10 @@ const CorporateDetails = ({post}) => {
     const showDiv1 = (ele) => { 
         setDiv1('visible')
         ele.target.placeholder='';
-        setColor1('#4a64f5')
-
-         
     }
 
     const showDiv2 = (ele) => { 
      setDiv2('visible')
-     setColor2('#4a64f5')
      ele.target.placeholder='';
 
 
@@ -127,6 +135,92 @@ const CorporateDetails = ({post}) => {
          ingam.current.value = file.name;
         }
 
+
+        function checkCorporateRegiNumber(number){
+            let color ='red'
+            var numberMap = number.replace(/-/gi, '').split('').map(function (d){
+                return parseInt(d, 10);
+            });
+            
+            if(numberMap.length == 10){
+                var keyArr = [1, 3, 7, 1, 3, 7, 1, 3, 5];
+                var chk = 0;
+                
+                keyArr.forEach(function(d, i){
+                    chk += d * numberMap[i];
+                });
+                
+                chk += parseInt((keyArr[8] * numberMap[8])/ 10, 10);
+                console.log(chk);
+                if( Math.floor(numberMap[9]) === ( (10 - (chk % 10) ) % 10)){ 
+                    color = 'blue'
+                }
+            }
+            setColor2(color);
+            
+        }
+
+        function is_bubinno(bubinNum){
+            var as_Biz_no = String(bubinNum);
+            var isNum = true;
+            var I_TEMP_SUM = 0 ;
+            var I_TEMP = 0;
+            var S_TEMP;
+            var I_CHK_DIGIT = 0;
+            var color ='red';
+            
+            if(bubinNum.length != 13) {
+                color ='red';
+            }
+            
+            for(let index01 = 1; index01 < 13; index01++) {
+            var i = index01 % 2;
+            var j = 0;
+            
+            if(i == 1) j = 1;
+            else if( i == 0) j = 2;
+            
+            I_TEMP_SUM = I_TEMP_SUM + parseInt(as_Biz_no.substring(index01-1, index01),10) * j;
+            }
+            
+            I_CHK_DIGIT= I_TEMP_SUM%10 ;
+            if(I_CHK_DIGIT != 0 ) I_CHK_DIGIT = 10 - I_CHK_DIGIT;
+            
+            if (as_Biz_no.substring(12,13) != String(I_CHK_DIGIT)){
+
+                color ='red';
+
+            }else{ 
+                color = 'blue'
+            }
+
+            setColor1(color)
+            }
+
+
+
+             
+
+            const checkKorean = (str) => { 
+                const regExp = /[ㄱ-ㅎ|ㅏ-ㅣ가-힣]/;
+                return regExp.test(str); 
+            }
+  
+
+    const Korean = (ele) => { 
+
+        if(ele.target.value){ 
+           setColor3('blue')
+           if(!checkKorean(ele.target.value)){
+           setColor3('red')
+           }
+   
+       }
+       }
+   
+            
+            
+           
 
 
 
@@ -172,10 +266,10 @@ style={{
               <input type="file" onChange={fileUpload} id="ex_file" ref ={inputImg} style={{visibility: 'hidden', height: '0px'}}/>
 
     <div className="inputdiv" id="inputdivin" 
-    style={{ borderBottom: '1px solid rgb(224 224 224)', height: '30px',width: '320px', marginTop: '22px', display: 'inline-block'}}>
+    style={{ borderBottom: '1px solid rgb(224 224 224)', height: '30px',width: '330px', marginTop: '22px', display: 'inline-block'}}>
         
     <div style={{display:'inline'}} id="inputdivingam">
-    <input type="text" id="ingam" ref={ingam} className="textcont" style={{border:'none', width: '320px', outline:'none', fontSize: '20px'}} readOnly=""/>
+    <input type="text" id="ingam" ref={ingam} className="textcont" style={{border:'none', width: '330px', outline:'none', fontSize: '20px'}} readOnly=""/>
     </div>
 
     </div>
@@ -188,7 +282,7 @@ style={{
     <div className="inputdiv" id="inputdiv44" style={{borderBottom: `1px solid ${bordercolor1}`, marginBottom: '10px'}}>
     <input autoComplete="off" type="number" name="" defaultValue="" id="text44" className="textcont" 
       onClick={showDiv1}
-      onChange={Number1}
+      onChange={(ele) => is_bubinno(ele.target.value)}
         style={{marginBottom: '5px',
         outline: 'none',
         caretColor: bordercolor1,
@@ -208,7 +302,7 @@ style={{
     <div className="inputdiv" id="inputdiv55" style={{borderBottom: `1px solid ${bordercolor2}`, marginBottom: '10px'}}>
         <input autoComplete="off" type="number" name="" defaultValue="" id="text55" className="textcont" placeholder="사업자 등록번호" 
         onClick={showDiv2}
-        onChange={Number2}
+        onChange={(ele) => checkCorporateRegiNumber(ele.target.value)}
         style={{marginBottom: '5px',
         border:'none',
         caretColor: bordercolor2,
@@ -220,20 +314,22 @@ style={{
            outline:'none',
            letterSpacing: 'normal',
            textAlign: 'left',
-           color: '#b7b7b7'}}
+           color: 'internal light dark'}}
         maxLength="10" oninput="maxLengthCheck(this)"/>
     </div>
 
 
 
     <div className="imformname" id="imformnamepost-1" style={{visibility: div3, fontSize: '12px', color:'#898989'}}> 법인 등본상 주소</div>
-    <div style={{display: 'flex'}}>
-    <div className="inputdiv" style={{width:'330px',display:'inline-block'}} style={{borderBottom: '1px solid rgb(224 224 224)'}}>
+    <div className="inputdiv" style={{width:'330px',
+    borderBottom: '1px solid rgb(224 224 224)',
+               height: '40px',
+               display:'inline-block'}}>
         <input type="text" id="textpost-1" className="textcont" 
         defaultValue=''
         value={address}
         onClick={showDiv3}
-        style={{marginBottom: '5px',
+        style={{
         border:'none',
         padding: '0px',
         margin:'0px',
@@ -247,8 +343,7 @@ style={{
            textAlign: 'left',
            color: 'internal light dark'}}
         placeholder="법인 등본상 주소" readonly=""/></div>
-<img src={upyen} style={{width: 'calc(30% - 15px)',display:'inline-block', transform: 'translateY(7px)', marginLeft: '10px', marginBottom:'10px', float: 'right'}} onClick={onChangeOpenPost}/>
-    </div>
+<img src={upyen} style={{width: 'calc(30% - 15px)',display:'inline-block', transform: 'translateY(7px)', marginLeft: '10px', marginBottom:'20px', marginTop: '-10px',float: 'right'}} onClick={onChangeOpenPost}/>
 
     <div className="inputdiv" id="inputdiv111" style={{borderBottom: '1px solid rgb(224 224 224)', marginBottom: '10px'}}>
         <input type="text" id="textpost-23" className="textcont" style={{border:'none', display:'inline'}} readonly=""
@@ -256,6 +351,7 @@ style={{
         style={{marginBottom: '5px',
         outline: 'none',
         border:'none',
+        width: '100%',
         padding: '0px',
         margin:'0px',
            height: '40px',
@@ -267,8 +363,10 @@ style={{
         /></div>
 
     <div className="inputdiv" id="inputdiv112" style={{borderBottom: `1px solid ${bordercolor3}`}}>
-        <input autocomplete="off" type="text" name="" value="" id="text61" className="textcont" placeholder="상세주소를 입력해주세요" 
+        <input autocomplete="off" type="text" name="" defaultValue="" id="text61" className="textcont" placeholder="상세주소를 입력해주세요" 
         onClick={showDiv3}
+        onChange={Korean}
+        onKeyUp={fullHandler}
         style={{marginBottom: '5px',
                border:'none',
                padding: '0px',

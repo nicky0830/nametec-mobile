@@ -115,7 +115,7 @@ const Page1 = styled.div`
 
 
 
- function CorporateInfo({tab}){ 
+ function CorporateInfo({tab,page, full}){ 
 
     const [tab1, setTab1] = useState('currentImform');
     const [tab2, setTab2] = useState('boxImform2');
@@ -132,13 +132,27 @@ const Page1 = styled.div`
         if( tab1 === 'boxImform2') {
             setTab1('currentImform'); 
             setTab2('boxImform2');
-
-
-        }else{ 
+            //이게 있으면 
+        }else if(tab2 === 'boxImform2'){ 
             setTab1('boxImform2')
             setTab2('currentImform'); 
-
         }
+    }
+
+    const pageHandler = () => { 
+        if(page === 0.5){ 
+            tab();
+        }
+    }
+
+    const fullHandler = () => { 
+        if((bordercolor1 === '#4a64f5')
+        &&(bordercolor2 === '#4a64f5')){
+            full(true);
+        }else{
+            full(false)
+        }
+
     }
 
 
@@ -159,7 +173,7 @@ const Page1 = styled.div`
     const Korean = (ele) => { 
 
      if(ele.target.value){ 
-        setColor1('blue')
+        setColor1('#4a64f5')
         if(!checkKorean(ele.target.value)){
         setColor1('red')
         }
@@ -169,7 +183,7 @@ const Page1 = styled.div`
 
     const English = (ele) => { 
         if(ele.nativeEvent.data){
-            setColor2('blue')
+            setColor2('#4a64f5')
 
     if(!checkEnglish(ele.nativeEvent.data)){ 
         setColor2('red')
@@ -256,9 +270,9 @@ const Page1 = styled.div`
     </div>
     <div className = 'tabs-container' style={{margin: '11px 20px 0px 20px' }}>
         <ul className="tabs" style={{padding:'0px', margin: '0px'}}>
-            <li className={`tab-link ${tab2}`} data-tab="tab-1" style={{cursor :  'pointer'}} onClick={()=>{tabHandler(); tab()}}>
+            <li className={`tab-link ${tab2}`} data-tab="tab-1" style={{cursor :  'pointer'}} onClick={()=>{tabHandler(); pageHandler()}}>
                 <span style={{display: 'inline-block', marginTop : '12px'}}>개인/개인 사업자</span></li>
-            <li className = {`tab-link ${tab1}`} style={{float: 'right',marginRight:'10px', marginLeft : '12px', cursor :  'pointer'}}  data-tab="tab-2" onClick={() => {tabHandler(); tab()}}>
+            <li className = {`tab-link ${tab1}`} style={{float: 'right',marginRight:'10px', marginLeft : '12px', cursor :  'pointer'}}  data-tab="tab-2" >
                 <span style={{display: 'inline-block', marginTop : '12px'}}>법인</span>
             </li>
         </ul>
@@ -287,7 +301,7 @@ const Page1 = styled.div`
                    lineHeight: '1.1',
                    letterSpacing: 'normal',
                    textAlign: 'left',
-                   color: '#e0e0e0'}}
+                   color: 'black'}}
     
                 />
             </div>
@@ -296,6 +310,7 @@ const Page1 = styled.div`
                 <input autoComplete="off" type="text" name="" id="text22" className="textcont Regular" placeholder="법인 명칭(영문)" style={{border:'none', color : '#000000', fontSize: '20px', height: '16px'}}
                 onClick={showDiv2}
                 onChange={English}
+                onKeyUp={fullHandler}
                 style={{marginBottom: '5px',
          border:'none',
          caretColor: bordercolor2,
@@ -307,7 +322,7 @@ const Page1 = styled.div`
             lineHeight: '1.1',
             letterSpacing: 'normal',
             textAlign: 'left',
-            color:'#e0e0e0'}}/>
+            color:'black'}}/>
                 
                 
             </div>
@@ -319,14 +334,8 @@ const Page1 = styled.div`
     </Page1>
 </div>
 
-<Link to ='/applicant2'>
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}}>다음
-</button>
-</Link>
+
+
 
 </div>
 

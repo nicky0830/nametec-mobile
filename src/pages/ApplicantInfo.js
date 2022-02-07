@@ -1,7 +1,5 @@
-import React, { useRef, useState, useEffect} from 'react';
-import {Link} from 'react-router-dom'
+import React, {  useState } from 'react';
 import styled from 'styled-components';
-import arrow from "../image/arrow@3x.png";
 import '../components/inputstyles.css';
 //폰트 다른 걸로!! noto sans kr로 바꾸기
 
@@ -103,7 +101,7 @@ const Page1 = styled.div`
 
 
 
- const ApplicantInfo= ({tab})=>{ 
+ const ApplicantInfo= ({tab, full, page})=>{ 
 
     const [tab1, setTab1] = useState('boxImform2');
     const [tab2, setTab2] = useState('currentImform');
@@ -111,12 +109,27 @@ const Page1 = styled.div`
     const [div2, setDiv2] = useState('hidden');
     const [div3, setDiv3] = useState('hidden');
 
-   
 
- 
+
     const [bordercolor1, setColor1] = useState('#e0e0e0');
     const [bordercolor2, setColor2] = useState('#e0e0e0');
     const [bordercolor3, setColor3] = useState('#e0e0e0');
+
+    const fullHandler = () => { 
+        if((bordercolor1==='#4a64f5')
+        && (bordercolor2==='#4a64f5')
+        && (bordercolor3==='#4a64f5')){ 
+            full(true);
+        }else{ 
+            full(false)
+        }
+    }
+
+    const pageHandler = () => { 
+        if(page === 0){ 
+            tab();
+        }
+    }
 
 
 
@@ -125,9 +138,8 @@ const Page1 = styled.div`
             setTab1('currentImform'); 
             setTab2('boxImform2');
 
-
-        }else{ 
-            setTab1('boxImform2')
+        }else if(tab2 === 'boxImform2'){ 
+            setTab1('boxImform2');
             setTab2('currentImform'); 
 
         }
@@ -144,12 +156,7 @@ const Page1 = styled.div`
         const regExp = /[a-z|A-Z]/;
         return regExp.test(str); 
     }
-    
 
-    const checkNumber = (str) => { 
-        const regExp = /[0-9]/;
-        return regExp.test(str); 
-    }
 
     const Korean = (ele) => { 
 
@@ -173,21 +180,7 @@ const Page1 = styled.div`
     }
 
     
-       const Number = (ele) => { 
 
-        
-        if(!checkNumber(ele.nativeEvent.data)){ 
-            setColor3('red')
-        }
-        if(ele.nativeEvent.data.length >6){
-            setColor3('red')
-        }
-       
-       console.log(bordercolor3)
-
-    }
-
-    
 
    
 
@@ -210,19 +203,164 @@ const Page1 = styled.div`
     const showDiv3 = (ele) => { 
         setDiv3('visible')
         ele.target.placeholder ='';
-        setColor3('#4a64f5')
-
        
         }
+    
+    var yy, mm, dd,cc;
+
+    function check_1(number){ 
+        var num1 = number.substr(0,6);
+        yy = num1.substr(0,2);//01
+        mm = num1.substr(2,4);//23
+        dd = num1.substr(4,6);//45
+
+        var color = '#4164f5';
+
+        if(number==='' || number===null || number.length!==6){ 
+            color = 'red'
+        }
 
 
-    const inputFull = () => { 
-        if(bordercolor1==='#4a64f5'&&
-        bordercolor2==='#4a64f5' &&
-        bordercolor3==='#4a64f5'){ 
-            return true;
+        if(!isNumeric(num1)){ 
+            color = 'red'
+        }
+
+        if(yy <'00' || yy>'99' ||
+           mm < '01' || mm > '12' ||
+           dd < '01' || dd > '31'){ 
+            color = 'red'
+        }
+
+
+        if(getNumberOfDate(yy, mm) < mm){ 
+            color = 'red'
+        }
+        
+        setColor3(color);
+
+
+    }
+
+
+
+
+    function check_resident2(number){ 
+        var num2 = number.substr(6,7);
+        var gender = num2.substr(0,1);
+         cc = (gender=== '1' || gender === '2') ? '19' : '20'; 
+        var color = '#4a64f5'
+
+    
+        if(number==='' || number===null || number.length!==7){ 
+            color = 'red'
+        }
+   
+     
+
+        else if(!isNumeric(num2)){ 
+            color = 'red'
+        }
+
+    
+        else if(gender < '1' || gender > '4'){ 
+            color = 'red'
+        }
+    
+        //  연도계산
+        //날짜 형식 검사 
+        else if(isYYYYMMDD(parseInt(cc+yy), parseInt(mm), parseInt(dd))===false){ 
+            color = 'red'
+        }
+
+       
+
+    //     if (!isSSN(num1, num2)) { 
+    //         return false; 
+    // } 
+        setColor3(color)
+    
+    
+    }
+
+    function isYYYYMMDD(y,m,d){ 
+        switch(m){ 
+            case 2: 
+            if(d>29)return false; 
+            if(d === 29){ //윤년인지 확인 : 윤년일 때만 29 가능  - 4의 배수 또는 100의 배수지만 400의 배수가 아니도록
+                if((y%4 !==0)|| ((y%100===0) && (y%400 !==0))){ 
+                    return false;
+                }
+            }
+            break;
+            //31이 없는 달들
+            case 4: if(d >= 31)return false;
+            break;
+            case 6: if(d >= 31)return false;
+            break;
+            case 9: if(d >= 31)return false;
+            break;
+            case 11: if(d >= 31)return false;
+            break;
+
+            default: return true;
+    
+        }
+        return true;
+    }
+    
+
+    function isNumeric(s) { 
+        for (let i=0; i<s.length; i++) { 
+                let c = s.substr(i, 1); 
+                //하나씩 확인하면서
+                if (c < "0" || c > "9") return false; 
+        } 
+        return true; 
+    } 
+
+    function isLeapYear(y) { 
+        if (y < 100) {
+            y = y + 1900; 
+        }
+        if ( ((y % 4 === 0) && (y % 100 !== 0)) || (y % 400 === 0) ) { 
+                return true; 
+        } else { 
+                return false; 
         }
     }
+
+
+function getNumberOfDate(yy, mm) { 
+    let month = [29,31,28,31,30,31,30,31,31,30,31,30,31];
+     if (mm === 2 && isLeapYear(yy)) {
+         mm = 0; 
+     }
+     return month[mm]; 
+ } 
+
+
+
+
+
+//  function isSSN(s1, s2) { 
+//     let n = 2; 
+//     let sum = 0; 
+//     for (let i=0; i<s1.length; i++) 
+//             sum += parseInt(s1.substr(i, 1)) * n++; 
+//     for (let i=0; i<s2.length-1; i++) { 
+//             sum += parseInt(s2.substr(i, 1)) * n++; 
+//             if (n === 10) n = 2; 
+//     } 
+//     let c = 11 - sum % 11; 
+//     if (c === 11) c = 1; 
+//     if (c === 10) c = 0; 
+//     if (c !== parseInt(s2.substr(6, 1))) return false; 
+//     else return true; 
+// } 
+
+
+
+
     
     //렌더링을 위해 감싸준다 
     //react는 외부 dom에서 일어나는 변화를 인식 못하며 자체적으로 업데이트한다 
@@ -251,10 +389,11 @@ const Page1 = styled.div`
 
  return ( 
 
+
 <div className='test' style={{maxWidth: '520px', margin:'auto', marginBottom: '100px',  display : 'block' }}>
    
-
     <div id="page1" style={{display: 'block'}}>
+
     <Page1>
     <div className="Bold headLine" style={{
             marginTop: '80px',
@@ -278,12 +417,14 @@ const Page1 = styled.div`
     </div>
     <div className = 'tabs-container' style={{margin: '11px 20px 0px 20px' }}>
         <ul className="tabs">
-            <li className={`tab-link ${tab2} Medium`} data-tab="tab-1" style={{cursor :  'pointer'}} onClick={()=> {tabHandler(); tab()}}>
+            <li className={`tab-link ${tab2} Medium`} data-tab="tab-1" style={{cursor :  'pointer'}}>
                 <span style={{display: 'inline-block', marginTop : '8px'}}>개인/개인 사업자</span></li>
-            <li className = {`tab-link ${tab1} Medium`} style={{float: 'right',marginRight:'10px', marginLeft : '12px', cursor :  'pointer'}}  data-tab="tab-2" onClick={() => {tabHandler(); tab()}}>
+            <li className = {`tab-link ${tab1} Medium`} style={{float: 'right',marginRight:'10px', marginLeft : '12px', cursor :  'pointer'}}  data-tab="tab-2" onClick={() => {tabHandler();
+                 pageHandler()}}>
                 <span style={{display: 'inline-block', marginTop : '8px'}}>법인</span>
             </li>
         </ul>
+        {/* 법인 페이지인데 법인을 눌렀으면 변화 없게 :  */}
 
         <div className="c-checkbox c-checkbox--normal" style={{marginTop: '8.5px', height:'26.7px'}}>
 
@@ -343,9 +484,9 @@ const Page1 = styled.div`
         
         
             <input autoFocus="off" type="number"defaultValue =''  name=""  id="text3-1" className="textcont Regular" placeholder="주민등록번호" 
-                onChange={Number}
+               onChange={(ele)=> check_1(ele.target.value)}
                style={{marginBottom: '5px',
-               border:'none',
+               border:'none',                            
                caretColor: bordercolor3,
                outline: 'none',
                   height: '40px',
@@ -360,7 +501,10 @@ const Page1 = styled.div`
             <span className="lineDivider"> - </span>
 
             <input autoFocus="off" type="password" name="" defaultValue =''  id="text3-2" className="textcont" placeholder="●●●●●●●" 
-               onChange={Number}
+               onChange={(ele) => {
+                   check_resident2(ele.target.value);
+                }}
+                onKeyUp={fullHandler}
                style={{marginBottom: '5px',
                border:'none',
                   height: '40px',

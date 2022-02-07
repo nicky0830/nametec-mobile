@@ -1,17 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {Link} from 'react-router-dom'
-import arrow from "../image/arrow@3x.png";
-import { DotCircleBar } from './ApplicantInfo';
 import button from '../image/upyen.png';
 import DaumPostcode from 'react-daum-postcode';
 
 
-const ApplicantAddress = ({post}) => {
+const ApplicantAddress = ({post, full}) => {
     const [div1, setDiv1] = useState('hidden');
     const [div2, setDiv2] = useState('hidden');
 
     const [bordercolor1, setColor1] = useState('#e0e0e0')
-
+    const fullHandler=()=>{ 
+        if(address && addressDetail){
+            full(true)
+        }
+        
+    }
 
     const checkKorean = (str) => { 
         const regExp = /[ㄱ-ㅎ|ㅏ-ㅣ가-힣]/;
@@ -160,6 +162,7 @@ return (
                    defaultValue=''
                    onClick={showDiv2}
                    onChange={Korean}
+                   onKeyUp={fullHandler}
                    style={{marginBottom: '5px',
                     border:'none',
                     caretColor: bordercolor1,

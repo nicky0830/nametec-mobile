@@ -1,32 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {Link} from 'react-router-dom'
-import { DotCircleBar } from './ApplicantInfo';
-import box from '../image/box@3x.png';
-import question from '../image/question_mark.png';
-import check from '../image/check_gray@3x.png';
-import arrow from "../image/arrow@3x.png";
+
 import grc from '../image/grc@2x.png';
 import blc from '../image/blc@2x.png';
 
 
 
-const ApplicantAssign = () => {
-    const [check1, setCheck1] = useState(true)
+const ApplicantAssign = ({full}) => {
+    const [check1, setCheck1] = useState(false)
+    const [check2, setCheck2] = useState(false)
+    console.log(check1)
+    console.log(check2)
+
+
+
 const clickHandler1= () => { 
-        setCheck1(!check1);
+    if(check1===true){ 
+        setCheck1(false);
+    }else{ 
+        setCheck1(true)
+    }
+    console.log(check1)
 }
 
-const [check2, setCheck2] = useState(true)
 const clickHandler2= () => { 
-        setCheck2(!check2);
+    if(check2===true){ 
+        setCheck2(false);
+    }else{ 
+        setCheck2(true)
+    }        
+
+
+}
+
+const fullHandler = () => { 
+    console.log(check1)
+    console.log(check2)
+    full(true)
+
 }
 
  return (
 
     <div className='test' style={{width: '520px', margin:'auto', marginBottom: '100px'}}>
-    <div>
    
-    </div>
 
     <div id="page5">
     <div className="headLine"
@@ -53,10 +69,11 @@ const clickHandler2= () => {
         style={{fontSize : '12px',
          marginLeft : '20px', 
          marginRight : '53px', 
-         backgroundColor:  check1  ? '#efefef': 'rgb(237, 239, 254)',         borderRadius: '21px', 
+         backgroundColor:  check1  ?  'rgb(237, 239, 254)' : '#efefef',        
+        borderRadius: '21px', 
          marginTop : '30px', 
          padding : '18px 10.9px 20px 60.9px'}}>
-        <img id="chmark1" src={check1 ? grc : blc}
+        <img id="chmark1" src={check1 ? blc : grc}
         style={{position: 'absolute', width : '30px', marginLeft : '-40px', marginTop : '-4px'}}/>
             (필수)
             <a id="agreeA"> 개인정보수집에 동의합니다 </a>
@@ -85,11 +102,16 @@ const clickHandler2= () => {
         5. 위와 같은 개인정보 수집 이용에 동의 하지 않으실 수 있습니다. (동의 거부시 출원진행 불가)
     </div>
 
-        <div id="checkagree2" className="Regular" onClick={clickHandler2}
+        <div id="checkagree2" className="Regular" onClick={() => { 
+            clickHandler2(); 
+            fullHandler();
+
+        }}
         style={{fontSize : '12px', marginLeft : '20px', marginRight : '53px',
-        backgroundColor:  check2  ? '#efefef': 'rgb(237, 239, 254)',        borderRadius: '21px', marginTop : '30px', 
+        backgroundColor:  check2  ?  'rgb(237, 239, 254)': '#efefef',
+        borderRadius: '21px', marginTop : '30px', 
         padding : '12px 10.9px 12px 60.9px'}}>
-    <img id="chmark2" src={check2? grc : blc}
+    <img id="chmark2" src={check2 ? blc : grc}
     style={{position: 'absolute',width : '30px', marginLeft : '-40px', marginTop : '5px'}}/>
     (필수)
     <a id="agreeB"> 
@@ -128,14 +150,8 @@ const clickHandler2= () => {
 
 </div>
 
-<Link to ='/applicant2'>
-<button type="button" id="next_button6" className='Medium'
-style={{height:'60px', marginTop:'4%', position: 'fixed', 
-bottom: '0px', width : '520px', border: 'none', 
-backgroundColor:'#efefef', color: '#b7b7b7', fontSize: '17px'
-}} disabled="disabled">다음
-</button>
-</Link>
+
+
 
 
 </div>
