@@ -11,7 +11,7 @@ import Mypage from './pages/Mypage';
 import Member from './pages/Member';
 import CostProcessGuide from './pages/CostProcessGuide';
 import Center from './pages/Center';
-import Infomcheck from './pages/Infomcheck';
+import Infomcheck2 from './pages/Infomcheck2';
 import Success3 from './pages/Success3';
 import Success from './pages/success';
 import Payment from './pages/Payment';
@@ -101,7 +101,7 @@ function App(){
                 <Route path='/costprocess'><CostProcessGuide/></Route>
                 <Route path='/center'><Center/></Route>
                 <Route path='/success'><Success/></Route>
-                <Route path='/infomcheck'><Infomcheck/></Route>
+                <Route path='/infomcheck'><Infomcheck2/></Route>
                 <Route path='/success3'><Success3/></Route>
                 <Route path='/payment'><Payment/></Route>
                 <Route path='/payment2'><Payment2/></Route>

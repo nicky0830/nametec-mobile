@@ -322,8 +322,11 @@ const CorporateHead = ({full}) => {
 <div class="" id="textcon3-1" style={{width:'90%',margin:'20px'}}>
 
 
-    <div className="imformname" id="imformname7" style={{visibility: div1, fontSize: '12px', color:'#898989'}} >성명</div>
-    <div className="inputdiv" id="inputdiv7" style={{borderBottom: `1px solid ${bordercolor1}`,  marginBottom: '10px'}}>
+    <div className="imformname" id="imformname7" style={{height:'17px', marginBottom: '3px', visibility: div1, fontSize: '12px', color:'#898989'}} >성명</div>
+    <div className="inputdiv" id="inputdiv7" style={{           
+        height: '28px',
+        marginBottom: '16px',
+        borderBottom: `1px solid ${bordercolor1}`,  marginBottom: '10px'}}>
         <input autocomplete="off" type="text" name="" defaultValue="" id="text7" className="textcont" 
        onClick={showDiv1}
        onChange={Korean}
@@ -332,8 +335,8 @@ const CorporateHead = ({full}) => {
         border:'none',
         padding: '0px',
         margin: '0px',
-           height: '40px',
-           outline:'none',
+        height: '28px',
+        outline:'none',
            fontSize: '20px',
            lineHeight: '1.1',
            letterSpacing: 'normal',
@@ -344,8 +347,11 @@ const CorporateHead = ({full}) => {
 
 
 
-       <div className="imformname" id="imformname8" style={{visibility: div2, fontSize: '12px', color:'#898989'}}> 주민등록번호</div>
-    <div className="inputdiv" id="inputdiv8" style={{borderBottom: `1px solid ${bordercolor2}`,  marginBottom: '10px'}}>
+       <div className="imformname" id="imformname8" style={{height:'17px', marginBottom: '3px',visibility: div2, fontSize: '12px', color:'#898989'}}> 주민등록번호</div>
+    <div className="inputdiv" id="inputdiv8" style={{
+         height: '28px',
+         marginBottom: '16px',
+        borderBottom: `1px solid ${bordercolor2}`}}>
         <input autocomplete="off" type="number" name="" defaultValue="" id="text8-1" class="textcont" placeholder="주민등록번호" maxlength="6"
               onClick={showDiv2}
               onChange={(ele) => check_1(ele.target.value)}
@@ -355,8 +361,8 @@ const CorporateHead = ({full}) => {
         caretColor: bordercolor2,
         padding: '0px',
         margin: '0px',
-           height: '40px',
-           fontSize: '20px',
+        height: '28px',
+        fontSize: '20px',
            lineHeight: '1.1',
            letterSpacing: 'normal',
            textAlign: 'left',
@@ -368,8 +374,8 @@ const CorporateHead = ({full}) => {
         style={{marginBottom: '5px',
          border:'none',
          caretColor: bordercolor3,
-            height: '40px',
-            fontSize: '20px',
+         height: '28px',
+         fontSize: '20px',
             outline:'none',
             padding: '0px',
             margin: '0px',
@@ -385,16 +391,21 @@ const CorporateHead = ({full}) => {
         <!--             ../static/image/x_round@3x.png 3x" style="width: 16px; height: 16px; float:right;">--> */}
     </div>
 
-    <div className="imformname" id="imformname9" style={{visibility: div3, fontSize: '12px', color:'#898989'}}> 이메일</div>
-    <div className="inputdiv" id="inputdiv9"style={{borderBottom: `1px solid ${bordercolor3}`,  marginBottom: '10px'}}>
+    <div className="imformname" id="imformname9" style={{height:'17px', marginBottom: '3px',visibility: div3, fontSize: '12px', color:'#898989'}}> 이메일</div>
+    <div className="inputdiv" id="inputdiv9"style={{
+        
+        borderBottom: `1px solid ${bordercolor3}`,  
+        height: '28px',
+        marginBottom: '16px',
+       }}>
   
         <input autocomplete="off" type="email" name="" defaultValue="" id="text9" class="textcont" placeholder="이메일" 
        onClick={showDiv3}
        onChange={(ele) => validateEmail(ele.target.value)}
        style={{marginBottom: '5px',
         border:'none',
-           height: '40px',
-           caretColor: bordercolor4,
+        height: '28px',
+        caretColor: bordercolor4,
            fontSize: '20px',
            lineHeight: '1.1',
            padding: '0px',
@@ -406,8 +417,11 @@ const CorporateHead = ({full}) => {
     </div>
 
 
-    <div className="imformname" id="imformname10" style={{visibility: div4, fontSize: '12px', color:'#898989'}}> 휴대전화</div>
-    <div className="inputdiv" id="inputdiv10" style={{borderBottom: `1px solid ${bordercolor4}`,  marginBottom: '10px'}}
+    <div className="imformname" id="imformname10" style={{height:'17px', marginBottom: '3px',visibility: div4, fontSize: '12px', color:'#898989'}}> 휴대전화</div>
+    <div className="inputdiv" id="inputdiv10" style={{
+        borderBottom: `1px solid ${bordercolor4}`,  
+        height: '30px',
+        marginBottom: '16px'}}
     >
         <input autocomplete="off" type="number" name="" defaultValue="" id="text10" class="textcont" placeholder="휴대전화"
         onClick={showDiv4}
@@ -416,7 +430,7 @@ const CorporateHead = ({full}) => {
         style={{marginBottom: '5px',
         border:'none',
         caretColor: bordercolor4,
-           height: '40px',
+           height: '28px',
            fontSize: '20px',
            lineHeight: '1.1',
            outline:'none',

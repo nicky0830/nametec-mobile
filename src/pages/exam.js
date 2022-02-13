@@ -1,730 +1,732 @@
-<body style="width : 100%; margin: 0;">
-    {/* 전체에 대한  */}
-<div class="test" style=" max-width : 520px; margin:auto;margin-bottom : 100px;">
-    {/* 전체에 대한 */}
-<div class="">
-    {/* top에 대한 */}
-    <div class="menu2" style="margin-top : 16px;" onclick="backinform1_1()">
-        <img src="../static/image/arrow@3x.png" onclick="" style="width : 15px;margin-top :40px;">
-    </div>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <div style="display: inline-block;float: right;margin-right: 25px;margin-top: 5%;">
-        <div class="circle1" style="background-color: #4a64f5;"></div>
-        <div class="bar1" style="background-color: rgb(74, 100, 245);"></div>
-        <div class="circle1" style="background-color: rgb(74, 100, 245);"></div>
-        <div class="bar1"></div>
-        <div class="circle1"></div>
-        <div class="bar1"></div>
-        <div class="circle1"></div>
-        <div class="bar1"></div>
-        <div class="circle1"></div>
-    </div>
-</div>
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <script defer="" src="/static/js/bundle.js"></script><style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.active{
+  background-color: tomato;
+}
+
+.homeRegisterBtn{ 
+  border-radius: 10%;
+  display: block; 
+  width: 100px; 
+  height: 50px;
+  background-color: aliceblue;
+}
+
+.app{ 
+
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
 
 
-<div id="page1" style="display: none;">
-    <div class="headLine">
-        출원인 정보입력 <br>
-    </div>
-    <div style="margin-left:20px; color:#515151; font-size:14px;margin-top:41px;">출원 유형</div>
-        {/* 제목 */}
-    <div style="margin:11px 20px 0px 20px;">
-        <ul class="tabs">
-            <li class="tab-link currentImform" data-tab="tab-1" style="cursor :  pointer;"><span style="margin-top : 7px;">개인/개인 사업자</span></li>
-            <li style="float: right;margin-right:10px;margin-left : 12px;cursor :  pointer;" class="tab-link boximform2" data-tab="tab-2"><span style="margin-top : 7px;">법인</span>
-            </li>
-        </ul>
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxTQUFTO0VBQ1Q7O2NBRVk7RUFDWixtQ0FBbUM7RUFDbkMsa0NBQWtDO0FBQ3BDOztBQUVBO0VBQ0U7YUFDVztBQUNiO0FBQ0E7RUFDRSx3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsY0FBYztFQUNkLFlBQVk7RUFDWixZQUFZO0VBQ1osMkJBQTJCO0FBQzdCOztBQUVBOztBQUVBLFNBQVM7QUFDVCxVQUFVO0FBQ1YsU0FBUztBQUNULGVBQWU7QUFDZixhQUFhO0FBQ2Isd0JBQXdCOzs7QUFHeEIiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcclxuICBtYXJnaW46IDA7XHJcbiAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxyXG4gICAgJ1VidW50dScsICdDYW50YXJlbGwnLCAnRmlyYSBTYW5zJywgJ0Ryb2lkIFNhbnMnLCAnSGVsdmV0aWNhIE5ldWUnLFxyXG4gICAgc2Fucy1zZXJpZjtcclxuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcclxuICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xyXG59XHJcblxyXG5jb2RlIHtcclxuICBmb250LWZhbWlseTogc291cmNlLWNvZGUtcHJvLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JyxcclxuICAgIG1vbm9zcGFjZTtcclxufVxyXG4uYWN0aXZle1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHRvbWF0bztcclxufVxyXG5cclxuLmhvbWVSZWdpc3RlckJ0bnsgXHJcbiAgYm9yZGVyLXJhZGl1czogMTAlO1xyXG4gIGRpc3BsYXk6IGJsb2NrOyBcclxuICB3aWR0aDogMTAwcHg7IFxyXG4gIGhlaWdodDogNTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBhbGljZWJsdWU7XHJcbn1cclxuXHJcbi5hcHB7IFxyXG5cclxubWFyZ2luOiAwO1xyXG5wYWRkaW5nOiAwO1xyXG5ib3JkZXI6IDA7XHJcbmZvbnQtc2l6ZTogMTAwJTtcclxuZm9udDogaW5oZXJpdDtcclxudmVydGljYWwtYWxpZ246IGJhc2VsaW5lO1xyXG5cclxuXHJcbn0iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);</style><style>@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);</style><style>@font-face {
+    font-family : "Bold";
+    src : url(http://ec2-3-34-251-245.ap-northeast-2.compute.amazonaws.com:3000/static/media/NotoSansCJKkr-Bold.bbb4ca5df6c6540f4af8.otf) format('truetype');
+}
+.Bold{
+    font-family: Bold
+}
+@font-face {
+    font-family : "Regular";
+    src : url(http://ec2-3-34-251-245.ap-northeast-2.compute.amazonaws.com:3000/static/media/NotoSansCJKkr-Regular.bf54b090356010039bab.otf) format('truetype');
+    
+}
+.Regular{
+    font-family: Regular
+}
 
-        <div class="c-checkbox c-checkbox--normal" style="margin-top: 8.5px; height:26.7px;">
 
-        </div>
-    </div>
-    {/* tabs */}
+@font-face {
+    font-family : "Light";
+    src : url(http://ec2-3-34-251-245.ap-northeast-2.compute.amazonaws.com:3000/static/media/NotoSansCJKkr-Light.7d4ce2f6f92cffc70600.otf) format('truetype');
+}
+.Light{
+    font-family: Light
+}
+@font-face {
+    font-family : "Medium";
+    src : url(http://ec2-3-34-251-245.ap-northeast-2.compute.amazonaws.com:3000/static/media/NotoSansCJKkr-Medium.7def03a7e5e60c5e0704.otf) format('truetype');
+}
+.Medium{
+    font-family: Medium
+}
 
-    <div class="tabclass current" id="tab-1" style="  width:90%; margin:20px;margin-top: 41px;"> 
+#start_btn {
+    width: 60%;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : 14.65%;
+}
+.btn:focus,
+.btn:active,
+.btn:active:focus,
+.custom-select:focus,
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none;
+}
 
-    {/* ul 안의 li */}
-        <div class="imformname" id="imformname1" style="visibility: visible;"> 출원인 성명 
-        <span style="color:#898989">(한글)</span>
-        </div>
-        <div class="inputdiv" id="inputdiv1" style="border-bottom: 1px solid rgb(224, 224, 224);">
-            <input autocomplete="off" type="text" name="" value="" id="text1" class="textcont" placeholder="출원인 성명(한글)" style="border:none; color : #000000;color ; rgb(0, 0, 0);">
+.loadingdots {
+    height: 12px;
+    width: 12px;
+    border-radius:50%;
+    transform: scale(0);
+    background-color:red;
+    animation: scaling 2s ease-in-out infinite;
+    display: inline-block;
+    margin:.3rem;
+}
+
+.loadingdots:nth-child(1){
+    animation-delay:0s;
+}
+.loadingdots:nth-child(2){
+    animation-delay:0.5s;
+}
+.loadingdots:nth-child(3){
+    animation-delay: 1s;
+}
+.dot-pulse {
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #4a64f5;
+    color: #4a64f5;
+    box-shadow: 9999px 0 0 -5px #4a64f5;
+    animation: dotPulse 1.5s infinite linear;
+    animation-delay: .25s;
+}
+
+.dot-pulse::before, .dot-pulse::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #4a64f5;
+    color: #4a64f5;
+}
+
+.dot-pulse::before {
+    box-shadow: 9984px 0 0 -5px #4a64f5;
+    animation: dotPulseBefore 1.5s infinite linear;
+    animation-delay: 0s;
+}
+
+.dot-pulse::after {
+    box-shadow: 10014px 0 0 -5px #4a64f5;
+    animation: dotPulseAfter 1.5s infinite linear;
+    animation-delay: .5s;
+}
+
+@keyframes dotPulseBefore {
+    0% {
+        box-shadow: 9984px 0 0 -5px #4a64f5;
+    }
+    30% {
+        box-shadow: 9984px 0 0 2px #4a64f5;
+    }
+    60%,
+    100% {
+        box-shadow: 9984px 0 0 -5px #4a64f5;
+    }
+}
+
+@keyframes dotPulse {
+    0% {
+        box-shadow: 9999px 0 0 -5px #4a64f5;
+    }
+    30% {
+        box-shadow: 9999px 0 0 2px #4a64f5;
+    }
+    60%,
+    100% {
+        box-shadow: 9999px 0 0 -5px #4a64f5;
+    }
+}
+
+@keyframes dotPulseAfter {
+    0% {
+        box-shadow: 10014px 0 0 -5px #4a64f5;
+    }
+    30% {
+        box-shadow: 10014px 0 0 2px #4a64f5;
+    }
+    60%,
+    100% {
+        box-shadow: 10014px 0 0 -5px #4a64f5;
+    }
+}
+.noto{
+    font-family: "Noto Sans KR", sans-serif;
+}
+#text {
+    margin-bottom: 5px;
+    font-family: "Noto Sans KR", sans-serif;
+    width: 80%;
+    height: 40px;
+    opacity: 0.5;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #b7b7b7;
+}
+#introBox{
+    height: 750px;
+    margin-top: 52px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fafafa;
+}
+#innerBoxOn{
+    width: 500px;
+    height: 150px;
+    background-color: #fafafa;
+    line-height: 150px;
+}
+#introFooter{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#innerBox{
+    width: 500px;
+    height: 150px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    line-height: 150px;
+}
+.sucin2s {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #000000;
+    font-size: 14px;
+    float: right;
+    font-weight: 400;
+
+}
+.sucin2 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #898989;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+}
+.btn {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    padding: .3rem .8rem;
+    letter-spacing: .5px;
+}
+#a04 {
+    margin: 4% 20px 0 0;
+    float: right;
+    font-size: 16px;
+    color: #b7b7b7;
+}
+#a01 {
+
+    float: right;
+    margin: 4% 4px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    color: #4a64f5;
+}
+.btn:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+.btn:active {
+    box-shadow: none !important;
+    outline: none;
+}
+.btn:active:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+.circle{
+    width:113px;
+    height:113px;
+    border-radius: 70px;
+    border: solid 1px #cccccc;
+}
+#midbox{
+    width: 80%;
+    height: 275px;
+    margin: 24px 0 21.3px;
+    margin-left : 10%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+#start_btn2 {
+    width: 230px;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : -115px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy90ZXh0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtJQUNJLG9CQUFvQjtJQUNwQixnRUFBNkQ7QUFDakU7QUFDQTtJQUNJO0FBQ0o7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixnRUFBZ0U7O0FBRXBFO0FBQ0E7SUFDSTtBQUNKOzs7QUFHQTtJQUNJLHFCQUFxQjtJQUNyQixnRUFBOEQ7QUFDbEU7QUFDQTtJQUNJO0FBQ0o7QUFDQTtJQUNJLHNCQUFzQjtJQUN0QixnRUFBK0Q7QUFDbkU7QUFDQTtJQUNJO0FBQ0o7O0FBRUE7SUFDSSxVQUFVO0lBQ1Ysb0JBQW9CO0lBQ3BCLHlCQUF5QjtJQUN6Qiw0QkFBNEI7SUFDNUIsa0JBQWtCO0lBQ2xCLDBCQUEwQjtJQUMxQixZQUFZO0lBQ1osY0FBYztJQUNkLGNBQWM7SUFDZCxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLG9CQUFvQjtBQUN4QjtBQUNBOzs7OztJQUtJLDJCQUEyQjtJQUMzQixhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLG9CQUFvQjtJQUNwQiwwQ0FBMEM7SUFDMUMscUJBQXFCO0lBQ3JCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG9CQUFvQjtBQUN4QjtBQUNBO0lBQ0ksbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsYUFBYTtJQUNiLFdBQVc7SUFDWCxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLHlCQUF5QjtJQUN6QixjQUFjO0lBQ2QsbUNBQW1DO0lBQ25DLHdDQUF3QztJQUN4QyxxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIseUJBQXlCO0lBQ3pCLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxtQ0FBbUM7SUFDbkMsOENBQThDO0lBQzlDLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLG9DQUFvQztJQUNwQyw2Q0FBNkM7SUFDN0Msb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0k7UUFDSSxtQ0FBbUM7SUFDdkM7SUFDQTtRQUNJLGtDQUFrQztJQUN0QztJQUNBOztRQUVJLG1DQUFtQztJQUN2QztBQUNKOztBQUVBO0lBQ0k7UUFDSSxtQ0FBbUM7SUFDdkM7SUFDQTtRQUNJLGtDQUFrQztJQUN0QztJQUNBOztRQUVJLG1DQUFtQztJQUN2QztBQUNKOztBQUVBO0lBQ0k7UUFDSSxvQ0FBb0M7SUFDeEM7SUFDQTtRQUNJLG1DQUFtQztJQUN2QztJQUNBOztRQUVJLG9DQUFvQztJQUN4QztBQUNKO0FBQ0E7SUFDSSx1Q0FBdUM7QUFDM0M7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQix1Q0FBdUM7SUFDdkMsVUFBVTtJQUNWLFlBQVk7SUFDWixZQUFZO0lBQ1osZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixvQkFBb0I7SUFDcEIsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixzQkFBc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGNBQWM7QUFDbEI7QUFDQTtJQUNJLGFBQWE7SUFDYixnQkFBZ0I7SUFDaEIsNkNBQTZDO0lBQzdDLHlCQUF5QjtBQUM3QjtBQUNBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYix5QkFBeUI7SUFDekIsa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxlQUFlO0lBQ2YsU0FBUztJQUNULFdBQVc7QUFDZjtBQUNBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYiw2Q0FBNkM7SUFDN0Msc0JBQXNCO0lBQ3RCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksdUNBQXVDO0lBQ3ZDLGNBQWM7SUFDZCxlQUFlO0lBQ2YsWUFBWTtJQUNaLGdCQUFnQjs7QUFFcEI7QUFDQTtJQUNJLHVDQUF1QztJQUN2QyxlQUFlO0lBQ2YsY0FBYztJQUNkLG1CQUFtQjtJQUNuQixvQkFBb0I7SUFDcEIsa0JBQWtCO0lBQ2xCLGdCQUFnQjtBQUNwQjtBQUNBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLG9CQUFvQjtBQUN4QjtBQUNBO0lBQ0ksbUJBQW1CO0lBQ25CLFlBQVk7SUFDWixlQUFlO0lBQ2YsY0FBYztBQUNsQjtBQUNBOztJQUVJLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsY0FBYztBQUNsQjtBQUNBO0lBQ0ksMkJBQTJCO0lBQzNCLGFBQWE7QUFDakI7QUFDQTtJQUNJLDJCQUEyQjtJQUMzQixhQUFhO0FBQ2pCO0FBQ0E7SUFDSSwyQkFBMkI7SUFDM0IsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIseUJBQXlCO0FBQzdCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YsYUFBYTtJQUNiLHFCQUFxQjtJQUNyQixpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLDRDQUE0QztJQUM1Qyx5QkFBeUI7QUFDN0I7QUFDQTtJQUNJLFlBQVk7SUFDWixvQkFBb0I7SUFDcEIseUJBQXlCO0lBQ3pCLDRCQUE0QjtJQUM1QixrQkFBa0I7SUFDbEIsMEJBQTBCO0lBQzFCLFlBQVk7SUFDWixjQUFjO0lBQ2QsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixvQkFBb0I7QUFDeEIiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgvL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Vhcmx5YWNjZXNzL25vdG9zYW5za3IuY3NzKTtcclxuQGltcG9ydCB1cmwoaHR0cDovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Vhcmx5YWNjZXNzL25vdG9zYW5za3IuY3NzKTtcclxuXHJcbkBmb250LWZhY2Uge1xyXG4gICAgZm9udC1mYW1pbHkgOiBcIkJvbGRcIjtcclxuICAgIHNyYyA6IHVybChcIi4vZm9udC9Ob3RvU2Fuc0NKS2tyLUJvbGQub3RmXCIpIGZvcm1hdCgndHJ1ZXR5cGUnKTtcclxufVxyXG4uQm9sZHtcclxuICAgIGZvbnQtZmFtaWx5OiBCb2xkXHJcbn1cclxuQGZvbnQtZmFjZSB7XHJcbiAgICBmb250LWZhbWlseSA6IFwiUmVndWxhclwiO1xyXG4gICAgc3JjIDogdXJsKFwiLi9mb250L05vdG9TYW5zQ0pLa3ItUmVndWxhci5vdGZcIikgZm9ybWF0KCd0cnVldHlwZScpO1xyXG4gICAgXHJcbn1cclxuLlJlZ3VsYXJ7XHJcbiAgICBmb250LWZhbWlseTogUmVndWxhclxyXG59XHJcblxyXG5cclxuQGZvbnQtZmFjZSB7XHJcbiAgICBmb250LWZhbWlseSA6IFwiTGlnaHRcIjtcclxuICAgIHNyYyA6IHVybChcIi4vZm9udC9Ob3RvU2Fuc0NKS2tyLUxpZ2h0Lm90ZlwiKSBmb3JtYXQoJ3RydWV0eXBlJyk7XHJcbn1cclxuLkxpZ2h0e1xyXG4gICAgZm9udC1mYW1pbHk6IExpZ2h0XHJcbn1cclxuQGZvbnQtZmFjZSB7XHJcbiAgICBmb250LWZhbWlseSA6IFwiTWVkaXVtXCI7XHJcbiAgICBzcmMgOiB1cmwoXCIuL2ZvbnQvTm90b1NhbnNDSktrci1NZWRpdW0ub3RmXCIpIGZvcm1hdCgndHJ1ZXR5cGUnKTtcclxufVxyXG4uTWVkaXVte1xyXG4gICAgZm9udC1mYW1pbHk6IE1lZGl1bVxyXG59XHJcblxyXG4jc3RhcnRfYnRuIHtcclxuICAgIHdpZHRoOiA2MCU7XHJcbiAgICBmb250LWZhbWlseTogUmVndWxhcjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIGxpbmUtaGVpZ2h0OiAzO1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogM3B4O1xyXG4gICAgbWFyZ2luLWxlZnQgOiAxNC42NSU7XHJcbn1cclxuLmJ0bjpmb2N1cyxcclxuLmJ0bjphY3RpdmUsXHJcbi5idG46YWN0aXZlOmZvY3VzLFxyXG4uY3VzdG9tLXNlbGVjdDpmb2N1cyxcclxuLmZvcm0tY29udHJvbDpmb2N1cyB7XHJcbiAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG59XHJcblxyXG4ubG9hZGluZ2RvdHMge1xyXG4gICAgaGVpZ2h0OiAxMnB4O1xyXG4gICAgd2lkdGg6IDEycHg7XHJcbiAgICBib3JkZXItcmFkaXVzOjUwJTtcclxuICAgIHRyYW5zZm9ybTogc2NhbGUoMCk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOnJlZDtcclxuICAgIGFuaW1hdGlvbjogc2NhbGluZyAycyBlYXNlLWluLW91dCBpbmZpbml0ZTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbjouM3JlbTtcclxufVxyXG5cclxuLmxvYWRpbmdkb3RzOm50aC1jaGlsZCgxKXtcclxuICAgIGFuaW1hdGlvbi1kZWxheTowcztcclxufVxyXG4ubG9hZGluZ2RvdHM6bnRoLWNoaWxkKDIpe1xyXG4gICAgYW5pbWF0aW9uLWRlbGF5OjAuNXM7XHJcbn1cclxuLmxvYWRpbmdkb3RzOm50aC1jaGlsZCgzKXtcclxuICAgIGFuaW1hdGlvbi1kZWxheTogMXM7XHJcbn1cclxuLmRvdC1wdWxzZSB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBsZWZ0OiAtOTk5OXB4O1xyXG4gICAgd2lkdGg6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDEwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNGE2NGY1O1xyXG4gICAgY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBib3gtc2hhZG93OiA5OTk5cHggMCAwIC01cHggIzRhNjRmNTtcclxuICAgIGFuaW1hdGlvbjogZG90UHVsc2UgMS41cyBpbmZpbml0ZSBsaW5lYXI7XHJcbiAgICBhbmltYXRpb24tZGVsYXk6IC4yNXM7XHJcbn1cclxuXHJcbi5kb3QtcHVsc2U6OmJlZm9yZSwgLmRvdC1wdWxzZTo6YWZ0ZXIge1xyXG4gICAgY29udGVudDogJyc7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDA7XHJcbiAgICB3aWR0aDogMTBweDtcclxuICAgIGhlaWdodDogMTBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBjb2xvcjogIzRhNjRmNTtcclxufVxyXG5cclxuLmRvdC1wdWxzZTo6YmVmb3JlIHtcclxuICAgIGJveC1zaGFkb3c6IDk5ODRweCAwIDAgLTVweCAjNGE2NGY1O1xyXG4gICAgYW5pbWF0aW9uOiBkb3RQdWxzZUJlZm9yZSAxLjVzIGluZmluaXRlIGxpbmVhcjtcclxuICAgIGFuaW1hdGlvbi1kZWxheTogMHM7XHJcbn1cclxuXHJcbi5kb3QtcHVsc2U6OmFmdGVyIHtcclxuICAgIGJveC1zaGFkb3c6IDEwMDE0cHggMCAwIC01cHggIzRhNjRmNTtcclxuICAgIGFuaW1hdGlvbjogZG90UHVsc2VBZnRlciAxLjVzIGluZmluaXRlIGxpbmVhcjtcclxuICAgIGFuaW1hdGlvbi1kZWxheTogLjVzO1xyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGRvdFB1bHNlQmVmb3JlIHtcclxuICAgIDAlIHtcclxuICAgICAgICBib3gtc2hhZG93OiA5OTg0cHggMCAwIC01cHggIzRhNjRmNTtcclxuICAgIH1cclxuICAgIDMwJSB7XHJcbiAgICAgICAgYm94LXNoYWRvdzogOTk4NHB4IDAgMCAycHggIzRhNjRmNTtcclxuICAgIH1cclxuICAgIDYwJSxcclxuICAgIDEwMCUge1xyXG4gICAgICAgIGJveC1zaGFkb3c6IDk5ODRweCAwIDAgLTVweCAjNGE2NGY1O1xyXG4gICAgfVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGRvdFB1bHNlIHtcclxuICAgIDAlIHtcclxuICAgICAgICBib3gtc2hhZG93OiA5OTk5cHggMCAwIC01cHggIzRhNjRmNTtcclxuICAgIH1cclxuICAgIDMwJSB7XHJcbiAgICAgICAgYm94LXNoYWRvdzogOTk5OXB4IDAgMCAycHggIzRhNjRmNTtcclxuICAgIH1cclxuICAgIDYwJSxcclxuICAgIDEwMCUge1xyXG4gICAgICAgIGJveC1zaGFkb3c6IDk5OTlweCAwIDAgLTVweCAjNGE2NGY1O1xyXG4gICAgfVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGRvdFB1bHNlQWZ0ZXIge1xyXG4gICAgMCUge1xyXG4gICAgICAgIGJveC1zaGFkb3c6IDEwMDE0cHggMCAwIC01cHggIzRhNjRmNTtcclxuICAgIH1cclxuICAgIDMwJSB7XHJcbiAgICAgICAgYm94LXNoYWRvdzogMTAwMTRweCAwIDAgMnB4ICM0YTY0ZjU7XHJcbiAgICB9XHJcbiAgICA2MCUsXHJcbiAgICAxMDAlIHtcclxuICAgICAgICBib3gtc2hhZG93OiAxMDAxNHB4IDAgMCAtNXB4ICM0YTY0ZjU7XHJcbiAgICB9XHJcbn1cclxuLm5vdG97XHJcbiAgICBmb250LWZhbWlseTogXCJOb3RvIFNhbnMgS1JcIiwgc2Fucy1zZXJpZjtcclxufVxyXG4jdGV4dCB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1cHg7XHJcbiAgICBmb250LWZhbWlseTogXCJOb3RvIFNhbnMgS1JcIiwgc2Fucy1zZXJpZjtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICBvcGFjaXR5OiAwLjU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogbm9ybWFsO1xyXG4gICAgZm9udC1zdHJldGNoOiBub3JtYWw7XHJcbiAgICBmb250LXN0eWxlOiBub3JtYWw7XHJcbiAgICBsaW5lLWhlaWdodDogMS4xO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBjb2xvcjogI2I3YjdiNztcclxufVxyXG4jaW50cm9Cb3h7XHJcbiAgICBoZWlnaHQ6IDc1MHB4O1xyXG4gICAgbWFyZ2luLXRvcDogNTJweDtcclxuICAgIGJveC1zaGFkb3c6IDFweCAxcHggNHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE2KTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XHJcbn1cclxuI2lubmVyQm94T257XHJcbiAgICB3aWR0aDogNTAwcHg7XHJcbiAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcclxuICAgIGxpbmUtaGVpZ2h0OiAxNTBweDtcclxufVxyXG4jaW50cm9Gb290ZXJ7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG4jaW5uZXJCb3h7XHJcbiAgICB3aWR0aDogNTAwcHg7XHJcbiAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgYm94LXNoYWRvdzogMXB4IDFweCA0cHggMCByZ2JhKDAsIDAsIDAsIDAuMTYpO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGxpbmUtaGVpZ2h0OiAxNTBweDtcclxufVxyXG4uc3VjaW4ycyB7XHJcbiAgICBmb250LWZhbWlseTogXCJOb3RvIFNhbnMgS1JcIiwgc2Fucy1zZXJpZjtcclxuICAgIGNvbG9yOiAjMDAwMDAwO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuXHJcbn1cclxuLnN1Y2luMiB7XHJcbiAgICBmb250LWZhbWlseTogXCJOb3RvIFNhbnMgS1JcIiwgc2Fucy1zZXJpZjtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGNvbG9yOiAjODk4OTg5O1xyXG4gICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcclxuICAgIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xyXG4gICAgZm9udC1zdHlsZTogbm9ybWFsO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxufVxyXG4uYnRuIHtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBsaW5lLWhlaWdodDogMjRweDtcclxuICAgIHBhZGRpbmc6IC4zcmVtIC44cmVtO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IC41cHg7XHJcbn1cclxuI2EwNCB7XHJcbiAgICBtYXJnaW46IDQlIDIwcHggMCAwO1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgY29sb3I6ICNiN2I3Yjc7XHJcbn1cclxuI2EwMSB7XHJcblxyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgbWFyZ2luOiA0JSA0cHggMCAwO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICBjb2xvcjogIzRhNjRmNTtcclxufVxyXG4uYnRuOmZvY3VzIHtcclxuICAgIGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbn1cclxuLmJ0bjphY3RpdmUge1xyXG4gICAgYm94LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxufVxyXG4uYnRuOmFjdGl2ZTpmb2N1cyB7XHJcbiAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG59XHJcbi5jaXJjbGV7XHJcbiAgICB3aWR0aDoxMTNweDtcclxuICAgIGhlaWdodDoxMTNweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDcwcHg7XHJcbiAgICBib3JkZXI6IHNvbGlkIDFweCAjY2NjY2NjO1xyXG59XHJcbiNtaWRib3h7XHJcbiAgICB3aWR0aDogODAlO1xyXG4gICAgaGVpZ2h0OiAyNzVweDtcclxuICAgIG1hcmdpbjogMjRweCAwIDIxLjNweDtcclxuICAgIG1hcmdpbi1sZWZ0IDogMTAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIGJveC1zaGFkb3c6IDFweCAxcHggNHB4IDAgcmdiYSgwLCAwLCAwLCAwLjEpO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxufVxyXG4jc3RhcnRfYnRuMiB7XHJcbiAgICB3aWR0aDogMjMwcHg7XHJcbiAgICBmb250LWZhbWlseTogUmVndWxhcjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuICAgIG1hcmdpbi1sZWZ0IDogLTExNXB4O1xyXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.brandregister-inputcontainer{ 
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.midbox3 {
+    width: 90%;
+    height: 47px;
+    margin: 11.5px 0 16.3px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+}
+.midbox{
+    width: 88%;
+    margin: 24px 0 21.3px;
+    margin-left: 6.3%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+}
+.midbox1 {
+    width: 88%;
+    margin: 24px 0 21.3px;
+    margin-left: 6.3%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+}
+.midbox12 {
+    width: 88%;
+    margin: 24px 0 21.3px;
+    margin-left: 6.3%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%);
+    background-color: #f5f6ff;
+}
+.smallChoiceBoxBlue{
+    color: #fff;
+    font-size: 14px;
+    padding : 1.7px 14.4px 3px 13.6px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #4a64f5;
+    display : inline-block;
+    float: right;
+}
+.disabled-link {
+    pointer-events: none;
+}
+.smallChoiceBoxWhite{
+    color: #4a64f5;
+    font-size: 14px;
+    padding : 1.7px 14.4px 3px 13.6px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display : inline-block;
+    float: right;
+}
+#next_button {
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    height: 60px;
+    width: 100%;
+    max-width: 520px;
+}
+input:focus{
+    outline: none;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 25px;
+    vertical-align:middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b7b7b7;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4a64f5;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4a64f5;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.midbox23 {
+    width: 89%;
+    height: 47px;
+    margin: 11.5px 0 21.3px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+}
+.midbox2 {
+    width: 88%;
+    margin: 24px 0 21.3px;
+    margin-left: 6.3%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 10%);
+    background-color: #edeffe;
+}
+/*@media(max-width : 490px){*/
+/*    #discountAmount{*/
+/*        margin-right : 5%;*/
+/*    }*/
+/*}*/
+/*@media(min-width : 491px){*/
+/*    #discountAmount{*/
+/*        margin-right : 10%;*/
+/*    }*/
+/*}*/
+#next_button {
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    height: 60px;
+    width: 100%;
+    max-width: 520px;
+}
+#next_button6 {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    font-size: 17px;
+}
+.res {
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    background-color: #ffffff;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 14%);
+    padding-top: 10px;
+    position: fixed;
+    bottom: 59px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.brandregister-input{
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #b7b7b7;
+
+  width: 335px;
+  height: 29px;
+  border-style: none;
+  border-bottom: solid 2px #b7b7b7;
+
+
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b7b7b7;
+    transition: .4s;
+}
+.slider.round {
+    border-radius: 34px;
+}
+.l2 {
+    color: #898989;
+    display: inline;
+    float: left;
+    opacity: 0.7;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.switch input {
+    display: none;
+}
+.informchecktext {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    margin-bottom: 5px;
+    width: 63%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #b7b7b7;
+}
+.headLine2 {
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 30px;
+    line-height: 1.27;
+    text-align: left;
+    color: #000000;
+}
+.brandregister-input:focus{ 
+    caret-color: #4a64f5;
+    outline: none;
+    border-style: none;
+    border-bottom: solid 2px #4a64f5;
+}
+
+.brandregister-inputbutton{
+    width: 16px;
+    height: 16px;
+    background-color: #efefef;
+    padding: 4.5px 4.5px 4.5px 4.5px;
+    margin: 10px 20px 12.1px 0;
+    border-style: none;
+    font-size: 3px;
+    text-align: center;
+} 
+
+
+.brandlogoregister-plusbox{
+    display: block;
+    width: 335px;
+    height: 253px;
+    margin: 43px 35px 203px;
+    object-fit: contain;
+
+}
+
+.dropdowncomponent-container{ 
+    margin-top: 44px;
+}
+
+
+
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9zdHlsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2IsOEJBQThCOztBQUVsQzs7O0FBR0E7SUFDSSxVQUFVO0lBQ1YsWUFBWTtJQUNaLHVCQUF1QjtJQUN2QixrQkFBa0I7SUFDbEIsMENBQTBDO0lBQzFDLHlCQUF5QjtBQUM3QjtBQUNBO0lBQ0ksVUFBVTtJQUNWLHFCQUFxQjtJQUNyQixpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLDBDQUEwQztJQUMxQyx5QkFBeUI7QUFDN0I7QUFDQTtJQUNJLFVBQVU7SUFDVixxQkFBcUI7SUFDckIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQUNuQiwwQ0FBMEM7SUFDMUMseUJBQXlCO0FBQzdCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YscUJBQXFCO0lBQ3JCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUFDbkIsMENBQTBDO0lBQzFDLHlCQUF5QjtBQUM3QjtBQUNBO0lBQ0ksV0FBVztJQUNYLGVBQWU7SUFDZixpQ0FBaUM7SUFDakMsa0JBQWtCO0lBQ2xCLDRDQUE0QztJQUM1Qyx5QkFBeUI7SUFDekIsc0JBQXNCO0lBQ3RCLFlBQVk7QUFDaEI7QUFDQTtJQUNJLG9CQUFvQjtBQUN4QjtBQUNBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixpQ0FBaUM7SUFDakMsa0JBQWtCO0lBQ2xCLDRDQUE0QztJQUM1QyxzQkFBc0I7SUFDdEIsc0JBQXNCO0lBQ3RCLFlBQVk7QUFDaEI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixlQUFlO0lBQ2YsWUFBWTtJQUNaLFlBQVk7SUFDWixXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxhQUFhO0FBQ2pCO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIscUJBQXFCO0lBQ3JCLFdBQVc7SUFDWCxZQUFZO0lBQ1oscUJBQXFCO0FBQ3pCOztBQUVBLCtCQUErQjtBQUMvQixlQUFlLFlBQVksQ0FBQzs7QUFFNUIsZUFBZTtBQUNmO0lBQ0ksa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZixNQUFNO0lBQ04sT0FBTztJQUNQLFFBQVE7SUFDUixTQUFTO0lBQ1QseUJBQXlCO0lBRXpCLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLFlBQVk7SUFDWixXQUFXO0lBQ1gsU0FBUztJQUNULFdBQVc7SUFDWCx1QkFBdUI7SUFFdkIsZUFBZTtBQUNuQjs7QUFFQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLDJCQUEyQjtBQUMvQjs7QUFFQTtJQUdJLDJCQUEyQjtBQUMvQjs7QUFFQSxvQkFBb0I7QUFDcEI7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLFVBQVU7SUFDVixZQUFZO0lBQ1osdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQiwwQ0FBMEM7SUFDMUMseUJBQXlCO0FBQzdCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YscUJBQXFCO0lBQ3JCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUFDbkIsMENBQTBDO0lBQzFDLHlCQUF5QjtBQUM3QjtBQUNBLDZCQUE2QjtBQUM3Qix1QkFBdUI7QUFDdkIsNkJBQTZCO0FBQzdCLFFBQVE7QUFDUixJQUFJO0FBQ0osNkJBQTZCO0FBQzdCLHVCQUF1QjtBQUN2Qiw4QkFBOEI7QUFDOUIsUUFBUTtBQUNSLElBQUk7QUFDSjtJQUNJLGlCQUFpQjtJQUNqQixlQUFlO0lBQ2YsWUFBWTtJQUNaLFlBQVk7SUFDWixXQUFXO0lBQ1gsZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxZQUFZO0lBQ1oseUJBQXlCO0lBQ3pCLDRCQUE0QjtJQUM1QixrQkFBa0I7SUFDbEIsMEJBQTBCO0lBQzFCLFlBQVk7SUFDWixjQUFjO0lBQ2QsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksNEJBQTRCO0lBQzVCLDZCQUE2QjtJQUM3Qix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxzQ0FBc0M7SUFDdEMsaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixZQUFZO0FBQ2hCO0FBQ0E7SUFDSSxTQUFTO0lBQ1QsVUFBVTtBQUNkOzs7QUFHQTtJQUNJLGVBQWU7SUFDZixtQkFBbUI7SUFDbkIsb0JBQW9CO0lBQ3BCLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsc0JBQXNCO0lBQ3RCLGdCQUFnQjtJQUNoQixjQUFjOztFQUVoQixZQUFZO0VBQ1osWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixnQ0FBZ0M7OztBQUdsQztBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLFlBQVk7SUFDWixXQUFXO0lBQ1gsU0FBUztJQUNULFdBQVc7SUFDWCx1QkFBdUI7SUFFdkIsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZixNQUFNO0lBQ04sT0FBTztJQUNQLFFBQVE7SUFDUixTQUFTO0lBQ1QseUJBQXlCO0lBRXpCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixxQkFBcUI7SUFDckIsV0FBVztJQUNYLFlBQVk7SUFDWixzQkFBc0I7QUFDMUI7O0FBRUE7SUFDSSxhQUFhO0FBQ2pCO0FBQ0E7SUFDSSx3QkFBd0I7SUFDeEIsd0JBQXdCO0lBQ3hCLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YsWUFBWTtJQUNaLGVBQWU7SUFDZixtQkFBbUI7SUFDbkIsb0JBQW9CO0lBQ3BCLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsc0JBQXNCO0lBQ3RCLGdCQUFnQjtJQUNoQixjQUFjO0FBQ2xCO0FBQ0E7SUFDSSxnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixpQkFBaUI7SUFDakIsZ0JBQWdCO0lBQ2hCLGNBQWM7QUFDbEI7QUFDQTtJQUNJLG9CQUFvQjtJQUNwQixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLGdDQUFnQztBQUNwQzs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1oseUJBQXlCO0lBQ3pCLGdDQUFnQztJQUNoQywwQkFBMEI7SUFDMUIsa0JBQWtCO0lBQ2xCLGNBQWM7SUFDZCxrQkFBa0I7QUFDdEI7OztBQUdBO0lBQ0ksY0FBYztJQUNkLFlBQVk7SUFDWixhQUFhO0lBQ2IsdUJBQXVCO0lBQ3ZCLG1CQUFtQjs7QUFFdkI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyIuYnJhbmRyZWdpc3Rlci1pbnB1dGNvbnRhaW5lcnsgXHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cclxufVxyXG5cclxuXHJcbi5taWRib3gzIHtcclxuICAgIHdpZHRoOiA5MCU7XHJcbiAgICBoZWlnaHQ6IDQ3cHg7XHJcbiAgICBtYXJnaW46IDExLjVweCAwIDE2LjNweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcclxuICAgIGJveC1zaGFkb3c6IDFweCAxcHggNHB4IDAgcmdiKDAgMCAwIC8gMTAlKTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XHJcbn1cclxuLm1pZGJveHtcclxuICAgIHdpZHRoOiA4OCU7XHJcbiAgICBtYXJnaW46IDI0cHggMCAyMS4zcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNi4zJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDRweCAwIHJnYigwIDAgMCAvIDEwJSk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xyXG59XHJcbi5taWRib3gxIHtcclxuICAgIHdpZHRoOiA4OCU7XHJcbiAgICBtYXJnaW46IDI0cHggMCAyMS4zcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNi4zJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDRweCAwIHJnYigwIDAgMCAvIDEwJSk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xyXG59XHJcbi5taWRib3gxMiB7XHJcbiAgICB3aWR0aDogODglO1xyXG4gICAgbWFyZ2luOiAyNHB4IDAgMjEuM3B4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDYuMyU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgYm94LXNoYWRvdzogMXB4IDFweCA0cHggMCByZ2IoMCAwIDAgLyAxMCUpO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjZmZjtcclxufVxyXG4uc21hbGxDaG9pY2VCb3hCbHVle1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBwYWRkaW5nIDogMS43cHggMTQuNHB4IDNweCAxMy42cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDRweCAwIHJnYmEoMCwgMCwgMCwgMC4xKTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBkaXNwbGF5IDogaW5saW5lLWJsb2NrO1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcbi5kaXNhYmxlZC1saW5rIHtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG59XHJcbi5zbWFsbENob2ljZUJveFdoaXRle1xyXG4gICAgY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICBwYWRkaW5nIDogMS43cHggMTQuNHB4IDNweCAxMy42cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDRweCAwIHJnYmEoMCwgMCwgMCwgMC4xKTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICBkaXNwbGF5IDogaW5saW5lLWJsb2NrO1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcbiNuZXh0X2J1dHRvbiB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGhlaWdodDogNjBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWF4LXdpZHRoOiA1MjBweDtcclxufVxyXG5pbnB1dDpmb2N1c3tcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbn1cclxuLnN3aXRjaCB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDRweDtcclxuICAgIGhlaWdodDogMjVweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOm1pZGRsZTtcclxufVxyXG5cclxuLyogSGlkZSBkZWZhdWx0IEhUTUwgY2hlY2tib3ggKi9cclxuLnN3aXRjaCBpbnB1dCB7ZGlzcGxheTpub25lO31cclxuXHJcbi8qIFRoZSBzbGlkZXIgKi9cclxuLnNsaWRlciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYjdiN2I3O1xyXG4gICAgLXdlYmtpdC10cmFuc2l0aW9uOiAuNHM7XHJcbiAgICB0cmFuc2l0aW9uOiAuNHM7XHJcbn1cclxuXHJcbi5zbGlkZXI6YmVmb3JlIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICBoZWlnaHQ6IDE5cHg7XHJcbiAgICB3aWR0aDogMTlweDtcclxuICAgIGxlZnQ6IDRweDtcclxuICAgIGJvdHRvbTogM3B4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICAtd2Via2l0LXRyYW5zaXRpb246IC40cztcclxuICAgIHRyYW5zaXRpb246IC40cztcclxufVxyXG5cclxuaW5wdXQ6Y2hlY2tlZCArIC5zbGlkZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzRhNjRmNTtcclxufVxyXG5cclxuaW5wdXQ6Zm9jdXMgKyAuc2xpZGVyIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMCAxcHggIzRhNjRmNTtcclxufVxyXG5cclxuaW5wdXQ6Y2hlY2tlZCArIC5zbGlkZXI6YmVmb3JlIHtcclxuICAgIC13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDI2cHgpO1xyXG4gICAgLW1zLXRyYW5zZm9ybTogdHJhbnNsYXRlWCgyNnB4KTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgxOHB4KTtcclxufVxyXG5cclxuLyogUm91bmRlZCBzbGlkZXJzICovXHJcbi5zbGlkZXIucm91bmQge1xyXG4gICAgYm9yZGVyLXJhZGl1czogMzRweDtcclxufVxyXG5cclxuLnNsaWRlci5yb3VuZDpiZWZvcmUge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG59XHJcbi5taWRib3gyMyB7XHJcbiAgICB3aWR0aDogODklO1xyXG4gICAgaGVpZ2h0OiA0N3B4O1xyXG4gICAgbWFyZ2luOiAxMS41cHggMCAyMS4zcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDRweCAwIHJnYigwIDAgMCAvIDEwJSk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xyXG59XHJcbi5taWRib3gyIHtcclxuICAgIHdpZHRoOiA4OCU7XHJcbiAgICBtYXJnaW46IDI0cHggMCAyMS4zcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNi4zJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDRweCAwIHJnYigwIDAgMCAvIDEwJSk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWRlZmZlO1xyXG59XHJcbi8qQG1lZGlhKG1heC13aWR0aCA6IDQ5MHB4KXsqL1xyXG4vKiAgICAjZGlzY291bnRBbW91bnR7Ki9cclxuLyogICAgICAgIG1hcmdpbi1yaWdodCA6IDUlOyovXHJcbi8qICAgIH0qL1xyXG4vKn0qL1xyXG4vKkBtZWRpYShtaW4td2lkdGggOiA0OTFweCl7Ki9cclxuLyogICAgI2Rpc2NvdW50QW1vdW50eyovXHJcbi8qICAgICAgICBtYXJnaW4tcmlnaHQgOiAxMCU7Ki9cclxuLyogICAgfSovXHJcbi8qfSovXHJcbiNuZXh0X2J1dHRvbiB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGhlaWdodDogNjBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWF4LXdpZHRoOiA1MjBweDtcclxufVxyXG4jbmV4dF9idXR0b242IHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzRhNjRmNTtcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDEwMCUgMTAwJTtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG59XHJcbi5yZXMge1xyXG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMTNweDtcclxuICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAxM3B4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm94LXNoYWRvdzogMCAwIDhweCAwIHJnYigwIDAgMCAvIDE0JSk7XHJcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIGJvdHRvbTogNTlweDtcclxufVxyXG4qIHtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbn1cclxuXHJcblxyXG4uYnJhbmRyZWdpc3Rlci1pbnB1dHtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XHJcbiAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcclxuICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjE7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIGNvbG9yOiAjYjdiN2I3O1xyXG5cclxuICB3aWR0aDogMzM1cHg7XHJcbiAgaGVpZ2h0OiAyOXB4O1xyXG4gIGJvcmRlci1zdHlsZTogbm9uZTtcclxuICBib3JkZXItYm90dG9tOiBzb2xpZCAycHggI2I3YjdiNztcclxuXHJcblxyXG59XHJcbi5zbGlkZXIucm91bmQ6YmVmb3JlIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxufVxyXG4uc2xpZGVyOmJlZm9yZSB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgaGVpZ2h0OiAxOXB4O1xyXG4gICAgd2lkdGg6IDE5cHg7XHJcbiAgICBsZWZ0OiA0cHg7XHJcbiAgICBib3R0b206IDNweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgLXdlYmtpdC10cmFuc2l0aW9uOiAuNHM7XHJcbiAgICB0cmFuc2l0aW9uOiAuNHM7XHJcbn1cclxuLnNsaWRlciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYjdiN2I3O1xyXG4gICAgLXdlYmtpdC10cmFuc2l0aW9uOiAuNHM7XHJcbiAgICB0cmFuc2l0aW9uOiAuNHM7XHJcbn1cclxuLnNsaWRlci5yb3VuZCB7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNHB4O1xyXG59XHJcbi5sMiB7XHJcbiAgICBjb2xvcjogIzg5ODk4OTtcclxuICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgb3BhY2l0eTogMC43O1xyXG59XHJcblxyXG4uc3dpdGNoIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHdpZHRoOiA0NHB4O1xyXG4gICAgaGVpZ2h0OiAyNXB4O1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG5cclxuLnN3aXRjaCBpbnB1dCB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcbi5pbmZvcm1jaGVja3RleHQge1xyXG4gICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xyXG4gICAgLXdlYmtpdC1ib3JkZXItcmFkaXVzOiAwO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG4gICAgd2lkdGg6IDYzJTtcclxuICAgIGhlaWdodDogNDBweDtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XHJcbiAgICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcclxuICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxLjE7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgIGNvbG9yOiAjYjdiN2I3O1xyXG59XHJcbi5oZWFkTGluZTIge1xyXG4gICAgbWFyZ2luLXRvcDogMzBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgZm9udC1zaXplOiAzMHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuMjc7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgY29sb3I6ICMwMDAwMDA7XHJcbn1cclxuLmJyYW5kcmVnaXN0ZXItaW5wdXQ6Zm9jdXN7IFxyXG4gICAgY2FyZXQtY29sb3I6ICM0YTY0ZjU7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgYm9yZGVyLXN0eWxlOiBub25lO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQgMnB4ICM0YTY0ZjU7XHJcbn1cclxuXHJcbi5icmFuZHJlZ2lzdGVyLWlucHV0YnV0dG9ue1xyXG4gICAgd2lkdGg6IDE2cHg7XHJcbiAgICBoZWlnaHQ6IDE2cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWZlZmVmO1xyXG4gICAgcGFkZGluZzogNC41cHggNC41cHggNC41cHggNC41cHg7XHJcbiAgICBtYXJnaW46IDEwcHggMjBweCAxMi4xcHggMDtcclxuICAgIGJvcmRlci1zdHlsZTogbm9uZTtcclxuICAgIGZvbnQtc2l6ZTogM3B4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59IFxyXG5cclxuXHJcbi5icmFuZGxvZ29yZWdpc3Rlci1wbHVzYm94e1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMzM1cHg7XHJcbiAgICBoZWlnaHQ6IDI1M3B4O1xyXG4gICAgbWFyZ2luOiA0M3B4IDM1cHggMjAzcHg7XHJcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xyXG5cclxufVxyXG5cclxuLmRyb3Bkb3duY29tcG9uZW50LWNvbnRhaW5lcnsgXHJcbiAgICBtYXJnaW4tdG9wOiA0NHB4O1xyXG59XHJcblxyXG5cclxuXHJcblxyXG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>/* .textcont { 
+            border:none;
+            outline: none;
+            padding: 0px;
+               width: 80%;
+               height: 40px;
+               font-size: 20px;
+               line-height: 1.1;
+               letter-spacing: normal;
+               text-align: left;
+               color: #b7b7b7;
+               margin-bottom: 5px;
+
+} */
+
+.informname{ 
+    font-size: 12px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL2lucHV0c3R5bGVzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7OztHQWFHOztBQUVIO0lBQ0ksZUFBZTtBQUNuQiIsInNvdXJjZXNDb250ZW50IjpbIi8qIC50ZXh0Y29udCB7IFxuICAgICAgICAgICAgYm9yZGVyOm5vbmU7XG4gICAgICAgICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgICAgICAgcGFkZGluZzogMHB4O1xuICAgICAgICAgICAgICAgd2lkdGg6IDgwJTtcbiAgICAgICAgICAgICAgIGhlaWdodDogNDBweDtcbiAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcbiAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjE7XG4gICAgICAgICAgICAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xuICAgICAgICAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgICAgICAgIGNvbG9yOiAjYjdiN2I3O1xuICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuXG59ICovXG5cbi5pbmZvcm1uYW1leyBcbiAgICBmb250LXNpemU6IDEycHg7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div class="app">
+            <div style="margin: auto; max-width: 520px;">
+                <div class="sc-gKclnd fvhBYJ">
+                    <a href="/success">
+                        <img class="topbar-backbutton" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABECAMAAADEFod+AAAAP1BMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC6E+JdAAAAFHRSTlMAJAwFneK77vgXyjBoWUqvPXyI1uzODLwAAAEYSURBVEjHrZbLDoQgEATxBYoiivP/37pxV1hO003inCshdtGDxrw2/eh8R3DLJSJugVw3yT0j4lb35cQCbp9/nOw6Fx4MnbxlLulcytymc+ODzUHFhpi5Q9fhH86tWMc9U8foELkWSofYXuWOzMVB1zE36jh17sxcIHXsnA4Qc2+5mBfPxVy0eT3mNWuzA6djJFuUyBZtnA4Qc9Hhjld0GFJHOdejhcXd+j84wV2ZuE9uCLHSEgy7Lk9Eslen2g2g89W2gXmyheEr2HCLqjXBS4LRb2R3quWYoKSyRgdWkqUlwXL8HxkoybdLOmhJO9s5HD373vAvWNW5SEvyqB/lAYBkkQQvU+4c+uUqnYMZPZKsYSbEYBrmA9jOKk43dOpKAAAAAElFTkSuQmCC" alt="<">
+                            </a>
+                            </div>
+        
+        <div class="headLine2 Bold">연락처를 기재해주세요</div>
+        <div class="Regular" style="margin-left: 20px; font-size: 14px; text-align: left; color: rgb(74, 100, 245);">결제 후, 상표 출원 진행사항을 알려드리기 위해
+        <br>정확한 전화번호 및 이메일이 꼭 필요합니다.
         </div>
         
-        <div class="imformname" id="imformname2" style="visibility: visible;"> 출원인 성명 <span style="color:#898989">(영문)</span></div>
-        <div class="inputdiv" id="inputdiv2" style="border-bottom: 1px solid rgb(224, 224, 224);">
-            <input autocomplete="off" type="text" name="" value="" id="text2" class="textcont" placeholder="출원인 성명(영문)" style="border: none; color: rgb(0, 0, 0);">
-        </div>
-
-        <div class="imformname" id="imformname3" style="visibility: visible;"> 주민등록번호</div>
-        <div class="inputdiv" id="inputdiv3" style="border-bottom: 1px solid rgb(224, 224, 224);">
-            <input autocomplete="off" type="number" name="" value="" id="text3-1" class="textcont" placeholder="주민등록번호" style="border: none; color: rgb(0, 0, 0);" maxlength="6" oninput="maxLengthCheck(this)">
-            <span class="lineDivider"> - </span>
-
-            <input autocomplete="off" type="password" name="" value="" id="text3-2" class="textcont" placeholder="●●●●●●●" style="border: none; color: rgb(0, 0, 0);" maxlength="7" oninput="maxLengthCheck(this)" onkeyup="firstnum()">
-
-            <input type="hidden" id="a">
-        </div>
-
-    </div>
-
-    <div class="tabclass" id="tab-2">
-        <div class="" id="textcon" style="  width:90%; margin:20px;">
-            <div class="imformname" id="imformname11"> 법인 명칭 <span style="color:#b7b7b7">(한글)</span></div>
-            <div class="inputdiv" id="inputdiv11">
-                <input autocomplete="off" type="text" name="" value="" id="text11" class="textcont" placeholder="법인 명칭(한글)" style="border:none;">
+        <div id="textcoco" class="" style="width: calc(100% - 40px); margin: 24px 0px 0px 20px; border-bottom: 2px solid rgb(183, 183, 183);">
+            <input id="tela" type="tel" maxlength="11" name="" class="informchecktext Medium" placeholder="전화번호" style="border: none; color: rgb(0, 0, 0); opacity: 0.4;">
             </div>
-            <div class="imformname" id="imformname22"> 법인 명칭 <span style="color:#b7b7b7">(영문)</span></div>
-            <div class="inputdiv" id="inputdiv22">
-                <input autocomplete="off" type="text" name="" value="" id="text22" class="textcont" placeholder="법인 명칭(영문)" style="border:none;">
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
-
-
-
-<script>
-  function firstnum() {
-
-      var ssn = document.getElementById("text3-2");
-      var current = document.getElementById("a");
-      current.textContent = ssn.value;
-
-      if(ssn.value.length>1){
-
-      }
-
-  }
-
-
-
-
-
-</script>
-
-<div id="page2" style={{display: block}}>
-    <div class="headLine">
-        출원인 연락처 <br/>
-    </div>
-
-    <div className="" id="textcon2" style={{width: '90%', margin: '20px', marginTop: '20px'}}>
-        <div className="imformname" id="imformname5" style={{visibility: 'visible'}}> 출원인 전화번호</div>
-
-        <div className="inputdiv" id="inputdiv5">
-            <input autocomplete="off" type="tel" name="" value="" id="text5" class="textcont" placeholder="출원인 전화번호" style={{border:'none' , width: '95%',  color : '#000000'}} maxlength="11" oninput="maxLengthCheck(this)"/>
-        </div>
-
-        <div className="imformname" id="imformname4" style={{visibility: 'visible'}}> 출원인 이메일
-        </div>
-+        <div className="inputdiv" id="inputdiv4">
-            <input autocomplete="off" type="email" name="cus_email" value="" id="text4" class="textcont" placeholder="출원인 이메일" style={{border:'none', color : '#000000'}}/>
-        </div>
-
-    </div>
-</div>
-
-
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-<script>
-    function sample6_execDaumPostcode1() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-<!--                    document.getElementById("sample6_extraAddress").value = extraAddr;-->
-
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('textpost').value =  data.zonecode;
-                let postcode = data.zonecode;
-                document.getElementById("textpostdet").value = addr;
-                sessionStorage.setItem('addr', addr);
-                sessionStorage.setItem('postcode', postcode);
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("text6").focus();
-            }
-        }).open();
-        judgein4();
-    }
-
-
-
-
-</script>
-
-<div id="page3" style="display: none;">
-    <div className="headLine">
-        출원인 등본상 주소<br/>
-    </div>
-
-    <div class="" id="textcon3" style="  width:90%; margin:20px;margin-top: 20px;  ">
-
-        <div class="imformname" id="imformnamepost" style="visibility: visible;"> 우편 번호</div>
-        <div class="inputdiv" style="width:60%;display:inline-block;">
-            <input type="text" id="textpost" class="textcont" style="border:none;width:80%;display:inline;color : rgb(0,0,0) " placeholder="출원인 등본상 주소" readonly=""></div>
-        <div style="display:inline;">
-            <img src="../static/image/upyen.png" onclick="sample6_execDaumPostcode1()" style="width: calc(40% - 15px);transform: translateY(7px);margin-left: 10px;">
-        </div>
-
-        <div class="inputdiv" id="inputdiv_textpostdet">
-            <div><input type="text" id="textpostdet" class="textcont1" style="border:none;" readonly=""></div>
-        </div>
-
-        <div class="imformname" id="imformname6"> 상세주소</div>
-        <div class="inputdiv" id="inputdiv6">
-            <input autocomplete="off" type="text" name="" value="" id="text6" class="textcont" placeholder="상세주소를 입력해주세요" style="border:none;">
-
-        </div>
-
-    </div>
-
-
-<!--    <div style="margin-top:47px; margin-left:5%; font-size:16px;">-->
-<!--        <div style="margin-bottom: 20px;"><img src="../static/image/box@3x.png" style="width: 20px; height: 20px;"-->
-<!--                                               onclick="checkboxClickk()" id="boxBox-1"><span-->
-<!--                style="font-size: 17px;margin-left: 7px;transform: translateY(-2px);font-weight: bold;">위임 동의</span>-->
-<!--        </div>-->
-<!--        <div class="chmark" style="display:inline-block;width:12px;color: #b7b7b7;" onclick="checkmarkClick1()"><img-->
-<!--                id="chmark1" style="width:12px;" src="../static/image/check_gray@3x.png"></div>-->
-<!--        <div style="font-size:14px;color:#898989;display:inline-block; "><span style="color:#000000;display:inline;">(필수)</span>-->
-<!--            개인정보수집에 동의합니다.-->
-<!--        </div>-->
-<!--        <img src="../static/image/question_mark.png"-->
-<!--             srcset="../static/image/question_mark@2x.png 2x,-->
-<!--             ../static/image/question_mark@3x.png 3x" onclick="questionmark1()">-->
-<!--    </div>-->
-
-<!--    <div style="margin-top:17px; margin-left:5%; font-size:16px;">-->
-<!--        <div class="chmark" style="display:inline-block;width:12px;color: #b7b7b7;transform: translateY(-17px);"-->
-<!--             onclick="checkmarkClick2()"><img id="chmark2" style="width:12px;" src="../static/image/check_gray@3x.png">-->
-<!--        </div>-->
-<!--        <div style="font-size:14px;color:#898989;display:inline-block; width:85%;"><span-->
-<!--                style="color:#000000;display:inline;">(필수)</span> 상표등록과 관련된 일체의 업무에 대해<br>네임텍에 위임할 것을 의합니다.-->
-<!--        </div>-->
- </div>
-</div>
-
-
-<!--<div style="height: 100px;"></div>-->
-<button type="button" id="next_button6" style="height:60px;margin-top:4%; position: fixed; bottom: 0px; max-width : 520px;" onclick="inform1_3()">다음
-</button>
-<style>
-    #text3-1 {
-        width: 43%;
-    }
-
-    #text3-2 {
-        width: 43%;
-    }
-    .circle1{
-        display: inline-block;
-        width:10px;
-        height:10px;
-        background-color: #efefef;
-        border-radius: 25px;
-    }
-    .bar1{
-        display: inline-block;
-        width: 16px;
-        height: 2px;
-        background-color: #efefef;
-        transform: translateY(-4px);
-    }
-
-
-
-
-</style>
-<div id="page2-2" style="display: none;">
-<div class="headLine">
-    법인 상세정보 <br>
-</div>
-
-
-<div class="" id="textcon24" style="  width:90%; margin:20px;">
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="imformname" style="visibility: visible;"> 법인 인감<span style="color:#b7b7b7">(사용인감)</span>
-        <img src="../static/image/question_mark.png" srcset="../static/image/question_mark@2x.png 2x,
-                 ../static/image/question_mark@3x.png 3x" style="margin-left:5px; ">
-    </div>
-
-    <div class="filebox">
-              <label for="ex_file">  
-                <img src="../static/image/file_button.png" srcset="../static/image/file_button@2x.png 2x,
-                ../static/image/file_button@3x.png 3x" style="display:inline; margin-top:5px; transform: translateY(10px);">
-                    
-                </label>
-              <input type="file" onchange="fileUpload()" id="ex_file">
-    </div>
-
-    <div class="inputdiv" id="inputdivin" style="width:calc(100% - 111px);display:inline-block;margin-top:10px; ">
-        <div style="display:inline;" id="inputdivingam">
-            <input type="text" id="ingam" class="textcont" style="border:none;" readonly=""></div>
-    </div>
-
-
-
-
-
-
-<style>
-.where {
-  display: block;
-  margin: 25px 15px;
-  font-size: 11px;
-  color: #000;
-  text-decoration: none;
-  font-family: verdana;
-  font-style: italic;
-}
-.filebox {display:inline-block; margin-right: 10px;}
-
-
-.filebox label {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.filebox input[type="file"] {  /* 파일 필드 숨기기 */
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip:rect(0,0,0,0);
-  border: 0;
-}
-
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="imformname" id="imformname44"> 법인 등록번호</div>
-    <div class="inputdiv" id="inputdiv44">
-        <input autocomplete="off" type="number" name="" value="" id="text44" class="textcont" placeholder="법인 등록번호" style="border:none;width:95%;" maxlength="13" oninput="maxLengthCheck(this)">
-    </div>
-
-    <div class="imformname" id="imformname55"> 사업자 등록번호</div>
-    <div class="inputdiv" id="inputdiv55">
-        <input autocomplete="off" type="number" name="" value="" id="text55" class="textcont" placeholder="사업자 등록번호" style="border:none;width:95%;" maxlength="10" oninput="maxLengthCheck(this)">
-    </div>
-
-
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-<!--                    document.getElementById("sample6_extraAddress").value = extraAddr;-->
-
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('textpost-1').value = data.zonecode;
-                document.getElementById("textpost-23").value = addr;
-                document.getElementById("textpost-1").style.color = "rgb(0,0,0)";
-                document.getElementById("textpost-23").style.color = "rgb(0,0,0)";
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("text6").focus();
-                let postcode = data.zonecode;
-                sessionStorage.setItem('postcode', postcode);
-                sessionStorage.setItem('addr', addr);
-            }
-        }).open();
-
-        $('#next_button6').attr("disabled", false);
-    }
-</script>
-
-    <div class="imformname" id="imformnamepost-1" style="visibility: visible;"> 법인 등본상 주소</div>
-    <div class="inputdiv" style="width:60%;display:inline-block;">
-        <input type="text" id="textpost-1" class="textcont" style="border:none;display:inline;" placeholder="법인 등본상 주소" readonly=""></div>
-    <div style="display:inline;">
-
-        <img src="../static/image/upyen.png" style="width: calc(40% - 15px);transform: translateY(7px);margin-left: 10px;" onclick="sample6_execDaumPostcode()">
-    </div>
-
-    <div class="inputdiv" id="inputdiv111">
-        <input type="text" id="textpost-23" class="textcont" style="border:none;display:inline;" readonly=""></div>
-
-    <div class="inputdiv" id="inputdiv112">
-        <input autocomplete="off" type="text" name="" value="" id="text61" class="textcont" placeholder="상세주소를 입력해주세요" style="border:none; color : rgb(0,0,0) ;">
-    </div>
-        </div>
-
-</div>
-
-
-
-<div id="page2-3" style="display: none;">
-<div class="headLine">
-    대표자 정보 <br>
-</div>
-
-
-<div class="" id="textcon3-1" style="  width:90%;margin:20px;  ">
-
-    <div class="imformname" id="imformname7" style="visibility: visible;"> 성명</div>
-    <div class="inputdiv" id="inputdiv7">
-        <input autocomplete="off" ;="" type="text" name="" value="" id="text7" class="textcont" placeholder="성명" style="border:none; color : rgb(0,0,0) ;">
-    </div>
-
-
-
-       <div class="imformname" id="imformname8"> 주민등록번호</div>
-    <div class="inputdiv" id="inputdiv8">
-        <input autocomplete="off" ;="" type="number" name="" value="" id="text8-1" class="textcont" placeholder="주민등록번호" style="border:none;" maxlength="6" oninput="maxLengthCheck(this)">
-        <span class="lineDivider"> - </span>
-
-        <input autocomplete="off" ;="" type="password" name="" value="" id="text8-2" class="textcont" placeholder="●●●●●●●" style="border:none;" maxlength="7" oninput="maxLengthCheck(this)">
-
-
-        <!--        <img onClick="eraseInput('text3')" class="x_button" src="../static/image/x_round.png"-->
-        <!--             srcset="../static/image/x_round@2x.png 2x,-->
-        <!--             ../static/image/x_round@3x.png 3x" style="width: 16px; height: 16px; float:right;">-->
-    </div>
-
-    <div class="imformname" id="imformname9" style="visibility: visible;"> 이메일</div>
-    <div class="inputdiv" id="inputdiv9">
-        <input autocomplete="off" type="email" name="" value="" id="text9" class="textcont" placeholder="이메일" style="border:none; color : rgb(0,0,0) ;">
-    </div>
-
-
-    <div class="imformname" id="imformname10" style="visibility: visible;"> 휴대전화</div>
-    <div class="inputdiv" id="inputdiv10">
-        <input autocomplete="off" ;="" type="number" name="" value="" id="text10" class="textcont" placeholder="휴대전화" style="border:none; color : rgb(0,0,0) ;">
-    </div>
-
-</div>
-
-
-
-
-
-</div>
-
-<div id="page4" style="display: none;">
-    <div class="headLine Bold">
-        출원 내용 최종 동의 <br/>
-    </div>
-
-    <div class="Regular" style="margin-top:47px; margin-left:5%; font-size:12px;color : #4a64f5;">
-        상표명
-    </div>
-    <div id="real_logo_id" class="Medium" style="margin-top : 4px;margin-left:5%; font-size:16px;">
-        네임텍상표
-    </div>
-    <div class="Regular" style="margin-top:20px; margin-left:5%; font-size:12px;color : #4a64f5;">
-        로고
-    </div>
-    <div id="logoinsert" style="text-align : center;margin-top : 10px;border: solid 1px #ccc;width: 122px;height: 74px; margin-left:5%;">
-
-    </div>
-    <div id="imformtable" style="margin-left : 5%;margin-top : 20px;border-top : 2px dashed #8989894a;">
-
-    </div>
-    <div id="checkagree" class="Regular" onclick="checkagree1();" style="font-size : 12px;margin-left : 20px; margin-right : 20px;background-color: #efefef;border-radius: 21px;margin-top : 20px;padding : 18px 10.9px 20px 60.9px;">
-<img id="imgcheck" src="../static/image/grc@2x.png" style="position: absolute;width : 30px;margin-left : -40px;margin-top : 6px;"/>위 내용을 모두 확인하였으며,
-<br/>해당 내용으로 상표를 출원하는 것에 동의합니다.
-    </div>
-    <div class="Regular" style="margin-top : 22px;font-size : 12px;margin-left : 5%;">
-*내용수정이 필요할 경우, 유선 또는 이메일로 연락해주시기 바랍니다.
-
-    </div>
-    <div class="Regular" style="margin-top : 5px;font-size : 12px;margin-left : 5%;">
-Tel : 02-922-5710
-    </div>
-    <div class="Regular" style="margin-top : 5px;margin-bottom : 100px;font-size : 12px;margin-left : 5%;">
-Mail : admin@nametec.kr
-
-    </div>
-</div>
-    {/* <div id="page5" style="display : none;">
-    <div class="headLine">
-        위임 및 정보 동의 <br>
-    </div>
-
-
-        <div id="checkagree1" class="Regular" onclick="checkmarkClick1();" style="font-size : 12px;margin-left : 20px; margin-right : 53px;background-color: #efefef;border-radius: 21px;margin-top : 30px;padding : 18px 10.9px 20px 60.9px;">
-<img id="chmark1" src="../static/image/grc@2x.png" style="position: absolute;width : 30px;margin-left : -40px;margin-top : -4px;">(필수)<a id="agreeA"> 개인정보수집에 동의합니다 </a>
-    </div>
-    <div class="termbox Regular" style="font-size : 12px ;overflow : scroll;padding-left : 2px; ">
-        1. 개인정보 수집 이용 목적 : 상표출원<br>
-2. 개인정보 수집 항목 : 담당자 성명, 담당자 이메일, 담당자 휴대전화, 담당자 유선전화, 출원인 성명(한글, 영문), 법인명(한글, 영문), 인감(법인임감), 주민등록번호, 법인등록번호, 출원인 이메일, 출원인 휴대전화, 출원인 유선전화, 사업자등록번호(출원용, 세금계산서용), 휴대전화번호(출원용, 세금계산서용), 주소, 상호명(세금계산서용), 대표자명(세금계산서용), 이메일(세금계산서용)
-<br>3. 제3자에게 정보제공 : 특허청, KG이니시스, 국세청, 금용결제원, 각 카드사, 각 은행, 각 통신사, 등<br>
-4. 개인정보 보유 이용기간 : 상표출원일부터 10년<br>
-5. 위와 같은 개인정보 수집 이용에 동의 하지 않으실 수 있습니다. (동의 거부시 출원진행 불가)
-    </div>
-        <div id="checkagree2" class="Regular" onclick="checkmarkClick2();" style="font-size : 12px;margin-left : 20px; margin-right : 53px;background-color: #efefef;border-radius: 21px;margin-top : 30px;padding : 12px 10.9px 12px 60.9px;">
-<img id="chmark2" src="../static/image/grc@2x.png" style="position: absolute;width : 30px;margin-left : -40px;margin-top : 5px;">(필수)<a id="agreeB"> 상표등록과 관련된 일체의 업무에 대해<br>네임텍에 위임할 것을 의합니다. </a>
-    </div>
-    <div class="termbox Regular" style="font-size : 12px ;overflow : scroll; padding-left : 2px; ">
-
-        1. 상표권 출원 및 등록에 관한 모든 절차<br>
-2. 상표권의 존속기간 갱신등록에 관한 모든 절차<br>
-3. 상표권 지정상품 추가등록에 출원에 관한 모든 절차<br>
-4. 상표권 상품분류전화등록에 관한 모든 절차<br>
-5. 상표권의 포기에 관한 모든 절차<br>
-6. 상표권 등록출원에 관한 신청의 취하<br>
-7. 상표권 등록출원에 관한 청구의 취하<br>
-8. 상표등록출원에 관한 거절결정불복심판청구관련 모든 절차<br>
-9. 상표등록출원에 관한 보정각하결정불복심판청구관련 모든 절차<br>
-10. 복대리인의 선임<br><br>
-
-
-상표법 제8조의 규정에 의하여 위와 같이 위임합니다.
-    </div>
-</div>
-</div> */}
-
-<script>
-    let ee = ;
-    let eee = ee[0] + "@" + ee[1];
-    console.log(eee);
-
-    if (typeof eee == 'undefined') {
-    } else {
-        $('#text4').val(eee);
-        $('#inputdiv4').css("border-bottom", "solid 1px #e0e0e0");
-        $('#text4').css("color", "#000000");
-        $('#text').css("opacity", "1");
-    }
-
-
-
-
-
-
-    var qus = "";
-    qus += '위임 동의\n'
-    qus += '1. 상표권 등록 및 출원에 관한 모든 절차\n'
-    qus += '3. 상표권 지정상품 추가등록 출원에 관한 모든 절차\n'
-    qus += '4. 상표권 상품분류전환등록에 관한 모든 절차\n'
-    qus += '5.상표권의 포기에 관한 모든 절차\n'
-    qus += '6. 상표권 등록출원에 관한 신청의 취하\n'
-    qus += '7. 상표권 등록출원에 관한 청구의 취하\n'
-    qus += '8. 상표등록출원에 관한 거절결정불복심판청구관련 모든 절차\n'
-    qus += '9. 상표등록출원에 관한 보정각하결정불복심판청구관련 모든 절차\n'
-    qus += '10. 복대리인의 선임\n'
-    qus += ' * 2~10번 항목은 출원인의 요청이 있는 경우에 한하여 당소 대리인(변리사) 업무를 할 수 있음을 의미할 뿐, 고객의 요청이 없는 한 변리사 임의로 절차를 대리하지 않으니 안심하시기 바랍니다.\n'
-
-    var qus2 = "";
-     qus2 += '개인정보수집에 동의\n'
-    qus2 += '1. 개인정보 수집 이용 목적 : 상표출원 \n'
-    qus2 += '2. 개인정보 수집 항목 : 담당자 성명, 담당자 이메일, 담당자 휴대전화, 담당자 유선전화, 출원인 성명(한글, 영문), 법인명(한글, 영문), 인감(법인인감), 주민등록번호, 법인등록번호, 출원인 이메일, 출원인 휴대전화, 출원인 유선전화, 사업자등록번호(출원용, 세금계산서용), 휴대전화번호(출원용, 세금계산서용), 주소, 상호명(세10금계산서용), 대표자명(세금계산서용), 이메일(세금계산서용)\n'
-    qus2 += '3. 제3자에게 정보제공 : 특허청, KCP, 국세청, 금융결제원, 각 카드사, 각 은행, 각 통신사, 나이스신용평가정보 외\n'
-    qus2 += '4. 개인정보 보유 이용기간 : 상표출원일 부터 10년\n'
-    qus2 += '5. 위와 같은 개인 정보 수집 이용에 동의 하지 않으실수 있습니다.\n'
-    qus2 += '(동의 거부시 출원진행 불가)\n'
-
-
-
-
-    function questionmark1(){
-        alert(qus2);
-    }
-    function questionmark2(){
-        alert(qus);
-    }
-
-
-
-
-</script>
-<style>
-        #text8-1 {
-        width: 43%;
-    }
-
-    #text8-2 {
-        width: 43%;
-    }
-</style>
-<script>
-var nowtab = 'tab-1';
-    $(document).ready(function(){
-     //로딩이 끝나면 뒤의 ㅎ일들일 실행
-	$('ul.tabs li').click(function(){
-        //버튼을 클릭하면 파란색을 입히는 클래스 add, 아닌 거를 remove
-        //tabclass가 있는 것에 current를 remove 해서 현재 페이지가 아니도록 
-		var tab_id = $(this).attr('data-tab');
-
-		$('ul.tabs li').removeClass('currentImform'); 
-        //클릭한 버튼에 removeClass, addClass
-		$('.tabclass').removeClass('current');
-        //tabclass에서 removeClass current : 개인과 법인 바꾸는 용도 
-		$('ul.tabs li').addClass('boximform2');
-        //클릭한 버튼에 add 
-
-		$(this).addClass('currentImform');
-       //클릭한 버튼에 addClass currentImform??
-
-		$("#"+tab_id).addClass('current');
-		$(this).removeClass('boximform2');
-        //this.attr(data-tab)
-
-		nowtab = tab_id;
-		if (nowtab == 'tab-1') {
-            //첫페이지면 
-		var button = document.getElementById("next_button6");
-		button.onclick = function() {
-		inform1_2()
-		}
-		}
-
-
-	})
-
-})
-
-
-
-
-function fileUpload(){
-let inputimage = getid('ex_file');
-    let file = inputimage.files[0];
-    ingam = getid('ingam');
-    ingam.value = file.name;
-}
-
-function getParameter(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-    var product = getimformdata(getParameter("merchant_uid"));
-    var product2 = getimformdata2(getParameter("merchant_uid"));
-    setimformdata(product);
-</script>
-
-</body>
-
-
-
-
-
-
-<div id="page4" style="display: none;">
-    <div class="headLine Bold">
-        출원 내용 최종 동의 <br/>
-    </div>
-
-    <div class="Regular" style="margin-top:47px; margin-left:5%; font-size:12px;color : #4a64f5;">
-        상표명
-    </div>
-    <div id="real_logo_id" class="Medium" style="margin-top : 4px;margin-left:5%; font-size:16px;">
-        네임텍상표
-    </div>
-    <div class="Regular" style="margin-top:20px; margin-left:5%; font-size:12px;color : #4a64f5;">
-        로고
-    </div>
-    <div id="logoinsert" style="text-align : center;margin-top : 10px;border: solid 1px #ccc;width: 122px;height: 74px; margin-left:5%;">
-
-    </div>
-    <div id="imformtable" style="margin-left : 5%;margin-top : 20px;border-top : 2px dashed #8989894a;">
-
-    </div>
-    <div id="checkagree" class="Regular" onclick="checkagree1();" style="font-size : 12px;margin-left : 20px; margin-right : 20px;background-color: #efefef;border-radius: 21px;margin-top : 20px;padding : 18px 10.9px 20px 60.9px;">
-<img id="imgcheck" src="../static/image/grc@2x.png" style="position: absolute;width : 30px;margin-left : -40px;margin-top : 6px;"/>위 내용을 모두 확인하였으며,
-<br/>해당 내용으로 상표를 출원하는 것에 동의합니다.
-    </div>
-    <div class="Regular" style="margin-top : 22px;font-size : 12px;margin-left : 5%;">
-*내용수정이 필요할 경우, 유선 또는 이메일로 연락해주시기 바랍니다.
-
-    </div>
-    <div class="Regular" style="margin-top : 5px;font-size : 12px;margin-left : 5%;">
-Tel : 02-922-5710
-    </div>
-    <div class="Regular" style="margin-top : 5px;margin-bottom : 100px;font-size : 12px;margin-left : 5%;">
-Mail : admin@nametec.kr
-
-    </div>
-</div>
+        <div id="textcoco2" class="" style="width: calc(100% - 40px); padding-left: 3px; margin: 24px 0px 0px 20px; border-bottom: 2px solid rgb(183, 183, 183);">
+            <input id="tela2" type="text" name="" class="informchecktext Medium" placeholder="이메일" style="border: none; color: rgb(0, 0, 0); opacity: 0.4;"></div><a class="disabled-link" href="/Success3"><div id="next_button" class="noto" style="cursor: pointer; position: fixed; bottom: 0px; display: flex; align-items: center; justify-content: center; background-color: rgb(239, 239, 239);"><div id="dam" style="color: rgb(183, 183, 183);"> 다음</div></div></a></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+
+</body></html>

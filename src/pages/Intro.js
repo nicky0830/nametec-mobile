@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css';
 import MainHeader from '../components/MainHeader';
+import BrowserHeader from '../components/BrowserHeader';
 import '../text.css'
 import remockup from "../image/remockup.png";
 import icon_min from "../image/icon_min@2x.png";
@@ -13,19 +14,35 @@ import icon_ai from "../image/icon_ai@2x.png";
 import b22x from "../image/b2@2x.png";
 import icon_phone from "../image/icon_phone@2x.png";
 import icon_insta from "../image/icon_insta@2x.png";
+import start_button from "../image/start_button@3x.png";
+import start_button2 from "../image/start_button2@3x.png";
+import kakaoBtn from "../image/kakaoBtn.png";
+import kakaoBtn2 from "../image/kakaoBtn2.png";
 import { BrowserRouter, Route , Switch as Routes , Link , NavLink, useParams} from 'react-router-dom';
+import{
+BrowserView,
+MobileView,
+isBrowser,
+IsMobile
+} from "react-device-detect";
+import $ from 'jquery';
+
+
+
 
 function Intro(){
     return(
+    <div>
+{/*     <MobileView> */}
         <div style={{margin : "0 auto",maxWidth : '520px'}}>
 
             <MainHeader/>
             <div>
                 <div className="Regular" style={{fontSize : "30px", textAlign : "center", marginTop : "60px"}}>
-                    사장님들 바쁘시죠?
+                    내 상표, 등록 가능할까요? 
                 </div>
                 <div className="Bold" style={{fontSize : "30px", textAlign : "center" }}>
-                    딱 5분만 투자하세요
+                    AI 무료진단 받아보세요! 
                 </div>
                 <div style={{fontSize : "14px", textAlign : "center", marginTop : "24px"}}>
                     <a className="Light">네임텍의 </a><a className="Medium">AI변리사</a><a className="Light">가 </a>
@@ -42,8 +59,8 @@ function Intro(){
                     <button type="button" id="start_btn" style={{position : 'absolute', marginTop : '70%', cursor:'pointer'}}>AI로 상표등록 시작하기
                     </button>
                     </Link>
-                    <img id="channel-chat-button" src={icon_kakao} onClick="void chatChannel();"
-                         style={{cursor: 'pointer', position: 'absolute', objectFit: 'cover', width: '12%', marginTtop: '76%', right: '20px', zIndex: '1', top: '7px',}}/>
+                    <img id="channel-chat-button" src={icon_kakao}
+                         style={{cursor: 'pointer', position: 'absolute', objectFit: 'cover', width: '12%', marginTop: '76%', right: '20px', zIndex: '1', top: '7px',}}/>
 
                 </div>
             </div>
@@ -174,9 +191,11 @@ function Intro(){
                                         <a className="Light" style={{fontSize : '14px', color :'#898989'}}>*상표 출원비와 상표 등록비를
                                             합친 금액이<br/><br/><br/>상표등록 총 비용입니다</a>
                                         <br/><br/><br/><br/><br/><br/>
-                                            <a href="https://m.nametec.kr/anne" className="Light"
+                                        <Link to ='/costprocess'>
+                                            <a className="Light"
                                                style={{fontSize : '14px',  color: '#000000', textDecoration: 'underline'}}>+
                                                 더 자세히 알아보기</a>
+                                        </Link>
             </div>
             <div style={{textAlign : 'center', backgroundColor: '#f5f6ff', paddingTop: '50px', paddingBottom : '150px'}}>
                 <div>
@@ -216,7 +235,7 @@ function Intro(){
                 </div>
                 <Link to="/brandregister">
                 <button type="button" className="btn" id="start_btn2"
-                        style={{position : 'absolute', marginTop : '4%', cursor:'pointer'}}>AI로 상표등록 시작하기
+                        style={{position : 'absolute', marginTop : '4%', cursor:'pointer',height:'50px'}}>AI로 상표등록 시작하기
                 </button>
                 </Link>
             </div>
@@ -255,14 +274,39 @@ function Intro(){
                         <img src={icon_phone}
                              style={{cursor:'pointer',width : '36px', float : 'left'}}/>
                     </a>
-                    <img src={icon_insta} onClick="instar();"
+                    <img src={icon_insta} onClick={()=>{window.location ="https://www.instagram.com/name.tec/"}}
                          style={{cursor:'pointer',width : '36px' ,float : 'left', marginLeft : '7px'}}/>
                 </div>
             </div>
         </div>
 
+    </div>
     );
-
 }
 
 export default Intro;
+
+$(document).ready(function(){
+var target = document.getElementById("start_btn2");
+var targetTop2 = window.pageYOffset + target.getBoundingClientRect().top;
+var floatPosition = parseInt($("#channel-chat-button").css('top'))
+// scroll 인식
+$(window).scroll(function() {
+
+    // 현재 스크롤 위치
+    var currentTop = window.pageYOffset;
+
+
+    if (currentTop + floatPosition-10 >document.body.clientHeight-1100){
+     var bannerTop = document.body.clientHeight-1100+ "px";
+    }else{
+     var bannerTop = currentTop + floatPosition-10 + "px";
+     }
+    //이동 애니메이션
+    $("#channel-chat-button").stop().animate({
+      "top" : bannerTop
+    }, 500);
+
+}).scroll();
+});
+

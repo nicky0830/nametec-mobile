@@ -114,41 +114,45 @@ return (
 
             <div class="" id="textcon3" style={{width:'90%', margin:'auto',marginTop: '20px'}}>
 
-                <div className="imformname Regular" id="imformnamepost" style={{visibility: div1, fontSize:'12px', color: 'rgb(183,183,183)'}}>우편 번호</div>
+                <div className="imformname Regular" id="imformnamepost" style={{height: '17px', marginBottom: '3px',visibility: div1, fontSize:'12px', color: 'rgb(183,183,183)'}}>우편 번호</div>
                 
                 <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                <div className="inputdiv" style={{borderBottom: '1px solid rgb(224 224 224)', width: '280px', height: '42px', paddingTop: '20px',flex: '3', marginBottom: '10px'}}>
+                <div className="inputdiv" style={{height: '32px',borderBottom: '1px solid rgb(224 224 224)', width: '280px',  padding: '20px 0px 0px 0px',flex: '3', marginBottom: '10px'}}>
                 
                 <input type="text" id="textpost" class="textcont" 
                 defaultValue=''
                 onChange={showDiv1}
+                onKeyUp={fullHandler}
                 value={address}
                 style={{
                      border:'none',
                      outline: 'none',
-                        height: '40px',
                         fontSize: '20px',
+                        height: '29px',
+                        padding: '0px',
                         letterSpacing: 'normal',
                         textAlign: 'left',
                         color: 'internal light dark'}}
                         placeholder="우편 번호" readonly=""/>
                         </div>
                 <img src={button} onClick={onChangeOpenPost}
-                style={{width: 'calc(40% - 15px)', height: '57px',marginLeft: '10px'}}/>
+                style={{display: 'block', width: '120px',height: '40px',marginLeft: '10px', marginTop: '12px'}}/>
                 </div>
 
                 <div class="inputdiv" id="inputdiv_textpostdet"
-                 style={{borderBottom: '1px solid rgb(224 224 224)'}}
+                 style={{height: '50px',borderBottom: '1px solid rgb(224 224 224)'}}
                  >
                     <div>
                 <input type="text" id="textpostdet" class="textcont1" style={{border:'none', marginBottom: '10px'}} readonly=""
                   value={addressDetail}
                    style={{marginBottom: '5px',
                    border:'none',
-                      width: '80%',
+                      width: '90%',
+                      padding: '0px',
                       outline: 'none',
-                      height: '40px',
+                      height: '29px',
                       fontSize: '20px',
+                      marginTop:'10px',
                       lineHeight: '1.1',
                       letterSpacing: 'normal',
                       textAlign: 'left',
@@ -156,8 +160,8 @@ return (
                     </div>
                 </div>
 
-                <div class="imformname" id="imformname6" style={{visibility: div2, fontSize: '12px', color: 'rgb(183,183,183)', marginTop: '10px'}}> 상세주소</div>
-                <div class="inputdiv" id="inputdiv6" style={{borderBottom: `1px solid ${bordercolor1}`}}>
+                <div class="imformname" id="imformname6" style={{height: '17px', marginBottom: '3px',visibility: div2, fontSize: '12px', color: 'rgb(183,183,183)', marginTop: '10px'}}> 상세주소</div>
+                <div class="inputdiv" id="inputdiv6" style={{height: '32px', borderBottom: `1px solid ${bordercolor1}`}}>
                     <input autocomplete="off" type="text" name="" id="text6" class="textcont" placeholder="상세주소를 입력해주세요" 
                    defaultValue=''
                    onClick={showDiv2}
@@ -167,7 +171,8 @@ return (
                     border:'none',
                     caretColor: bordercolor1,
                        width: '80%',
-                       height: '40px',
+                       padding: '0px',
+                       height: '29px',
                        outline: 'none',
                        fontSize: '20px',
                        lineHeight: '1.1',

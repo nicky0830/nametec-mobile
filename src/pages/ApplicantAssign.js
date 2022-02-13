@@ -67,8 +67,9 @@ const fullHandler = () => {
         <div id="checkagree1" className="Regular" 
         onClick={clickHandler1}
         style={{fontSize : '12px',
-         marginLeft : '20px', 
-         marginRight : '53px', 
+        width: '72%',
+        marginLeft:'39px',
+        marginRight : '53px', 
          backgroundColor:  check1  ?  'rgb(237, 239, 254)' : '#efefef',        
         borderRadius: '21px', 
          marginTop : '30px', 
@@ -83,7 +84,7 @@ const fullHandler = () => {
         style={{fontSize : '12px', overflow : 'scroll', paddingLeft : '2px'
         ,width: '85%',
     height: '145px',
-    margin: '20px 20px 20px',
+    margin: '20px 40px 20px',
     paddingTop: '3.5px',
     paddingBottom: '3.5px',
     border: 'solid 1px #b7b7b7',
@@ -107,7 +108,10 @@ const fullHandler = () => {
             fullHandler();
 
         }}
-        style={{fontSize : '12px', marginLeft : '20px', marginRight : '53px',
+        style={{fontSize : '12px',         
+        marginRight : '53px',
+        width: '72%',
+        marginLeft:'39px',
         backgroundColor:  check2  ?  'rgb(237, 239, 254)': '#efefef',
         borderRadius: '21px', marginTop : '30px', 
         padding : '12px 10.9px 12px 60.9px'}}>
@@ -122,10 +126,14 @@ const fullHandler = () => {
     </div>
 
     <div className="termbox Regular" 
-    style={{fontSize : '12px', overflow : 'scroll', paddingLeft : '2px'
-    ,width: '85%',
+    style={{
+    fontSize : '12px', 
+    overflow : 'scroll',
+     paddingLeft : '2px',
+     marginLeft:'5%',
+    width: '85%',
     height: '145px',
-    margin: '20px 20px 20px',
+    margin: '20px 40px 20px',
     paddingTop: '3.5px',
     paddingBottom: '3.5px',
     border: 'solid 1px #b7b7b7',

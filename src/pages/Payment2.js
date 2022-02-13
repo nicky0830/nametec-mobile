@@ -63,9 +63,10 @@ function Payment2(){
 
         <div style={{textAlign : 'center', position: 'fixed',maxWidth : '520px',  bottom : '0px',width : '100%'}}>
         <Link to="/">
-        <div style={{maxWidth : '520px',justifyContent : 'center', paddingTop:'20px',cursor : 'pointer',alignItems : 'center', width: '100%',marginTop:'10px',textSlign:'center',backgroundColor:'#4a64f5',color:'#ffffff', fontSize:'17px', height:'38px',bottom:'0px',left :'0px',paddingBottom: '5px'}}>
-                완료
-            </div>
+        <div id="next_button" className="noto"
+                                             style={{cursor:'pointer', position: 'fixed',bottom:'0px',display: 'flex', alignItems: 'center',justifyContent: 'center', backgroundColor: '#4a64f5'}}>
+                                            <div id="dam" style={{color:'#ffffff'}}> 완료</div>
+                                        </div>
            </Link>
             </div>
 

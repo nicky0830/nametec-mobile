@@ -88,19 +88,21 @@ return (
         출원인 연락처 <br/>
     </div>
 
-    <div className="" id="textcon2" style={{width: '90%', margin: '20px', marginTop: '20px'}}>
-        <div className="imformname" id="imformname5" style={{visibility: div1, fontSize: '12px', color:'#898989'}}> 출원인 전화번호</div>
+    <div className="" id="textcon2" style={{width: '90%', margin: '20px', marginTop: '45px'}}>
+        <div className="imformname" id="imformname5" style={{height: '17px', marginBottom: '3px', visibility: div1, fontSize: '12px', color:'#898989'}}> 출원인 전화번호</div>
 
-        <div className="inputdiv" id="inputdiv5" style={{borderBottom: `1px solid ${bordercolor1}`, marginBottom: '10px'}}>
+        <div className="inputdiv" id="inputdiv5" style={{height: '33px', borderBottom: `1px solid ${bordercolor1}`, marginBottom: '16px'}}>
             <input autoComplete="off" type="tel" name="" defaultValue="" id="text5" className="textcont Regular" placeholder="출원인 전화번호" 
                     onClick={showDiv1}
+                    onKeyUp={fullHandler}
                     onChange={(ele)=> telValidator(ele.target.value)}
-                     style={{marginBottom: '5px',
+                     style={{
+                        marginBottom: '5px',
                      border:'none',
                      outline: 'none',
                      caretColor: bordercolor1,
                         width: '80%',
-                        height: '40px',
+                        height: '29px',
                         fontSize: '20px',
                         lineHeight: '1.1',
                         letterSpacing: 'normal',
@@ -109,9 +111,9 @@ return (
             maxLength="11" oninput="maxLengthCheck(this)"/>
         </div>
 
-        <div className="imformname" id="imformname4" style={{visibility: div2, fontSize: '12px', color:'#898989'}}> 출원인 이메일
+        <div className="imformname" id="imformname4" style={{height: '17px', marginBottom: '3px', visibility: div2, fontSize: '12px', color:'#898989'}}> 출원인 이메일
         </div>
-      <div className="inputdiv" id="inputdiv4" style={{borderBottom: `1px solid ${bordercolor2}`}}>
+      <div className="inputdiv" id="inputdiv4" style={{height: '33px',borderBottom: `1px solid ${bordercolor2}`}}>
             <input autoComplete="off" type="email" name="email" defaultValue="" id="text4" 
             className="textcont" placeholder="출원인 이메일" style={{border:'none', color : '#000000'}}
             onClick={showDiv2}
@@ -122,7 +124,7 @@ return (
                width: '80%',
                outline: 'none',
                caretColor: bordercolor2,
-                 height: '40px',
+                 height: '29px',
                fontSize: '20px',
                lineHeight: '1.1',
                letterSpacing: 'normal',

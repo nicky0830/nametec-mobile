@@ -286,7 +286,7 @@ const Page1 = styled.div`
     <div className="tabclass" id="tab-2">
         <div className="" id="textcon" style={{width:'90%', margin:'20px'}}>
             <div className="imformname" id="imformname11" style={{visibility: div1, height: '17px', fontSize: '12px', color:'#898989'}}> 법인 명칭 <span style={{color:'#b7b7b7'}}>(한글)</span></div>
-            <div className="inputdiv" id="inputdiv11" style={{borderBottom: `1px solid ${bordercolor1}`}}>
+            <div className="inputdiv" id="inputdiv11" style={{height: '30px', marginBottom: '16px', borderBottom: `1px solid ${bordercolor1}`}}>
                 <input autoComplete="off" type="text" name="" id="text11" className="textcont Regular" placeholder="법인 명칭(한글)" 
                 onChange={Korean}
                 onClick={showDiv1}
@@ -306,7 +306,7 @@ const Page1 = styled.div`
                 />
             </div>
             <div className="imformname" id="imformname22" style={{visibility: div2, height: '17px', fontSize: '12px', color:'#898989'}}> 법인 명칭 <span style={{color:'#b7b7b7'}}>(영문)</span></div>
-            <div className="inputdiv" id="inputdiv22" style={{borderBottom: `1px solid ${bordercolor2}`}}>
+            <div className="inputdiv" id="inputdiv22" style={{height: '29px', marginBottom: '16px', borderBottom: `1px solid ${bordercolor2}`}}>
                 <input autoComplete="off" type="text" name="" id="text22" className="textcont Regular" placeholder="법인 명칭(영문)" style={{border:'none', color : '#000000', fontSize: '20px', height: '16px'}}
                 onClick={showDiv2}
                 onChange={English}

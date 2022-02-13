@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import styled from 'styled-components';
 import '../components/inputstyles.css';
 //폰트 다른 걸로!! noto sans kr로 바꾸기
@@ -115,6 +115,11 @@ const Page1 = styled.div`
     const [bordercolor2, setColor2] = useState('#e0e0e0');
     const [bordercolor3, setColor3] = useState('#e0e0e0');
 
+    const input1 = useRef(null);
+    const input2 = useRef(null);
+    const input3 = useRef(null);
+
+
     const fullHandler = () => { 
         if((bordercolor1==='#4a64f5')
         && (bordercolor2==='#4a64f5')
@@ -158,16 +163,7 @@ const Page1 = styled.div`
     }
 
 
-    const Korean = (ele) => { 
-
-     if(ele.target.value){ 
-        setColor1('#4a64f5')
-        if(!checkKorean(ele.target.value)){
-        setColor1('red')
-        }
-
-    }
-    }
+ 
 
     const English = (ele) => { 
         if(ele.nativeEvent.data){
@@ -178,6 +174,17 @@ const Page1 = styled.div`
     }
        }
     }
+
+    const Korean = (ele) => { 
+
+        if(ele.target.value){ 
+           setColor1('#4a64f5')
+           if(!checkKorean(ele.target.value)){
+           setColor1('red')
+           }
+   
+       }
+       }
 
     
 
@@ -202,6 +209,7 @@ const Page1 = styled.div`
 
     const showDiv3 = (ele) => { 
         setDiv3('visible')
+        setColor3('#4a64f5')
         ele.target.placeholder ='';
        
         }
@@ -436,11 +444,13 @@ function getNumberOfDate(yy, mm) {
         <span style={{color:'#898989',fontSize: '12px',}}>(한글)</span>
         </div>
 
-        <div className="inputdiv" id="inputdiv1"  style={{borderBottom: `1px solid ${bordercolor1}` }}>
+        <div className="inputdiv" id="inputdiv1"  style={{height: '29px',borderBottom: `1px solid ${bordercolor1}` }}>
         <input autoComplete='off'  type="text" id="text1" className="textcont Regular" placeholder="출원인 성명(한글)" 
         name='one' defaultValue=''
+        ref ={input1}
         onClick={showDiv1}
         onChange={Korean}
+        onKeyUp={fullHandler}
          style={{marginBottom: '5px',
          caretColor: bordercolor1,
          autoFocus: 'off',
@@ -460,9 +470,11 @@ function getNumberOfDate(yy, mm) {
         <div className="imformname"id="imformname2" style={{visibility: div2, fontSize: '12px', color:'#898989'}}> 출원인 성명 
         <span style={{color:'#898989'}}>(영문)</span>
         </div>
-        <div className="inputdiv" id="inputdiv2"  onClick ={showDiv2} onKeyDown={English} style={{borderBottom: `1px solid ${bordercolor2}`}} >
+        <div className="inputdiv" id="inputdiv2"  onClick ={showDiv2} onKeyDown={English} style={{height: '29px',borderBottom: `1px solid ${bordercolor2}`}} >
             <input type="text" name="" id="text2"defaultValue =''  className="textcont Regular" placeholder="출원인 성명(영문)" 
-            onChange= {English}
+            ref ={input2}
+           onChange= {English}
+            onKeyUp={fullHandler}
             style={{marginBottom: '5px',
             caretColor: bordercolor2,
             imeMode: 'inactive',
@@ -471,7 +483,7 @@ function getNumberOfDate(yy, mm) {
             outline: 'none',
             padding: '0px',
                width: '80%',
-               height: '40px',
+               height: '29px',
                fontSize: '20px',
                lineHeight: '1.1',
                letterSpacing: 'normal',
@@ -480,16 +492,18 @@ function getNumberOfDate(yy, mm) {
             
         </div>
         <div className="imformname" id="imformname3" style={{visibility: div3, fontSize: '12px', color:'#898989'}} > 주민등록번호</div>
-        <div className="inputdiv" id="inputdiv3" onClick ={showDiv3}  style={{borderBottom: `1px solid ${bordercolor3}`  }}>
+        <div className="inputdiv" id="inputdiv3" onClick ={showDiv3}  style={{height: '30px', borderBottom: `1px solid ${bordercolor3}`  }}>
         
         
             <input autoFocus="off" type="number"defaultValue =''  name=""  id="text3-1" className="textcont Regular" placeholder="주민등록번호" 
                onChange={(ele)=> check_1(ele.target.value)}
+               onKeyUp={fullHandler}
+               ref ={input3}
                style={{marginBottom: '5px',
                border:'none',                            
                caretColor: bordercolor3,
                outline: 'none',
-                  height: '40px',
+                  height: '28px',
                   padding: '0px',
                   autoFocus: 'off',
                   fontSize: '20px',
@@ -498,7 +512,12 @@ function getNumberOfDate(yy, mm) {
                   textAlign: 'left',
                   color: 'internal light dark'}}
             ></input>
-            <span className="lineDivider"> - </span>
+            <span className="lineDivider"
+            style={{
+                display: 'inline-block',
+                marginBottom: '10px'
+            }}
+            > - </span>
 
             <input autoFocus="off" type="password" name="" defaultValue =''  id="text3-2" className="textcont" placeholder="●●●●●●●" 
                onChange={(ele) => {
@@ -506,8 +525,9 @@ function getNumberOfDate(yy, mm) {
                 }}
                 onKeyUp={fullHandler}
                style={{marginBottom: '5px',
+               marginLeft: '10px',
                border:'none',
-                  height: '40px',
+                  height: '28px',
                   outline: 'none',
                   padding: '0px',
                   fontSize: '20px',

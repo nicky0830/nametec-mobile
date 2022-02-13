@@ -30,8 +30,8 @@ const MyInfoItem = ({name, email}) => {
                 style={{marginLeft: '18px', marginRight: '10px',display:'inline-block'}}/>
       <div style={{display:'inline-block', width: '90%'}}>
         <div style={{display:'inline-block', marginTop: '2px'}}>
-            <div id="customername" className = 'Medium' style={{fontSize: '16px'}}>{name}</div>
-            <div id="customeremail" style={{fontSize: '10px',color: '#b7b7b7'}}>{email}</div>
+            <div id="customername" className = 'noto' style={{fontSize: '16px'}}>{name}</div>
+            <div id="customeremail"className = 'noto' style={{fontSize: '10px',color: '#b7b7b7'}}>{email}</div>
         </div>
       </div>     
       <div style={{display:'inline-block',float:'right'}}>
@@ -71,7 +71,31 @@ const ItemContent  = ({title, subtitle, current}) => {
 </div>
     )
 }
-
+const ItemContent2  = ({title, subtitle, current}) => {
+    return(
+        <div  style={{ borderRadius:'10px',marginLeft: '5%', marginRight: '5%'}}>
+            {/* font 상속이 되나 싶어서 부모에 className을 넣었는데 상속 X */}
+    <div className = 'Medium' style={{paddingTop: '10px', color: 'rgb(137, 137, 137)', fontSize: '16px'}}>{title}</div>
+    <div  className = 'Medium' style={{color: 'rgb(81, 81, 81)', paddingBottom: '8px', fontSize: '16px'}}>{subtitle}</div>
+   { typeof current === 'string'  ?
+    <div
+    className ='Medium'
+    style={{
+    fontSize: '12px',
+    position: 'absolute',
+    borderRadius: '5px', boxShadow: 'rgba(0, 0, 0, 0.1) 1px 1px 4px 0px',
+    textAlign: 'center',
+    height: '36px', width: '130px',
+    left: '50%',
+    marginLeft: '30px', marginTop: '18px',
+    lineHeight: '3',
+    backgroundColor: 'rgb(239, 239, 239)', color: 'rgb(137, 137, 137)'}}>
+       {current}
+    </div> : null}
+    {/* current값이 있으면 넣고 없으면 null */}
+</div>
+    )
+}
 
 
 
@@ -211,7 +235,7 @@ const MypageTopbar = () => {
             height: '24px',
             transform: 'translateY(-5px)', 
             position: 'absolute', 
-            marginTop: '15px'}}>입금대기</div>
+            marginTop: '9px'}}>입금대기</div>
             <div style={{display: 'inline-block', marginLeft: '110px'}}>
                 <div style={{display: 'inline-block'}}>상표명</div>
                 <div style={{fontSize: '12px', color: 'rgb(183, 183, 183)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '140px'}}>의류 및 패션 제품</div>
@@ -232,7 +256,7 @@ const MypageTopbar = () => {
 
             <div id="div50" class="backGR" 
             style={{backgroundColor: 'rgb(250, 250, 250)', 
-            height: '335px', width: '111%', 
+            height: '340px', width: '111%',
             marginLeft: '-5.5%', 
             display: open ? 'block' : 'none' }}>
 
@@ -240,7 +264,7 @@ const MypageTopbar = () => {
             <ItemContent title='출원인 정보' subtitle='내용없음' current='출원 내역 상세보기'/>
             <ItemContent title='출원일' subtitle='날짜 미정' current='등록료 결제하기'/>
             <ItemContent title='등록료 납부 상태' subtitle='납부일 미정' current= {null}/>
-            <ItemContent title='등록일' subtitle='날짜 미정'/>
+            <ItemContent2 title='등록일' subtitle='날짜 미정'/>
 
 
 

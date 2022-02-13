@@ -5,7 +5,6 @@ import {useState} from 'react';
 import '../text.css';
 
 const Nextbutton = styled.button`
-
   cursor: pointer;
       position: fixed;
       bottom: 0px;
@@ -36,4 +35,3 @@ export default function NextButtonComponent({text, color}){
     </Nextbutton>
   )
 }
- 

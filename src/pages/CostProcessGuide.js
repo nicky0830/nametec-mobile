@@ -71,7 +71,7 @@ const CostProcessContent2 = () => {
 
 return (
     <>
-    <div style={{textAlign: 'center'}}>
+    <div style={{textAlign: 'center', marginBottom: '110px'}}>
         <div className="midbox"
         style = {{width: '88%',
         margin: '52px 0 21.3px',
@@ -136,10 +136,11 @@ return (
                 </div>
 
                 <div style={{lineHeight: '6px', color : '#b7b7b7', position: 'absolute', left : '50%', marginLeft : '-6.5px;', marginTop : '-10px'}}>
-                    <a className="Regular" style={{fontSize :'24px', color : '#b7b7b7'}}>+</a>
+                    <div className="Regular" style={{fontSize :'24px', color : '#b7b7b7', marginTop:'5px', width: '10px', height:'10px',marginLeft: '-2px'}}>+</div>
                 </div>
-                <div className="midbox2" style={{marginTop : '29px', width: '88%',
-                      margin: '24px 0 21.3px',
+                <div className="midbox2" style={{ width: '88%',
+                      margin: '40px 0 21.3px',
+                      marginTop : '40px',
                       marginLeft: '6.3%',
                       borderRadius: '10px',
                       boxShadow: '1px 1px 4px 0 rgb(0 0 0 0.1)',

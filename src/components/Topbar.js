@@ -40,9 +40,8 @@ object-fit: contain;
     text-align: left;
     color: #4a64f5;
 }
-
 >.topbar-pageallnumber{
-  margin: 4% 20px 0 0;
+margin: 4% 20px 0 0;
     float: right;
     font-size: 16px;
     color: #b7b7b7;
@@ -58,8 +57,8 @@ export default function TopbarComponent({page, path}){
       <Link to={path}>
       <img className="topbar-backbutton" src={backarrow} alt='<'/>
       </Link>
-      <span id="a04" className="Regular topbar-pageallnumber"> / 03</span>
-      <span id="a01" className="Regular topbar-pagenumber" >{page} </span>
+      <span id="a04" className="Regular"> / 03</span>
+        <span id="a01" className="Regular" >{page} </span>
       </Topbar>
         )
 }

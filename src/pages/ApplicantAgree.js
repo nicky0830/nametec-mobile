@@ -64,7 +64,7 @@ return (
 
 
       
-    <div id="imformtable" style={{marginLeft : '5%', marginTop: '20px', borderTop : '2px dashed #8989894a'}}>
+    <div id="imformtable" style={{marginLeft : '5%', marginRight : '5%', marginTop: '20px', borderTop : '2px dashed #8989894a'}}>
 
     </div>
 
@@ -89,10 +89,12 @@ return (
     </div>
 
     <div className="termbox Regular" 
-        style={{fontSize : '12px', overflow : 'scroll', paddingLeft : '2px'
-        ,width: '90%',
+        style={{
+        marginTop : '6px',fontSize : '12px', overflow : 'scroll', paddingLeft : '2px',
+        width: '90%',
     height: '145px',
     margin: '20px 20px 20px',
+    marginLeft:'28px',
     paddingTop: '3.5px',
     paddingBottom: '3.5px',
     border: 'solid 1px #b7b7b7',
@@ -116,12 +118,25 @@ return (
         clickHandler(); 
         fullHandler();
     }}
-    style={{fontSize : '12px', marginLeft : '20px', marginRight : '20px', backgroundColor:  check  ? '#efefef': 'rgb(237, 239, 254)', borderRadius: '21px',
-    marginTop : '20px', padding : '18px 10.9px 20px 60.9px'}}>
+    style={{fontSize : '12px',
+    marginLeft:'5%', 
+    marginRight : '20px', 
+    backgroundColor:  check  ? '#efefef': 'rgb(237, 239, 254)', 
+    borderRadius: '21px',
+    marginTop : '20px', 
+    padding : '18px 10.9px 20px 60.9px'}}>
 <img id="imgcheck" src={check ? grc : blc} 
 style={{position: 'absolute',width : '30px', marginLeft : '-40px',marginTop:'6px'}}/>위 내용을 모두 확인하였으며,
 <br/>해당 내용으로 상표를 출원하는 것에 동의합니다.
     </div>
+
+      
+    <div id="imformtable" style={{marginLeft : '5%', marginRight : '5%', marginTop: '20px', borderTop : '2px dashed #8989894a'}}>
+
+    </div>
+
+
+<div style={{marginLeft:'5px'}}>
     <div className="Regular" style={{marginTop: '22px',fontSize : '12px', marginLeft : '5%'}}>
 *내용수정이 필요할 경우, 유선 또는 이메일로 연락해주시기 바랍니다.
 
@@ -132,6 +147,7 @@ Tel : 02-922-5710
     <div className="Regular" style={{marginTop: '5px', marginBottom : '100px', fontSize : '12px', marginLeft : '5%'}}>
 Mail : admin@nametec.kr
 
+    </div>
     </div>
 </div>
 
