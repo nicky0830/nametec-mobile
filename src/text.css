@@ -30,6 +30,28 @@
     font-family: Medium
 }
 
+@font-face {
+    font-family : "Bold1";
+    src : url(./font/Pretendard-SemiBold.otf) format('truetype');
+    }
+    .Bold1{
+    font-family: Bold1
+    }
+    @font-face {
+    font-family : "Light1";
+    src : url(./font/Pretendard-Light.otf) format('truetype');
+    }
+    .Light1{
+    font-family: Light1
+    }
+    @font-face {
+    font-family : "Medium1";
+    src : url(./font/Pretendard-Medium.otf) format('truetype');
+    }
+    .Medium1{
+    font-family: Medium1
+    }
+
 #start_btn {
     width: 60%;
     font-family: Regular;

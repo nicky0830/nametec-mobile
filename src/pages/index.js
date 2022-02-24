@@ -17,8 +17,6 @@ import Success from './pages/success';
 import Payment from './pages/Payment';
 import Payment2 from './pages/Payment2';
 import All from './pages/All';
-import First from './pages/First';
-
 
 
 
@@ -94,12 +92,14 @@ function App(){
     return(
         <div className='app'>
             <meta name="viewport" 
-            content="width=device-width,initial-scale=1.0,
-            minimum-scale=1.0,maximum-scale=1.0,
+            content="width=device-width,
+            initial-scale=1.0,
+            minimum-scale=1.0,
+            maximum-scale=1.0,
             user-scalable=no">
             </meta>
             <Routes>
-                <Route exact path="/"><First/></Route>
+                <Route exact path="/"><Intro></Intro></Route>
                 <Route path="/brandregister"><BrandRegister></BrandRegister></Route>
                 <Route path="/brandlogoregister"><BrandLogoRegister></BrandLogoRegister></Route>
                 <Route path="/brandcategoryregister"><BrandCategoryRegister></BrandCategoryRegister></Route>

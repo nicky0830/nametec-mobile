@@ -93,14 +93,14 @@ const cashCheck = () => {
                 <div id="card" onClick={cardCheck} className="midbox3" style={{cursor : 'pointer',paddingLeft :' 16.3px', borderColor : '#4a64f5'}}>
                     <img id="cardimg" src={cardImg[0]} style={{width : '28.9px', marginTop : '13.4px', float : 'left'}}/>
                     <div>
-                    <a id="card_text" className="Regular" style={{fontSize : '14px', color : '#515151', position : 'absolute', marginTop : '12.5px', marginLeft : '12.7px'}}>신용 / 체크카드</a>
+                    <a id="card_text" className="Regular" style={{fontSize : '14px', color : '#515151', position : 'absolute', marginTop : '15.5px', marginLeft : '12.7px'}}>신용 / 체크카드</a>
                         </div>
                 </div>
 
                 <div id="cash" onClick={cashCheck} className="midbox23" style={{cursor : 'pointer',paddingLeft : '20.8px'}}>
                     <img id="cashimg" src={cashImg[0]} style={{width : '20px', marginTop : '13.4px', float : 'left'}}/>
                     <div>
-                    <a id="cashtext" className="Regular" style={{fontSize : '14px', color : '#515151', position : 'absolute', marginTop : '13.5px', marginLeft : '17.2px'}}>계좌이체</a>
+                    <a id="cashtext" className="Regular" style={{fontSize : '14px', color : '#515151', position : 'absolute', marginTop : '15.5px', marginLeft : '17.2px'}}>계좌이체</a>
                         </div>
                 </div>
 

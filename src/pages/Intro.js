@@ -39,10 +39,10 @@ function Intro(){
             <MainHeader/>
             <div>
                 <div className="Regular" style={{fontSize : "30px", textAlign : "center", marginTop : "60px"}}>
-                    내 상표, 등록 가능할까요? 
+                    사장님들 바쁘시죠?
                 </div>
                 <div className="Bold" style={{fontSize : "30px", textAlign : "center" }}>
-                    AI 무료진단 받아보세요! 
+                    딱 5분만 투자하세요
                 </div>
                 <div style={{fontSize : "14px", textAlign : "center", marginTop : "24px"}}>
                     <a className="Light">네임텍의 </a><a className="Medium">AI변리사</a><a className="Light">가 </a>

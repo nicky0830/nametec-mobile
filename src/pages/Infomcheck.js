@@ -15,22 +15,26 @@ useEffect(()=> {
 btnCheck()
     })
 const numberCheckFun = (e) => {
- var text = e.target.value;
+ var text1 = e.target.value;
 
 var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-if (regPhone.test(text) === true) {
+if (regPhone.test(text1) === true) {
 setPhone(1)
+$('#textcoco').css("border-bottom", "solid 2px #4a64f5");
 }else{
+$('#textcoco').css("border-bottom", "solid 2px red");
 setPhone(0)
 }
 }
 const emailCheckFun = (e) => {
 var emailVal = e.target.value;
-var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; // 검증에 사용할 정규식 변수 regExp에 저장
-if (emailVal.match(regExp) != null) {
-setEmail(1)
+var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+if (re.test(emailVal)===false) {
+setEmail(0)
+$('#textcoco2').css("border-bottom", "solid 2px red");
 }else {
 setEmail(1)
+$('#textcoco2').css("border-bottom", "solid 2px #4a64f5");
  }
 }
 const btnCheck = () => {
@@ -43,6 +47,7 @@ const btnCheck = () => {
                     $('#next_button').css('background-color', '#efefef');
                         $('#dam').css('color', '#b7b7b7');
                         setEventcss("disabled-link")
+
             }
     }
     return (
@@ -54,7 +59,7 @@ const btnCheck = () => {
             <div className="Regular" style={{marginLeft : '20px', fontSize : '14px', textAlign : 'left', color : '#4a64f5'}}>
                     결제 후, 상표 출원 진행사항을 알려드리기 위해<br/>정확한 전화번호 및 이메일이 꼭 필요합니다.
                 </div>
-            <div id="textcoco" className=""  style={{width: 'calc(100% - 40px)', paddingLeftdd:'3px',margin: '24px 0 0 20px',  borderBottom: 'solid 2px #b7b7b7' }}>
+            <div id="textcoco" className=""  style={{width: 'calc(100% - 40px)', paddingLeft:'3px',margin: '24px 0 0 20px',  borderBottom: 'solid 2px #b7b7b7' }}>
                     <input id="tela" onChange={numberCheckFun} type="tel" maxLength="11" name="" className="informchecktext Medium" placeholder="전화번호" style={{border: 'none', color : '#000000',opacity : "0.4" }}/>
                 </div>
             <div id="textcoco2" className=""  style={{width: 'calc(100% - 40px)', paddingLeft:'3px',margin: '24px 0 0 20px',  borderBottom: 'solid 2px #b7b7b7' }}>
@@ -63,7 +68,7 @@ const btnCheck = () => {
             <Link to="/Success3" className={eventcss}>
             <div id="next_button" className="noto"
                                  style={{cursor:'pointer', position: 'fixed',bottom:'0px',display: 'flex', alignItems: 'center',justifyContent: 'center', backgroundColor: '#efefef'}}>
-                                <div id="dam" style={{color:'#b7b7b7'}}>다음</div>
+                                <div id="dam" style={{color:'#b7b7b7'}}> 다음</div>
                             </div>
             </Link>
         </div>
@@ -103,10 +108,6 @@ $(document).ready(function () {
 
 
     $('#tela2').focus(function () {
-                //input의 focus/blur에 따라서 
-                //flag에 input의 value가 있으면 false로 만들어서 
-                // true면 gray, false면 blue 
-
             $('#textcoco2').css("border-bottom", "solid 2px #4a64f5");
             $('#tela2').css("color", "#000000");
             $('#tela2').css("opacity", "1");
@@ -120,20 +121,11 @@ $(document).ready(function () {
             $('#tela2').css("opacity", "1");
         });
             $('#tela2').blur(function () {
-                //input의 focus/blur에 따라서 
-                //flag에 input의 value가 있으면 false로 만들어서 
-                // true면 gray, false면 blue 
-
                 var flag = true;
                 flag = $(this).val().length > 0 ? false : true;
                 if (flag) {
                     $('#textcoco2').css("border-bottom", "solid 2px #b7b7b7");
                     $('#tela2').css("opacity", "0.4");
-                } else {
-                }
-            });
-
-    });                    $('#tela2').css("opacity", "0.4");
                 } else {
                 }
             });

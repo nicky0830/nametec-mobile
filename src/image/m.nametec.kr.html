@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://m.nametec.kr/ -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="./m.nametec.kr_files/266266868791844" async=""></script><script async="" src="./m.nametec.kr_files/fbevents.js"></script><script type="text/javascript" async="" src="./m.nametec.kr_files/analytics.js"></script><script async="" src="./m.nametec.kr_files/gtm.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W7CRKH2');</script>
+    <script>
+    if (window.location.host == "www.nametec.kr"||window.location.host == "nametec.kr"){
+window.location.href = "https://m.nametec.kr"+window.location.search;
+    }
+
+        function login() {
+    if (localStorage.getItem("customeremail") == null){
+    localurl = nametec + "/login";
+    window.location.href = localurl;
+    }
+    else{
+    localurl = nametec + "/search1";
+    window.location.href = localurl;
+    logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.style.display  = '';
+        menuBtn1.innerHTML = '마이페이지';
+        menuBtn1.onclick = function () {
+            mypage();
+        };
+    }
+
+}
+    </script>
+    
+    <meta property="og:title" content="네임텍">
+<meta property="og:description" content="간편 상표 출원 사이트">
+<meta property="og:image" content="../static/image/asd213123.jpg">
+    <meta property="og:url" content="https://m.nametec.kr/">
+    <link rel="shortcut icon" href="https://m.nametec.kr/static/image/favicon.ico">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+
+    <script src="./m.nametec.kr_files/kakao.min.js"></script>
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="./m.nametec.kr_files/swiper.min.css">
+    <script src="./m.nametec.kr_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./m.nametec.kr_files/main.js"></script>
+    <link rel="stylesheet" href="./m.nametec.kr_files/intro.css">
+    <script type="text/javascript" src="./m.nametec.kr_files/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./m.nametec.kr_files/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+
+        var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'Windows CE;', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson', 'Mobile', 'Symbian', 'Opera Mobi', 'Opera Mini', 'IEmobile');
+        var newURL = window.location.protocol + "//" + window.location.host + "/"
+
+        for (var word in mobileKeyWords) {
+            if (newURL.includes('https://nametec.kr')) {
+                if (navigator.userAgent.match(mobileKeyWords[word]) != null) {
+
+                    window.location.href = "https://m.nametec.kr";
+
+                    break;
+
+                }
+            }
+        }
+
+    </script>
+    <style>
+
+ @font-face {font-family: 'Light';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+  @font-face {font-family: 'Regular';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+   @font-face {font-family: 'Medium';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+    @font-face {font-family: 'Bold';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+html{
+max-width : 520px;
+margin: 0 auto;
+cursor : default;
+}
+<!--@font-face {-->
+<!--font-family : "Regular";-->
+<!--src : url(../static/font/NotoSansCJKkr-Regular.otf) format('truetype');-->
+<!--}-->
+.Regular{
+font-family: Regular
+}
+
+<!--@font-face {-->
+<!--font-family : "Bold";-->
+<!--src : url(../static/font/NotoSansCJKkr-Bold.otf) format('truetype');-->
+<!--}-->
+.Bold{
+font-family: Bold1
+}
+<!--@font-face {-->
+<!--font-family : "Light";-->
+<!--src : url(../static/font/NotoSansCJKkr-Light.otf) format('truetype');-->
+<!--}-->
+.Light{
+font-family: Light
+}
+<!--@font-face {-->
+<!--font-family : "Medium";-->
+<!--src : url(../static/font/NotoSansCJKkr-Medium.otf) format('truetype');-->
+<!--}-->
+.Medium{
+font-family: Medium
+}
+#start_btn {
+    width: 60%;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : 14.65%;
+}
+#start_btn123 {
+    width: 60%;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+}
+#start_btn1 {
+    width: 60%;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : 14.65%;
+}
+#start_btn2 {
+    width: 230px;
+    font-family: Regular;
+    background-color: #4a64f5;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: 100% 100%;
+    border: none;
+    color: #ffffff;
+    line-height: 3;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left : -115px;
+}
+.talk
+{
+position: relative;
+width: 85%;
+height: 70px;
+padding: 0px;
+background: #FFFFFF ;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
+}#midbox{
+  width: 80%;
+  height: 275px;
+  margin-left : 10%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.circle{
+  width:113px;
+  height:113px;
+  border-radius: 70px;
+  border: solid 1px #cccccc;
+}
+.sideBanner {
+width : 520px;
+  position: absolute;
+  top: 50px;
+  background-color: #999900;
+  color: #fffffff;
+  z-index : 1;
+}
+@-webkit-keyframes sdb05 {
+  0% {
+    -webkit-transform:  translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform:  translate(0px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb05 {
+  0% {
+    transform:  translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0px, 20px);
+    opacity: 0;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+</style>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '266266868791844');
+fbq('track', 'PageView');
+fbq('trackCustom', 'PageVisit', {page: '/'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=266266868791844&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<script type="text/javascript" charset="UTF-8" defer="" src="./m.nametec.kr_files/adn_check_1.0.2.ad"></script></head>
+
+<body style="overflow-x:hidden;">
+
+<div class="" style=" top:0px; width: 100%;background-color: #FFFFFF; z-index: 10010; max-width: 520px; margin: auto; border-bottom : 1px solid #e0e0e0; height : 55px;">
+    <img src="./m.nametec.kr_files/nametecLogo.png" style="display:inline-block;width: 105px;transform: translate(28px); margin-top : 12px;">
+    <img src="./m.nametec.kr_files/menu.png" srcset="../static/image/menu@2x.png 2x,
+             ../static/image/menu@3x.png 3x" class="" style="cursor:pointer;display:inline-block; float : right;margin-top : 20px; margin-right : 20px; " onclick="menuClick()">
+</div>
+<div class="Bold1" style="font-size : 28px; text-align : center; margin-top : 50px;">
+내 상표, 등록 가능할까요? <br>AI 무료진단 받아보세요<a style="color : #4A64F5">!</a>
+</div>
+
+<div class="Light1" style="font-size : 14px;line-height : 1.6;text-align : center; margin-top : 30px;">
+AI 진단 후에는 10년 경력의 변리사가
+    <br>
+추가 검토와 등록을 도와드립니다!
+</div>
+
+
+<div style="position: relative ;margin-bottom : 20px;">
+    <img src="./m.nametec.kr_files/smart.png" class="" style="object-fit: cover; width : 70%; padding : 0px;display: block; margin: 0px auto;margin-top : 30px;">
+    <div style="padding-left: 5%;display:inline-block;">
+    <button type="button" id="start_btn" style=" position : absolute; margin-top : -60px; cursor:pointer;" onclick="login()">AI 무료 진단 시작하기</button>
+<!--<a id="channel-chat-button" href="#" onclick="void chatChannel();">-->
+<!--  <img-->
+<!--    src="/tool/resource/static/img/button/channel/consult/consult_small_yellow_pc.png"-->
+<!--  />-->
+<!--</a>-->
+      <img id="channel-chat-button" src="./m.nametec.kr_files/icon_kakao@2x.png" onclick="void chatChannel();" style="cursor: pointer; position: absolute; object-fit: cover; width: 12%; margin-top: -20%; right: 20px; z-index: 1; top: 3428px;">
+
+        </div>
+</div>
+<a href="https://m.nametec.kr/#bottom">
+<img src="./m.nametec.kr_files/zxczxc.png" style="width:30px;margin-left : calc(50% - 17px);-webkit-animation: sdb05 1.5s infinite;animation: sdb05 1.5s infinite;padding-bottom:20px;">
+</a>
+<div id="bottom" style="padding-top: 50px;padding-bottom :50px;background-color: #fafafa;text-align : center; ">
+    <div style="">
+<a class="Bold1" style="font-size : 28px;">
+    가격은 낮춰도<br>기준은 낮추지 않습니다</a><a class="Bold1" style="font-size : 28px;color : #4A64F5">.</a>
+            </div>
+    <div class="Light1" style="font-size : 14px;line-height : 1.6;text-align : center; margin-top : 30px;">
+비용 부담은 최대한 줄이고,<br>
+더욱 꼼꼼하고 정확한 서비스를 제공합니다.
+</div>
+    <div style="background-color : #ffffff;width :90%;border-radius: 12px;margin: 0 auto;">
+    <img src="./m.nametec.kr_files/comparison.png" class="" style="object-fit: cover; width : 95%; padding : 0px;display: block; margin: 0px auto;margin-top : 30px;padding-top:10px;padding-bottom:12px">
+    </div>
+    <img id="que11" src="./m.nametec.kr_files/button3.png" onclick="que1();" class="" style="object-fit: cover; width :90%; padding : 0px;display: block; margin: 0px auto;margin-top : 50px;">
+    <div id="que1" style="background-color: rgb(255, 255, 255); width: 90%; margin: 0px auto;">
+        <img src="./m.nametec.kr_files/process.png" class="" style="object-fit: cover; width : 93%; padding : 0px;display: block; margin: 0px auto;padding-top : 30px;padding-bottom : 30px;">
+    </div>
+    <img id="que22" src="./m.nametec.kr_files/button4.png" onclick="que2();" class="" style="object-fit: cover; width :90%; padding : 0px;display: block; margin: 0px auto;margin-top : 15px;">
+    <div id="que2" style="background-color: rgb(255, 255, 255); width: 90%; margin: 0px auto; padding-top: 30px; padding-bottom: 30px;">
+        <img src="./m.nametec.kr_files/price.png" class="" style="object-fit: cover; width : 93%; padding : 0px;display: block; margin: 0px auto;">
+        <div style="margin-top : 21px;">
+<a class="Light1" style="font-size : 10px;color : #898989">*</a>
+        <a class="Regular" style="font-size : 10px;color : #515151">상표 출원비와 등록비를 합친 금액</a><a class="Light1" style="font-size : 10px;color : #898989">이 상표등록 총 비용입니다</a>
+            </div>
+        <div style="margin-top : -4px;">
+<a class="Light1" style="font-size : 10px;color : #515151">*저희보다 더 저렴한 서비스가 있다면, </a>
+        <a class="Regular" style="font-size : 10px;color : #898989">차액을 보상</a><a class="Light1" style="font-size : 10px;color : #515151">해드립니다.</a><br><br>
+            <a href="https://m.nametec.kr/anne" class="Light1" style="font-size : 14px;  color: #000000; text-decoration: underline; ">+ 더 자세히 알아보기</a>
+            </div>
+    </div>
+
+    </div>
+
+<div style="padding-top: 50px;padding-bottom :50px;background-color: #fff;text-align : center; ">
+    <div style="">
+<a class="Bold1" style="font-size : 28px;">
+    네임텍상표를 이용한<br>사장님들의 리얼 후기</a><a class="Bold1" style="font-size : 28px;color :#4A64F5 ">.
+</a>
+            </div>
+        <img src="./m.nametec.kr_files/hana.png" style="width : 86%;margin-top : 45px;">
+    <img src="./m.nametec.kr_files/mfb.png" style="width : 86%;margin-top : 25px;">
+    <img src="./m.nametec.kr_files/unni.png" style="width : 86%;margin-top : 25px;">
+</div>
+
+<div style="text-align : center; background-color: #fafafa; padding-top: 50px;">
+    <div>
+        <a class="Bold1" style="font-size : 28px;">네임텍의 약속</a><a class="Bold1" style="font-size : 28px;  color: #4A64F5; ">.</a>
+    </div>
+
+    <img src="./m.nametec.kr_files/kim4.png" style="width : 86%;margin-top : 30px;margin-bottom : 30px;">
+    <div>
+        <a class="Medium1" style="font-size : 16px;box-shadow: inset 0 -11px #edeffe; line-height : 21px;">신뢰할 수 있는 네임텍상표</a>
+        <div style="margin-top : 10px;">
+        <a class="Light1" style="font-size : 14px;line-height : 1.8">상표등록의 모든 과정이 완벽하게 끝날 때 까지 <br>반드시 끝까지 책임지겠습니다.</a>
+        </div>
+    </div>
+    <div style="margin-top : 30px;">
+        <a class="Medium1" style="font-size : 16px;box-shadow: inset 0 -11px #edeffe; line-height : 21px;">상표 무단 도용 근절</a>
+        <div style="margin-top : 10px;">
+        <a class="Light1" style="font-size : 14px;line-height : 1.8">고객님의 소중한 상표를 무단 도용, <br>악의적 선출원 등에서 지켜낼 수 있도록 <br>쉽고 빠르고 정확한 서비스를 제공하겠습니다.</a>
+        </div>
+    </div>
+    <button type="button" id="start_btn123" style="cursor:pointer;margin-top : 30px;margin-bottom : 50px;" onclick="login()">AI 무료 진단 시작하기</button>
+</div>
+
+<div style="padding-left : 19px; padding-top : 55px; padding-bottom :85px; ">
+<a class="Medium" style="font-size : 14px; color : #000000; ">네임텍 사업자 정보</a>
+    <div style="margin-top : 10px; line-height : 14px; ">
+        <a class="Light" style="font-size : 11px; color : #898989; ">대표자 : </a><a class="Light" style="font-size : 11px; color : #000000; ">&nbsp;&nbsp;김현호</a>
+        <br>
+        <a class="Light" style="font-size : 11px; color : #898989; ">주소 : </a><a class="Light" style="font-size : 11px; color : #000000; ">&nbsp;&nbsp;서울특별시 동대문구 약령시로 9길 39 1층 2호</a>
+        <br>
+        <a class="Light" style="font-size : 11px; color : #898989; ">사업자등록번호 : </a><a class="Light" style="font-size : 11px; color : #000000; ">&nbsp;&nbsp;439-30-01015</a>
+        <br>
+        <a class="Light" style="font-size : 11px; color : #898989; ">통신판매업 신고번호 : </a><a class="Light" style="font-size : 11px; color : #000000; ">&nbsp;&nbsp;2021-서울동대문-1369</a>
+        <br>
+        <a class="Light" style="font-size : 11px; color : #898989; ">전화번호 : </a><a class="Light" style="font-size : 11px; color : #000000; ">&nbsp;&nbsp;02-922-5710</a>
+
+    </div>
+    <div style="margin-top : 6px;">
+    <a class="Light" style="font-size : 11px; color : #898989; " href="https://m.nametec.kr/termsofservice">서비스 이용약관 </a> <a class="Light" style="font-size : 11px; color : #898989; ">&nbsp;|&nbsp;</a><a class="Light" style="font-size : 11px; color : #898989; " href="https://m.nametec.kr/privacypolicy">개인정보처리방침</a>
+</div>
+    <div style="margin-top : 6px;">
+        <a class="Light" style="font-size : 11px; color : #000000; ">Copyright©2021 티타티티. All rights reserved.</a>
+    </div>
+    <div style="margin-top : 6px;">
+        <a href="tel:02-922-5710">
+<img src="./m.nametec.kr_files/icon_phone@2x.png" style="cursor:pointer;width : 36px; float : left; ">
+            </a>
+        <img src="./m.nametec.kr_files/icon_insta@2x.png" onclick="instar();" style="cursor:pointer;width : 36px; float : left; margin-left : 7px; ">
+    </div>
+    </div>
+
+
+<div id="menuContainer" style="display:none;position: fixed;top: 0; width: 100% ; height: 100%;background-color: rgba(0, 0, 0, 0.7); font-family: NotoSansCJKkr; max-width : 520px;margin: auto;">
+
+    <div style="background-color:#ffffff; width: 100%;">
+        <div class="menuicon1">
+
+            <img src="./m.nametec.kr_files/x_icon@3x.png" class="" id="xbtn" onclick="closemenu()" style="cursor:pointer;width : 18px; float : right; margin-right : 20px;margin-top : 20px;">
+        </div>
+        <div class="menuicon1" style="height : 50px;">
+
+            <span style="cursor:pointer;margin-top : 15px;">로그인</span>
+        </div>
+        <div class="menuicon1" onclick="anne()" style="margin-top : 25px;">
+            <span style="cursor:pointer;">비용 및 절차 안내</span>
+        </div>
+        <div class="menuicon1" onclick="center()" style="margin-top : 25px;">
+            <span style="cursor:pointer; "> 고객센터</span>
+        </div>
+        <div class="menuicon1" id="logoutBtn" onclick="logout()" style="margin-top : 25px;display : none;">
+            <span style="cursor:pointer; "> 로그아웃</span>
+        </div>
+
+        <div style="height: 33px;"></div>
+    </div>
+</div>
+<script type="text/javascript">
+function instar(){
+location.href="https://www.instagram.com/name.tec/";
+}
+
+function closemenu(){
+xbtn = document.getElementById("menuContainer");
+xbtn.style.display = "none";
+
+}
+
+    <!--  naver_id_login.get_naver_userprofile("naverSignInCallback()");-->
+    // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+    <!--  function naverSignInCallback() {-->
+    <!--    alert(naver_id_login.getProfileData());-->
+    <!--  }-->
+    let email1 = localStorage.getItem('customeremail');
+
+    let menuicon1 = document.getElementsByClassName('menuicon1');
+    let menuBtn11 = menuicon1[1].getElementsByTagName('span')[0];
+    if (email1 == '' || email1 == null || email1 =='undefined') {
+        menuBtn11.innerHTML = '로그인';
+<!--        menuicon1[3].style.display = 'none';-->
+        menuBtn11.onclick = function () {
+            login2();
+        };
+    } else {
+    logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.style.display  = '';
+        menuBtn11.innerHTML = '마이페이지';
+        menuBtn11.onclick = function () {
+            mypage();
+        };
+    }
+
+
+</script>
+<script src="./m.nametec.kr_files/kakao.js"></script>
+<script>
+function que1() {
+if (document.getElementById("que1").style.display == ""){
+document.getElementById("que11").src = '../static/image/button1.png'
+document.getElementById("que1").style.display = "none";
+}else{
+document.getElementById("que1").style.display = "";
+document.getElementById("que11").src = '../static/image/button3.png'
+}
+}
+function que2() {
+if (document.getElementById("que2").style.display == ""){
+document.getElementById("que2").style.display = "none";
+document.getElementById("que22").src = '../static/image/button2.png'
+}else{
+document.getElementById("que2").style.display = "";
+document.getElementById("que22").src = '../static/image/button4.png'
+}
+}
+Kakao.init('e3234163a151f0558554e49a33bbbe27');
+
+function logout() {
+localStorage.clear();
+        location.href="https://m.nametec.kr/";
+
+  }
+
+  function getUrlParams() {
+    var params = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+        params[key] = value;
+    });
+    return params;
+}
+    if(window.location.hash) {
+        var naver_id_login = new naver_id_login("6LOI1P11vefOkidC2vN7", "https://m.nametec.kr/search1");
+        // 접근 토큰 값 출력
+        var naver_access_token = naver_id_login.oauthParams.access_token;
+        console.log(naver_access_token);
+        getNaverProfile()
+
+        function getNaverProfile() {
+        var utmRoute = sessionStorage.getItem('utmRoute');
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'https://m.nametec.kr/getNaverProfile',
+                    type: "post",
+                    data: JSON.stringify({
+                        "token": naver_access_token,
+                        "utmRoute" : utmRoute
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "JSON",
+                    crossDomain: true,
+                    success: function (data1) {
+                        if (data1.status == 200) {
+                            var profileData = data1
+                            timestampSecond = Math.floor(+ new Date() / 1000);
+                            localStorage.setItem('timestamp', timestampSecond);
+                            localStorage.setItem('customeremail', profileData['email']);
+                            localStorage.setItem('customerPhone', profileData['mobile']);
+                            localStorage.setItem('customername', profileData['name']);
+                            localStorage.setItem('customerToken', naver_access_token);
+                            localStorage.setItem('customerClass', profileData['class']);
+                            localStorage.setItem('real_email', profileData['real_email']);
+                            logoutBtn = document.getElementById('logoutBtn');
+                            let menuicon = document.getElementsByClassName('menuicon1');
+    let menuBtn1 = menuicon[1].getElementsByTagName('span')[0];
+    logoutBtn.style.display  = '';
+        menuBtn1.innerHTML = '마이페이지';
+        menuBtn1.onclick = function () {
+            mypage();
+        };
+                        }
+                        if (data1.status == 401) {
+                            alert('ssd');
+                        }
+                    },
+                    error: function (request, status, error) {
+
+
+                    }
+
+
+                });
+
+
+            });
+        }
+    }
+var oParams = getUrlParams();
+var utm_source = decodeURI(oParams.utm_source);
+var utm_content = decodeURI(oParams.utm_content);
+var utm_campaign = decodeURI(oParams.utm_campaign);
+var utm_medium = decodeURI(oParams.utm_medium);
+var utm_term = decodeURI(oParams.utm_term);
+var link = document.location.href;
+sessionStorage.setItem('getUrlLink', link);
+if(utm_source != 'undefined'){
+$.ajax({
+        type: "POST",
+        url: "https://m.nametec.kr/getUtmData",
+        data: JSON.stringify({
+                "utm_source": utm_source,
+                "utm_content" : utm_content,
+                "utm_campaign" : utm_campaign,
+                "utm_term" : utm_term,
+                "utm_medium" : utm_medium
+            }),
+        processData: false,
+        contentType: "application/json",
+        async: false,
+        success: function (data) {
+            if (data.status == 200) {
+            utmStr = utm_source+utm_content+utm_campaign+utm_term+utm_medium;
+            utmStr = utmStr.replace(/undefined/gi,'');
+
+            sessionStorage.setItem("utmRoute", utmStr);
+            } else {
+
+
+            }
+        }
+        ,
+        err: function (err) {
+            alert(err.status);
+        }
+    });
+}else{
+$.ajax({
+type: "POST",
+        url: "https://m.nametec.kr/getUtmData",
+        data: JSON.stringify({
+                "utm_source": 'm.nametec.kr',
+                "utm_content" : 'undefined',
+                "utm_campaign" : 'undefined',
+                "utm_term" : 'undefined',
+                "utm_medium" : 'undefined'
+            }),
+        processData: false,
+        contentType: "application/json",
+        async: false,
+        success: function (data) {
+            if (data.status == 200) {
+            sessionStorage.setItem("utmRoute", 'normal');
+            } else {
+            }
+        }
+        ,
+        err: function (err) {
+            alert(err.status);
+        }
+    });
+}
+currenturl= window.location.pathname;
+
+$.ajax({
+        type: "POST",
+        url: "https://m.nametec.kr/check_click",
+        data: JSON.stringify({
+                "currenturl": currenturl
+            }),
+        processData: false,
+        contentType: "application/json",
+        async: false,
+        success: function (data) {
+            if (data.status == 200) {
+            } else {
+
+
+            }
+        }
+        ,
+        err: function (err) {
+            alert(err.status);
+        }
+    });
+</script>
+<script type="text/javascript">
+let email = localStorage.getItem('customeremail');
+
+    let menuicon = document.getElementsByClassName('menuicon1');
+    let menuBtn1 = menuicon[1].getElementsByTagName('span')[0];
+    if (email == '' || email == null || email == 'undefined') {
+        menuBtn1.innerHTML = '로그인';
+<!--        menuicon[3].style.display = 'none';-->
+        menuBtn1.onclick = function () {
+            login2();
+        };
+    } else {
+    logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.style.display  = '';
+        menuBtn1.innerHTML = '마이페이지';
+        menuBtn1.onclick = function () {
+            mypage();
+        };
+    }
+var target = document.getElementById("start_btn");
+
+var targetTop2 = window.pageYOffset + target.getBoundingClientRect().top;
+var floatPosition = parseInt($("#channel-chat-button").css('top'))
+// scroll 인식
+$(window).scroll(function() {
+
+    // 현재 스크롤 위치
+    var currentTop = window.pageYOffset;
+
+
+    if (currentTop + floatPosition-10 >document.body.clientHeight-1100){
+     var bannerTop = document.body.clientHeight-590+ "px";
+    }else{
+     var bannerTop = currentTop + floatPosition-10 + "px";
+     }
+    //이동 애니메이션
+    $("#channel-chat-button").stop().animate({
+      "top" : bannerTop
+    }, 500);
+
+}).scroll();
+    function chatChannel() {
+      Kakao.Channel.chat({
+        channelPublicId: '_lWuhs' // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다.
+      });
+    }
+sessionStorage.setItem('page', 'intro');
+timestampSecond2 = Math.floor(+ new Date() / 1000);
+let timestampVal = localStorage.getItem('timestamp')
+if (timestampVal != null){
+if (Number(timestampVal)+3600 <= Number(timestampSecond2)){
+localStorage.clear()
+location.reload()
+}
+}
+
+</script>
+
+
+<script type="text/javascript">
+var adn_param = adn_param || [];
+adn_param.push([{
+    ui:'104440',
+    ut:'Home'
+}]);
+</script>
+<script type="text/javascript" defer="" src="./m.nametec.kr_files/adn_tags_2.1.3.js"></script>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7CRKH2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div id="adn_container" style="display:none"><div id="adn_wrap_25043553147" style="display:none"><iframe frameborder="0" scrolling="no" width="0px" height="0px" src="./m.nametec.kr_files/ads_1.0.2.html"></iframe></div></div></body></html>

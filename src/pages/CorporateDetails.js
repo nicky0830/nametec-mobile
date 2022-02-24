@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import question from '../image/question_mark.png';
 import file_btn from '../image/file_button@3x.png';
 import upyen from '../image/upyen.png';
@@ -6,48 +6,12 @@ import DaumPostcode from 'react-daum-postcode';
 
 const CorporateDetails = ({post,full}) => {
 
-    function storageAvailable(type) {
-        var storage;
-        try {
-            storage = window[type];
-            var x = '__storage_test__';
-            storage.setItem(x, x);
-            storage.removeItem(x);
-            return true;
-        }
-        catch(e) {
-            return e instanceof DOMException && (
-                // Firefox를 제외한 모든 브라우저
-                e.code === 22 ||
-                // Firefox
-                e.code === 1014 ||
-                // 코드가 존재하지 않을 수도 있기 떄문에 이름 필드도 확인합니다.
-                // Firefox를 제외한 모든 브라우저
-                e.name === 'QuotaExceededError' ||
-                // Firefox
-                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-                // 이미 저장된 것이있는 경우에만 QuotaExceededError를 확인하십시오.
-                (storage && storage.length !== 0);
-            }
-        }
-
-    const boolHandler = () => { 
-        if(storageAvailable('sessionStorage')){ 
-            console.log(true)
-        }else{ 
-            console.log(false)
-        }
-    }
-
-
-
-
     const [bordercolor1, setColor1] = useState('#e0e0e0')
     const [bordercolor2, setColor2] = useState('#e0e0e0')
     const [bordercolor3, setColor3] = useState('#e0e0e0')
     const [bordercolor4, setColor4] = useState('#e0e0e0')
 
- 
+
 
     const fullHandler = () => { 
         console.log('full')
@@ -69,15 +33,20 @@ const CorporateDetails = ({post,full}) => {
     const [div4, setDiv4] = useState('hidden');
 
 
+    const[value1, setValue1] = useState('')
+    const[value2, setValue2] = useState('')
 
-  
+    const valueHandler1 = (ele) => { 
+        setValue1(ele.target.value)
+    }
+
+    const valueHandler2 = (ele) => { 
+        setValue2(ele.target.value)
+    }
+
 
     const[address, setAddress] = useState('');//주소
     const[addressDetail, setAddressDetail] = useState('');//상세주소
-    const[ingamValue, setInagamValue]= useState('');//상세주소
-    const[corporateNum, setCorporateNum]= useState('');//상세주소
-    const[headNum, setHeadNum]= useState('');//상세주소
-
 
 
 
@@ -130,15 +99,7 @@ const CorporateDetails = ({post,full}) => {
             if(ele.target.value.length > 13){
                 setColor1('red')
             }
-            else if(ele.target.value.length <= 13){ 
-                setColor1('#4a64f5')
-
-            }
         }
-
-        setCorporateNum(ele.target.value);
-        sessionStorage.setItem('corporatenum', corporateNum)
-
 
     }
 
@@ -150,8 +111,6 @@ const CorporateDetails = ({post,full}) => {
         }else{ 
             setColor2('red')
         }
-        setHeadNum(ele.target.value);
-        sessionStorage.setItem('headnum', headNum)
 
       
        }
@@ -166,6 +125,9 @@ const CorporateDetails = ({post,full}) => {
     const showDiv2 = (ele) => { 
      setDiv2('visible')
      ele.target.placeholder='';
+
+
+    
      }
  
 
@@ -182,56 +144,17 @@ const CorporateDetails = ({post,full}) => {
         setDiv4('visible')
         ele.target.placeholder='';
         }
-
-        const inputImg = useRef(null);
-        const ingam = useRef(null)
     
  
+     const inputImg = useRef(null);
+     const ingam = useRef(null)
 
-useEffect(() => { 
-   
-
-    sessionStorage.setItem('filename', '');
-    ingam.current.value  = ''
-    sessionStorage.setItem('corporatenum', '');
-    sessionStorage.setItem('headnum', '');
-
-
-        //current에 해당 태그가 들어있다 
-        //getITem에 이전에 선택한 파일이 들어있다
-        //ingam.current에 null : 다시 렌더링되어서 그런가??
-        // ingam.current.value = sessionStorage.getItem('filename')
-        //선택 전에는 null
-}, [])
-
-useEffect(() => { 
-    console.log(sessionStorage.getItem('filename'))
-    setInagamValue(sessionStorage.getItem('filename'));
-
-    console.log(corporateNum, headNum)
-    setCorporateNum(sessionStorage.getItem('corporatenum'))
-    setHeadNum(sessionStorage.getItem('headnum'))
-
-    //current 함수가 반환되고 콘텐츠가 렌더링될 때까지 ref가 설정되지 않았으므로 
-//
-
-    //current에 해당 태그가 들어있다 
-    //getITem에 이전에 선택한 파일이 들어있다
-    //ingam.current에 null : 다시 렌더링되어서 그런가??
-    // ingam.current.value = sessionStorage.getItem('filename')
-    //선택 전에는 null
-}, [address, addressDetail])
 
  function fileUpload(){
-        const Storage = window.sessionStorage
+
         let file = inputImg.current.files[0];
-        setInagamValue(file.name);
-  
-        sessionStorage.setItem('filename',  file.name);
-        console.log(sessionStorage.getItem('filename'));
-        
+         ingam.current.value = file.name;
         }
-        
 
 
         function checkCorporateRegiNumber(number){
@@ -327,7 +250,6 @@ return (
 <div className='test' style={{maxWidth: '520px', margin:'auto', marginBottom: '100px', position: 'relative', zIndex: 0}}>
 {isOpenPost ? (
     <DaumPostcode style={postCodeStyle} autoClose onComplete={onCompleteOpenPost}/>
-
 ) :
     (<>
    
@@ -362,19 +284,13 @@ style={{
               <img src={file_btn} 
                style={{display:'inline', marginTop:'5px', transform: 'translateY(10px)', marginBottom:'20px', width: '110px'}}/>
               </label>
-              <input type="file" onChange={fileUpload} id="ex_file" ref ={inputImg} style={{visibility: 'hidden', height: '0px'}} readOnly=''/>
+              <input type="file" onChange={fileUpload} id="ex_file" ref ={inputImg} style={{visibility: 'hidden', height: '0px'}}/>
 
     <div className="inputdiv" id="inputdivin" 
     style={{ borderBottom: '1px solid rgb(224 224 224)', height: '30px',width: '330px', marginTop: '22px', display: 'inline-block'}}>
         
     <div style={{display:'inline'}} id="inputdivingam">
-    <input type="text" id="ingam" defaultValue=''
-     ref={el => {console.log(el); ingam.current = el;}} 
-     className="textcont" 
-     style={{border:'none', width: '330px', outline:'none', fontSize: '20px'}} 
-     value={ingamValue}
-     />
-  {/* 다른 컴포넌트를 렌더링하니까 null, 알아서 끝나고 다시 이 페이지 렌더링하면 null */}
+    <input type="text" id="ingam" ref={ingam} className="textcont" style={{border:'none', width: '330px', outline:'none', fontSize: '20px'}} readOnly=""/>
     </div>
 
     </div>
@@ -385,10 +301,9 @@ style={{
 
     <div className="imformname" id="imformname44" style={{height: '17px', marginBottom:'3px', visibility: div1, fontSize: '12px', color:'#898989'}} > 법인 등록번호</div>
     <div className="inputdiv" id="inputdiv44" style={{height: '30px', marginBottom: '16px',borderBottom: `1px solid ${bordercolor1}`, marginBottom: '10px'}}>
-    <input autoComplete="off" type="number" name="" id="text44" className="textcont" maxLength= {13}
-      value={corporateNum}
+    <input autoComplete="off" type="number" name="" defaultValue="" id="text44" className="textcont" maxLength= {13}
       onClick={showDiv1}
-      onChange = {Number1}
+      onChange = { Number1}
         style={{marginBottom: '5px',
         outline: 'none',
         caretColor: bordercolor1,
@@ -409,8 +324,7 @@ style={{
     <div className="inputdiv" id="inputdiv55" style={{height: '30px', marginBottom: '16px',
     borderBottom: `1px solid ${bordercolor2}`}}>
         <input autoComplete="off" type="number" name="" defaultValue="" id="text55" className="textcont" placeholder="사업자 등록번호" 
-        value={headNum}
-       onClick={showDiv2}
+        onClick={showDiv2}
         onChange = {Number2}
         style={{marginBottom: '5px',
         border:'none',
@@ -438,6 +352,7 @@ style={{
         <input type="text" id="textpost-1" className="textcont" 
         defaultValue=''
         value={address}
+        onChange={showDiv3}
         style={{
         border:'none',
         padding: '0px',
@@ -451,7 +366,7 @@ style={{
            letterSpacing: 'normal',
            textAlign: 'left',
            color: 'internal light dark'}}
-        placeholder="법인 등본상 주소" readOnly=""/></div>
+        placeholder="법인 등본상 주소" readonly=""/></div>
 <img src={upyen} style={{width: 'calc(30% - 15px)',display:'inline-block', transform: 'translateY(7px)', marginLeft: '10px', marginBottom:'20px', marginTop: '-20px',float: 'right'}} onClick={onChangeOpenPost}/>
 
     <div className="inputdiv" id="inputdiv111" style={{
@@ -459,8 +374,7 @@ style={{
         borderBottom: '1px solid rgb(224 224 224)', 
         marginBottom: '16px'}}>
 
-    <input type="text" id="textpost-23" className="textcont" style={{border:'none', display:'inline'}} readOnly=""
-                defaultValue=''
+    <input type="text" id="textpost-23" className="textcont" style={{border:'none', display:'inline'}} readonly=""
         value={addressDetail}
         style={{marginBottom: '5px',
         outline: 'none',
@@ -478,7 +392,7 @@ style={{
 
 <div className="imformname" id="imformnamepost-1" style={{height: '17px', marginBottom:'3px',visibility: div4, fontSize: '12px', color:'#898989'}}> 상세주소</div>
     <div className="inputdiv" id="inputdiv112" style={{height:'30px',marginBottom:'16px',borderBottom: `1px solid ${bordercolor4}`}}>
-        <input autoComplete="off" type="text" name="" defaultValue="" id="text61" className="textcont" placeholder="상세주소를 입력해주세요" 
+        <input autocomplete="off" type="text" name="" defaultValue="" id="text61" className="textcont" placeholder="상세주소를 입력해주세요" 
         onClick={showDiv4}
         onChange={Korean}
         onKeyUp={fullHandler}
